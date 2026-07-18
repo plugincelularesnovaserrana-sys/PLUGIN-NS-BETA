@@ -113,7 +113,7 @@
             letter-spacing: 0.5px;
         }
 
-        input, select {
+        input, select, textarea {
             width: 100%;
             padding: 12px 15px;
             background-color: #162447;
@@ -124,7 +124,13 @@
             transition: all 0.3s ease;
         }
 
-        input:focus, select:focus {
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: #45F3FF;
             box-shadow: 0 0 10px rgba(69, 243, 255, 0.2);
@@ -167,6 +173,42 @@
             box-shadow: 0 0 10px rgba(69, 243, 255, 0.1);
         }
 
+        /* Estilo compacto para o seletor de estado do aparelho */
+        .radio-tile-sm-group {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .radio-tile-sm {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: #162447;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #b0b3b8;
+            transition: all 0.2s;
+        }
+
+        .radio-tile-sm input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .radio-tile-sm.active {
+            border-color: #45F3FF;
+            background-color: rgba(69, 243, 255, 0.05);
+            color: #45F3FF;
+        }
+
+        /* AJUSTADO: Removido o space-between para evitar o buraco vertical sob o aviso */
         .results-box {
             background-color: #162447;
             border-radius: 8px;
@@ -174,7 +216,6 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
         .summary-item {
@@ -210,9 +251,10 @@
             text-align: center;
         }
 
+        /* AJUSTADO: Definido margem superior fixa e altura controlada */
         .table-wrapper {
             margin-top: 1.5rem;
-            max-height: 250px;
+            max-height: 380px;
             overflow-y: auto;
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 6px;
@@ -358,9 +400,22 @@
             </div>
 
             <div class="msg-section">
-                <div class="form-group">
-                    <label for="device_model">Modelo do Aparelho</label>
-                    <input type="text" id="device_model" placeholder="Ex: Galaxy S24 Ultra / iPhone 15 Pro">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="device_model">Modelo do Aparelho</label>
+                        <input type="text" id="device_model" placeholder="Ex: Galaxy S24 / iPhone 15 Pro">
+                    </div>
+                    <div class="form-group">
+                        <label>Estado do Aparelho</label>
+                        <div class="radio-tile-sm-group">
+                            <div class="radio-tile-sm active" id="tile-lacrado" onclick="setCondition('LACRADO')">
+                                <input type="radio" name="device_condition" value="LACRADO" checked> Lacrado
+                            </div>
+                            <div class="radio-tile-sm" id="tile-seminovo" onclick="setCondition('SEMINOVO')">
+                                <input type="radio" name="device_condition" value="SEMINOVO"> Seminovo
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="form-row">
@@ -372,6 +427,11 @@
                         <label id="dynamic-label" for="device_ram">Memória RAM (GB)</label>
                         <input type="number" id="device_ram" placeholder="Ex: 8">
                     </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="device_obs">Observações (Opcional)</label>
+                    <textarea id="device_obs" placeholder="Ex: Tela trocada, riscos na traseira..."></textarea>
                 </div>
 
                 <button class="btn-generate" onclick="copyModelMessage()">📋 Copiar Mensagem Pronta</button>
@@ -409,9 +469,9 @@
 </div>
 
 <script>
-    // Objeto global para armazenar os valores calculados das parcelas em tempo real
     let computedInstallments = {};
     let currentDevice = 'android';
+    let currentCondition = 'LACRADO';
 
     function formatCurrency(value) {
         return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -430,21 +490,23 @@
         if (type === 'iphone') {
             androidGroup.style.display = 'none';
             iphoneGroup.style.display = 'block';
-            
-            // Altera o rótulo e o placeholder para corresponder ao iPhone
             dynamicLabel.innerText = "Saúde da Bateria (%)";
-            ramInput.placeholder = "Ex: 95";
+            ramInput.placeholder = "Ex: 92";
         } else {
             androidGroup.style.display = 'block';
             iphoneGroup.style.display = 'none';
-            
-            // Restaura o rótulo e o placeholder originais para o Android
             dynamicLabel.innerText = "Memória RAM (GB)";
             ramInput.placeholder = "Ex: 8";
         }
         
         updateMinInput();
         calculate();
+    }
+
+    function setCondition(condition) {
+        currentCondition = condition;
+        document.getElementById('tile-lacrado').classList.toggle('active', condition === 'LACRADO');
+        document.getElementById('tile-seminovo').classList.toggle('active', condition === 'SEMINOVO');
     }
 
     function updateMinInput() {
@@ -494,7 +556,7 @@
         document.getElementById('res_saldo_liquido').innerText = formatCurrency(saldoLiquido);
 
         let htmlTable = '';
-        computedInstallments = {}; // limpa cache
+        computedInstallments = {};
 
         if (currentDevice === 'android') {
             const parcelasAndroid = [3, 4, 5, 6, 7, 8, 9, 10, 11];
@@ -570,43 +632,52 @@
         const modelo = document.getElementById('device_model').value.toUpperCase() || '{{MODELO}}';
         const armazenamento = document.getElementById('device_storage').value || '{{ARMAZENAMENTO}}';
         const dynamicValue = document.getElementById('device_ram').value || '{{VALOR}}';
+        const observacao = document.getElementById('device_obs').value.trim();
         
         const valorVenda = formatCurrency(parseFloat(document.getElementById('valor_venda').value) || 0);
         const valorEntrada = formatCurrency(parseFloat(document.getElementById('valor_entrada').value) || 0);
 
-        let mensagemPronta = "";
+        let linhasMensagem = [];
 
         if (currentDevice === 'android') {
             const p9 = computedInstallments[9] || "R$ 0,00";
             const p11 = computedInstallments[11] || "R$ 0,00";
 
-            mensagemPronta = [
+            linhasMensagem = [
                 "📱✨ *ANDROID NO BOLETO* ✨📱",
                 `*${modelo}* | *${armazenamento}GB* | *${dynamicValue}GB RAM*`,
+                `Estado: *${currentCondition}*`,
                 `Valor: *${valorVenda} à vista*`,
                 "",
                 "✨ *CONDIÇÃO ESPECIAL* ✨",
                 `🔹 *Entrada:* ${valorEntrada}`,
                 `🔹 *Parcelas:* 9x de *${p9}*`,
                 `🔹 *Parcelas:* 11x de *${p11}*`
-            ].join("\n");
+            ];
         } else {
             const p12 = computedInstallments[12] || "R$ 0,00";
             const p15 = computedInstallments[15] || "R$ 0,00";
 
-            mensagemPronta = [
+            linhasMensagem = [
                 "📱✨ *IPHONE NO BOLETO* ✨📱",
                 `*${modelo}* | *${armazenamento}GB* | *Bateria: ${dynamicValue}%*`,
+                `Estado: *${currentCondition}*`,
                 `Valor: *${valorVenda} à vista*`,
                 "",
                 "✨ *CONDIÇÃO ESPECIAL* ✨",
                 `🔹 *Entrada:* ${valorEntrada}`,
                 `🔹 *Parcelas:* 12x de *${p12}*`,
                 `🔹 *Parcelas:* 15x de *${p15}*`
-            ].join("\n");
+            ];
         }
 
-        // Executa a cópia para a área de transferência
+        if (observacao !== "") {
+            linhasMensagem.push("");
+            linhasMensagem.push(`⚠️ *Observação:* ${observacao}`);
+        }
+
+        const mensagemPronta = linhasMensagem.join("\n");
+
         navigator.clipboard.writeText(mensagemPronta).then(() => {
             alert("Mensagem copiada com sucesso!");
         }).catch(err => {
@@ -614,7 +685,6 @@
         });
     }
 
-    // Inicialização
     updateMinInput();
     calculate();
 </script>
