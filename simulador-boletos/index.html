@@ -312,7 +312,6 @@
 <body>
 
 <div class="container">
-    <!-- Bloco superior com a Logo e botão Voltar adicionados -->
     <div class="logo-back-container">
         <img src="assets/LOGO.png" alt="Plugin Celulares & Acessórios">
         <a href="../index.html" class="btn-back">⬅ Voltar ao Painel</a>
@@ -358,7 +357,6 @@
                 <input type="number" id="valor_entrada" value="250.00" step="0.01" oninput="calculate()">
             </div>
 
-            <!-- NOVOS CAMPOS SEPARADOS LOGO ABAIXO -->
             <div class="msg-section">
                 <div class="form-group">
                     <label for="device_model">Modelo do Aparelho</label>
@@ -371,7 +369,7 @@
                         <input type="number" id="device_storage" placeholder="Ex: 128">
                     </div>
                     <div class="form-group" id="ram-field-group">
-                        <label for="device_ram">Memória RAM (GB)</label>
+                        <label id="dynamic-label" for="device_ram">Memória RAM (GB)</label>
                         <input type="number" id="device_ram" placeholder="Ex: 8">
                     </div>
                 </div>
@@ -426,16 +424,23 @@
         
         const androidGroup = document.getElementById('perfil-android-group');
         const iphoneGroup = document.getElementById('perfil-iphone-group');
-        const ramGroup = document.getElementById('ram-field-group');
+        const dynamicLabel = document.getElementById('dynamic-label');
+        const ramInput = document.getElementById('device_ram');
 
         if (type === 'iphone') {
             androidGroup.style.display = 'none';
             iphoneGroup.style.display = 'block';
-            ramGroup.style.display = 'none'; // Esconde RAM para iPhone
+            
+            // Altera o rótulo e o placeholder para corresponder ao iPhone
+            dynamicLabel.innerText = "Saúde da Bateria (%)";
+            ramInput.placeholder = "Ex: 95";
         } else {
             androidGroup.style.display = 'block';
             iphoneGroup.style.display = 'none';
-            ramGroup.style.display = 'block'; // Mostra RAM para Android
+            
+            // Restaura o rótulo e o placeholder originais para o Android
+            dynamicLabel.innerText = "Memória RAM (GB)";
+            ramInput.placeholder = "Ex: 8";
         }
         
         updateMinInput();
@@ -561,12 +566,10 @@
         document.getElementById('table_parcelas').innerHTML = htmlTable;
     }
 
-    // Função para capturar dados e copiar a mensagem dinâmica montada
-// Função para capturar dados e copiar a mensagem dinâmica montada e formatada
     function copyModelMessage() {
         const modelo = document.getElementById('device_model').value.toUpperCase() || '{{MODELO}}';
         const armazenamento = document.getElementById('device_storage').value || '{{ARMAZENAMENTO}}';
-        const ram = document.getElementById('device_ram').value || '{{RAM}}';
+        const dynamicValue = document.getElementById('device_ram').value || '{{VALOR}}';
         
         const valorVenda = formatCurrency(parseFloat(document.getElementById('valor_venda').value) || 0);
         const valorEntrada = formatCurrency(parseFloat(document.getElementById('valor_entrada').value) || 0);
@@ -579,7 +582,7 @@
 
             mensagemPronta = [
                 "📱✨ *ANDROID NO BOLETO* ✨📱",
-                `*${modelo}* | *${armazenamento}GB* | *${ram}GB RAM*`,
+                `*${modelo}* | *${armazenamento}GB* | *${dynamicValue}GB RAM*`,
                 `Valor: *${valorVenda} à vista*`,
                 "",
                 "✨ *CONDIÇÃO ESPECIAL* ✨",
@@ -593,7 +596,7 @@
 
             mensagemPronta = [
                 "📱✨ *IPHONE NO BOLETO* ✨📱",
-                `*${modelo}* | *${armazenamento}GB*`,
+                `*${modelo}* | *${armazenamento}GB* | *Bateria: ${dynamicValue}%*`,
                 `Valor: *${valorVenda} à vista*`,
                 "",
                 "✨ *CONDIÇÃO ESPECIAL* ✨",
