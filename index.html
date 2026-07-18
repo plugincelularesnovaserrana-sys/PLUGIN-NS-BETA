@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Ferramentas - Plugin Celulares</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0B0C10; 
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .logo-container {
+            margin-bottom: 50px;
+        }
+
+        .logo-container img {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+        }
+
+        .modules-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            text-align: left;
+        }
+
+        .module-item {
+            /* Corrigido: Agora os menus principais usam o mesmo degradê e borda dos botões secundários */
+            background: linear-gradient(135deg, #1f4068, #162447);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        details summary {
+            padding: 24px 32px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #45F3FF; /* Texto em ciano neon para máxima nitidez */
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        details summary::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid #45F3FF;
+            border-bottom: 2px solid #45F3FF;
+            transform: rotate(-45deg);
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        details summary:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        details[open] {
+            border-color: #45F3FF;
+            box-shadow: 0 0 20px rgba(69, 243, 255, 0.2);
+        }
+
+        .menu-content {
+            padding: 0 32px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            background: #0B0C10; /* Fundo interno escuro para dar contraste aos botões quando aberto */
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        /* Submenus Internos */
+        .submenu-item {
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .submenu-item summary {
+            padding: 18px 24px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #45F3FF; 
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, #1f4068, #162447);
+            border-radius: 4px;
+        }
+
+        .submenu-item summary::after {
+            border-right: 2px solid #45F3FF;
+            border-bottom: 2px solid #45F3FF;
+        }
+
+        .submenu-content {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Botões de Ação Unificados */
+        .btn {
+            width: 100%;
+            padding: 18px 24px;
+            color: #45F3FF; 
+            background: linear-gradient(135deg, #1f4068, #162447);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            min-height: 56px;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #0056b3, #1f4068);
+            border-color: #45F3FF;
+            box-shadow: 0 4px 15px rgba(69, 243, 255, 0.2);
+            color: #FFFFFF; 
+        }
+
+        /* Botões internos dos submenus */
+        .btn-submenu {
+            background: rgba(11, 12, 16, 0.6);
+            color: #cbd5e1;
+            min-height: 48px;
+            padding: 12px 20px;
+            font-size: 11px;
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-submenu:hover {
+            background: #162447;
+            border-color: #45F3FF;
+            color: #45F3FF;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="assets/LOGO.png" alt="Plugin Celulares & Acessórios">
+        </div>
+
+        <div class="modules-wrapper">
+            
+            <!-- SEÇÃO: FINANCEIRO -->
+            <div class="module-item">
+                <details>
+                    <summary>Módulo Financeiro</summary>
+                    <div class="menu-content">
+                        <a href="gerador1/index.html" class="btn">
+                            Simulador Renegociação Total/Parcial
+                        </a>
+                        
+                        <a href="gerador2/index.html" class="btn">
+                            Simulador Renegociação Remanejamento
+                        </a>
+                        
+                        <a href="gerador-extenso/index.html" class="btn">
+                            Gerador de Parcelas por Extenso
+                        </a>
+
+                        <a href="https://sistema.consultcenter.com.br/users/login" target="_blank" class="btn">
+                            Consult Center
+                        </a>
+
+                        <!-- SUBMENU: CONTRATOS FINANCEIRO -->
+                        <div class="submenu-item">
+                            <details>
+                                <summary>Contratos de Renegociação</summary>
+                                <div class="submenu-content">
+                                    <a href="https://app.clicksign.com/fluxia/861114f2-7170-4c10-87e4-470235102e00" target="_blank" class="btn btn-submenu">
+                                        Renegociação Novo Sem Fiador
+                                    </a>
+                                    <a href="https://app.clicksign.com/fluxia/0ddb95f5-a964-4c33-b538-5222970c529f" target="_blank" class="btn btn-submenu">
+                                        Renegociação Novo Com Fiador
+                                    </a>
+                                    <a href="https://app.clicksign.com/fluxia/d6802929-7de2-45df-8d70-b12d52021afa" target="_blank" class="btn btn-submenu">
+                                        Renegociação Antigo Sem Fiador
+                                    </a>
+                                    <a href="https://app.clicksign.com/fluxia/788dc296-7301-48c5-bd1d-23bba499c572" target="_blank" class="btn btn-submenu">
+                                        Renegociação Antigo Com Fiador
+                                    </a>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- SEÇÃO: OPERACIONAL -->
+            <div class="module-item">
+                <details>
+                    <summary>Módulo Operacional</summary>
+                    <div class="menu-content">
+                        <a href="simulador-boletos/index.html" class="btn">
+                            Simulador de Boletos
+                        </a>
+                        
+                        <a href="gerador-extenso/index.html" class="btn">
+                            Gerador de Parcelas por Extenso
+                        </a>
+
+                        <a href="https://sistema.consultcenter.com.br/users/login" target="_blank" class="btn">
+                            Consult Center
+                        </a>
+
+                        <!-- SUBMENU: CONTRATOS OPERACIONAL -->
+                        <div class="submenu-item">
+                            <details>
+                                <summary>Contratos de Locação</summary>
+                                <div class="submenu-content">
+                                    <a href="https://app.clicksign.com/fluxia/e7f7261f-7a37-4f71-8af4-94f02c9551fd" target="_blank" class="btn btn-submenu">
+                                        Contrato de Locação Com Fiador
+                                    </a>
+                                    <a href="https://app.clicksign.com/fluxia/65f3eaee-bfad-4a68-adfd-0ad14badc264" target="_blank" class="btn btn-submenu">
+                                        Contrato de Locação Sem Fiador
+                                    </a>
+                                </div>
+                            </details>
+                        </div>
+
+                        <a href="https://pluginnovaserrana5.kommo.com/leads/pipeline/11444559/?skip_filter=Y" target="_blank" class="btn">
+                            Kommo CRM
+                        </a>
+                    </div>
+                </details>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

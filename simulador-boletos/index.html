@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMULADOR DE BOLETO | Plugin Celulares</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #0B0C10; /* Fundo escuro premium idêntico ao index e parcelas */
+            color: #FFFFFF;
+            padding: 40px 20px;
+            display: block; /* Adequado ao fluxo do topo */
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 950px;
+            background-color: #11141a; /* Container escuro levemente contrastante */
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            margin: 0 auto;
+        }
+
+        /* Estrutura de Cabeçalho Superior padrão */
+        .logo-back-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+        }
+
+        .logo-back-container img {
+            max-width: 250px;
+            height: auto;
+        }
+
+        .btn-back {
+            padding: 10px 20px;
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #1f4068, #162447);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-back:hover {
+            background: linear-gradient(135deg, #0056b3, #1f4068);
+            border-color: #45F3FF;
+            box-shadow: 0 0 10px rgba(69, 243, 255, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 30px;
+            font-size: 22px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #45F3FF;
+            padding-bottom: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .container {
+                padding: 1.5rem;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #b0b3b8;
+            letter-spacing: 0.5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #162447;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: #FFFFFF;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #45F3FF;
+            box-shadow: 0 0 10px rgba(69, 243, 255, 0.2);
+        }
+
+        .radio-tile-group {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .radio-tile {
+            flex: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background-color: #162447;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #b0b3b8;
+            transition: all 0.2s;
+        }
+
+        .radio-tile input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .radio-tile.active {
+            border-color: #45F3FF;
+            background-color: rgba(69, 243, 255, 0.05);
+            color: #45F3FF;
+            box-shadow: 0 0 10px rgba(69, 243, 255, 0.1);
+        }
+
+        .results-box {
+            background-color: #162447;
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.85rem 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .summary-item span:first-child {
+            color: #b0b3b8;
+        }
+
+        .summary-item span:last-child {
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+
+        .alert-message {
+            background-color: rgba(217, 119, 6, 0.15);
+            border: 1px solid #d97706;
+            color: #fbbf24;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .table-wrapper {
+            margin-top: 1.5rem;
+            max-height: 250px;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            background: #11141a;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #162447;
+            color: #45F3FF;
+            padding: 0.9rem 1.2rem;
+            font-weight: 700;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 0.9rem 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: rgba(69, 243, 255, 0.02);
+        }
+
+        tr td strong {
+            color: #45F3FF;
+        }
+
+        .best-option {
+            color: #27ae60;
+            font-weight: 700;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-left: 5px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Seção do Gerador de Mensagem */
+        .msg-section {
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        .btn-generate {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #00b4db, #0083b0);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 180, 219, 0.2);
+        }
+
+        .btn-generate:hover {
+            background: linear-gradient(135deg, #45F3FF, #00b4db);
+            box-shadow: 0 0 15px rgba(69, 243, 255, 0.4);
+        }
+
+        /* Estilização da barra de rolagem interna da tabela */
+        .table-wrapper::-webkit-scrollbar {
+            width: 6px;
+        }
+        .table-wrapper::-webkit-scrollbar-track {
+            background: #11141a;
+        }
+        .table-wrapper::-webkit-scrollbar-thumb {
+            background: #162447;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Bloco superior com a Logo e botão Voltar adicionados -->
+    <div class="logo-back-container">
+        <img src="assets/LOGO.png" alt="Plugin Celulares & Acessórios">
+        <a href="../index.html" class="btn-back">⬅ Voltar ao Painel</a>
+    </div>
+
+    <h2>Simulador de Boleto</h2>
+
+    <div class="grid">
+        <div>
+            <label>Tipo de Aparelho</label>
+            <div class="radio-tile-group">
+                <div class="radio-tile active" id="tile-android" onclick="setDevice('android')">
+                    <input type="radio" name="device_type" value="android" checked> Android
+                </div>
+                <div class="radio-tile" id="tile-iphone" onclick="setDevice('iphone')">
+                    <input type="radio" name="device_type" value="iphone"> iPhone
+                </div>
+            </div>
+
+            <div class="form-group" id="perfil-android-group">
+                <label for="perfil_android">Análise de Risco / Entrada Mínima (Android)</label>
+                <select id="perfil_android" onchange="calculate()">
+                    <option value="baixo">Risco Baixo (25% Entrada Mínima)</option>
+                    <option value="moderado">Risco Moderado (50% Entrada Mínima)</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="perfil-iphone-group" style="display: none;">
+                <label for="perfil_iphone">Análise de Risco / Entrada Mínima (iPhone)</label>
+                <select id="perfil_iphone" onchange="calculate()">
+                    <option value="baixo">Risco Baixo (30% Entrada Mínima)</option>
+                    <option value="moderado">Risco Moderado (50% Entrada Mínima)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="valor_venda">Valor de Venda do Aparelho (R$)</label>
+                <input type="number" id="valor_venda" value="1000.00" step="0.01" oninput="calculate()">
+            </div>
+
+            <div class="form-group">
+                <label for="valor_entrada">Valor de Entrada Informado (R$)</label>
+                <input type="number" id="valor_entrada" value="250.00" step="0.01" oninput="calculate()">
+            </div>
+
+            <!-- NOVOS CAMPOS SEPARADOS LOGO ABAIXO -->
+            <div class="msg-section">
+                <div class="form-group">
+                    <label for="device_model">Modelo do Aparelho</label>
+                    <input type="text" id="device_model" placeholder="Ex: Galaxy S24 Ultra / iPhone 15 Pro">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="device_storage">Armazenamento (GB)</label>
+                        <input type="number" id="device_storage" placeholder="Ex: 128">
+                    </div>
+                    <div class="form-group" id="ram-field-group">
+                        <label for="device_ram">Memória RAM (GB)</label>
+                        <input type="number" id="device_ram" placeholder="Ex: 8">
+                    </div>
+                </div>
+
+                <button class="btn-generate" onclick="copyModelMessage()">📋 Copiar Mensagem Pronta</button>
+            </div>
+        </div>
+
+        <div class="results-box">
+            <div>
+                <h3 style="font-size: 1.15rem; margin-bottom: 1.2rem; font-weight: 700; color: #45F3FF; text-transform: uppercase; letter-spacing: 0.5px;">Resumo do Cálculo</h3>
+                <div class="summary-item">
+                    <span>Entrada Mínima Recomendada:</span>
+                    <span id="res_entrada_minima">R$ 0,00</span>
+                </div>
+                <div class="summary-item">
+                    <span>Saldo Líquido a Parcelar:</span>
+                    <span id="res_saldo_liquido">R$ 0,00</span>
+                </div>
+                <div id="alert_container"></div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parcelas</th>
+                            <th>Valor da Parcela</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table_parcelas">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Objeto global para armazenar os valores calculados das parcelas em tempo real
+    let computedInstallments = {};
+    let currentDevice = 'android';
+
+    function formatCurrency(value) {
+        return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function setDevice(type) {
+        currentDevice = type;
+        document.getElementById('tile-android').classList.toggle('active', type === 'android');
+        document.getElementById('tile-iphone').classList.toggle('active', type === 'iphone');
+        
+        const androidGroup = document.getElementById('perfil-android-group');
+        const iphoneGroup = document.getElementById('perfil-iphone-group');
+        const ramGroup = document.getElementById('ram-field-group');
+
+        if (type === 'iphone') {
+            androidGroup.style.display = 'none';
+            iphoneGroup.style.display = 'block';
+            ramGroup.style.display = 'none'; // Esconde RAM para iPhone
+        } else {
+            androidGroup.style.display = 'block';
+            iphoneGroup.style.display = 'none';
+            ramGroup.style.display = 'block'; // Mostra RAM para Android
+        }
+        
+        updateMinInput();
+        calculate();
+    }
+
+    function updateMinInput() {
+        const venda = parseFloat(document.getElementById('valor_venda').value) || 0;
+        let minEntrada = 0;
+
+        if (currentDevice === 'android') {
+            const perfil = document.getElementById('perfil_android').value;
+            minEntrada = perfil === 'baixo' ? venda * 0.25 : venda * 0.50;
+        } else {
+            const perfil = document.getElementById('perfil_iphone').value;
+            minEntrada = perfil === 'baixo' ? venda * 0.30 : venda * 0.50;
+        }
+
+        document.getElementById('valor_entrada').value = minEntrada.toFixed(2);
+    }
+
+    document.getElementById('valor_venda').addEventListener('input', updateMinInput);
+
+    function calculate() {
+        const venda = parseFloat(document.getElementById('valor_venda').value) || 0;
+        let entrada = parseFloat(document.getElementById('valor_entrada').value) || 0;
+        
+        let pctMin = 0;
+        if (currentDevice === 'android') {
+            const perfil = document.getElementById('perfil_android').value;
+            pctMin = (perfil === 'baixo') ? 0.25 : 0.50;
+        } else {
+            const perfil = document.getElementById('perfil_iphone').value;
+            pctMin = (perfil === 'baixo') ? 0.30 : 0.50;
+        }
+
+        const entradaMinima = venda * pctMin;
+        document.getElementById('res_entrada_minima').innerText = formatCurrency(entradaMinima);
+
+        if (entrada < entradaMinima - 0.01) {
+            document.getElementById('alert_container').innerHTML = `
+                <div class="alert-message">
+                    Aviso: O valor de entrada está abaixo do recomendado (${pctMin * 100}%).
+                </div>
+            `;
+        } else {
+            document.getElementById('alert_container').innerHTML = '';
+        }
+
+        const saldoLiquido = Math.max(0, venda - entrada);
+        document.getElementById('res_saldo_liquido').innerText = formatCurrency(saldoLiquido);
+
+        let htmlTable = '';
+        computedInstallments = {}; // limpa cache
+
+        if (currentDevice === 'android') {
+            const parcelasAndroid = [3, 4, 5, 6, 7, 8, 9, 10, 11];
+            
+            parcelasAndroid.forEach(n => {
+                let multiplicador = 2.0;
+                let taxaFixaParcela = 1.0;
+                let custoFixoTotal = 60.0;
+
+                if (n === 3) multiplicador = 1.7;
+                else if (n === 4) multiplicador = 1.8;
+                else if (n === 5) multiplicador = 1.9;
+                else if (n === 10 || n === 11) {
+                    multiplicador = 2.2;
+                    taxaFixaParcela = 2.24;
+                }
+
+                const valorParcela = ((saldoLiquido * multiplicador) + (taxaFixaParcela * n) + custoFixoTotal) / n;
+                computedInstallments[n] = formatCurrency(valorParcela);
+
+                let labelExtra = '';
+                if (n === 9) {
+                    labelExtra = ' <span class="best-option">(MELHOR OPÇÃO PARA O CLIENTE)</span>';
+                }
+
+                htmlTable += `
+                    <tr>
+                        <td><strong>${n}X</strong>${labelExtra}</td>
+                        <td>${computedInstallments[n]}</td>
+                    </tr>
+                `;
+            });
+
+        } else {
+            const parcelasIphone = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
+            parcelasIphone.forEach(n => {
+                let multiplicador = 2.0;
+                let custoFixoTotal = 70.0;
+
+                if (n === 3) multiplicador = 1.7;
+                else if (n === 4) multiplicador = 1.8;
+                else if (n === 5) multiplicador = 1.9;
+                else if (n === 7) multiplicador = 2.1;
+                else if (n === 8) multiplicador = 2.16;
+                else if (n === 9) multiplicador = 2.17;
+                else if (n === 10) multiplicador = 2.19;
+                else if (n === 11) multiplicador = 2.2;
+                else if (n >= 12) {
+                    custoFixoTotal = 140.0;
+                    if (n === 12) multiplicador = 2.22;
+                    else if (n === 13) multiplicador = 2.24;
+                    else if (n === 14) multiplicador = 2.26;
+                    else if (n === 15) multiplicador = 2.28;
+                }
+
+                const valorParcela = ((saldoLiquido * multiplicador) + (2.0 * n) + custoFixoTotal) / n;
+                computedInstallments[n] = formatCurrency(valorParcela);
+
+                htmlTable += `
+                    <tr>
+                        <td><strong>${n}X</strong></td>
+                        <td>${computedInstallments[n]}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        document.getElementById('table_parcelas').innerHTML = htmlTable;
+    }
+
+    // Função para capturar dados e copiar a mensagem dinâmica montada
+// Função para capturar dados e copiar a mensagem dinâmica montada e formatada
+    function copyModelMessage() {
+        const modelo = document.getElementById('device_model').value.toUpperCase() || '{{MODELO}}';
+        const armazenamento = document.getElementById('device_storage').value || '{{ARMAZENAMENTO}}';
+        const ram = document.getElementById('device_ram').value || '{{RAM}}';
+        
+        const valorVenda = formatCurrency(parseFloat(document.getElementById('valor_venda').value) || 0);
+        const valorEntrada = formatCurrency(parseFloat(document.getElementById('valor_entrada').value) || 0);
+
+        let mensagemPronta = "";
+
+        if (currentDevice === 'android') {
+            const p9 = computedInstallments[9] || "R$ 0,00";
+            const p11 = computedInstallments[11] || "R$ 0,00";
+
+            mensagemPronta = [
+                "📱✨ *ANDROID NO BOLETO* ✨📱",
+                `*${modelo}* | *${armazenamento}GB* | *${ram}GB RAM*`,
+                `Valor: *${valorVenda} à vista*`,
+                "",
+                "✨ *CONDIÇÃO ESPECIAL* ✨",
+                `🔹 *Entrada:* ${valorEntrada}`,
+                `🔹 *Parcelas:* 9x de *${p9}*`,
+                `🔹 *Parcelas:* 11x de *${p11}*`
+            ].join("\n");
+        } else {
+            const p12 = computedInstallments[12] || "R$ 0,00";
+            const p15 = computedInstallments[15] || "R$ 0,00";
+
+            mensagemPronta = [
+                "📱✨ *IPHONE NO BOLETO* ✨📱",
+                `*${modelo}* | *${armazenamento}GB*`,
+                `Valor: *${valorVenda} à vista*`,
+                "",
+                "✨ *CONDIÇÃO ESPECIAL* ✨",
+                `🔹 *Entrada:* ${valorEntrada}`,
+                `🔹 *Parcelas:* 12x de *${p12}*`,
+                `🔹 *Parcelas:* 15x de *${p15}*`
+            ].join("\n");
+        }
+
+        // Executa a cópia para a área de transferência
+        navigator.clipboard.writeText(mensagemPronta).then(() => {
+            alert("Mensagem copiada com sucesso!");
+        }).catch(err => {
+            alert("Erro ao copiar mensagem automaticamente. Tente novamente.");
+        });
+    }
+
+    // Inicialização
+    updateMinInput();
+    calculate();
+</script>
+
+</body>
+</html>
