@@ -76,8 +76,30 @@
             padding-bottom: 15px;
         }
 
-        .form-group {
+        /* SISTEMA DE GRID PARA ALINHAMENTO PERFEITO */
+        .form-grid-3 {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.2fr;
+            gap: 20px;
             margin-bottom: 20px;
+        }
+
+        .form-grid-uf {
+            display: grid;
+            grid-template-columns: 2fr 2fr 0.8fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        /* Remove a margem interna do grupo quando dentro do grid */
+        .form-grid-3 .form-group, .form-grid-uf .form-group {
+            margin-bottom: 0;
         }
 
         label {
@@ -87,6 +109,9 @@
             font-size: 14px;
             color: #b0b3b8;
             letter-spacing: 0.5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         input {
@@ -98,6 +123,8 @@
             color: #FFFFFF;
             font-size: 16px;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            height: 48px; /* Altura idêntica para todas as caixas */
         }
 
         input:focus {
@@ -155,7 +182,7 @@
             width: 500px;
             height: 707px;
             margin: 0 auto;
-            background-image: url('../assets/CAPA CARNE NS.png'); /* Corrigido para .png maiúsculo */
+            background-image: url('../assets/CAPA CARNE NS.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -164,7 +191,7 @@
             background-color: #11141a;
         }
 
-        /* Box de dados ajustado perfeitamente no retângulo preto */
+        /* Box de dados na capa */
         .box-dados-pagador {
             position: absolute;
             top: 298px;
@@ -176,8 +203,8 @@
             justify-content: center;
             font-family: Arial, sans-serif;
             font-size: 6.5px;
-            line-height: 1.3;
-            color: #FFFFFF;
+            line-height: 1.4;
+            color: #000000;
             font-weight: bold;
             text-align: left;
         }
@@ -186,10 +213,6 @@
             white-space: nowrap; 
             overflow: hidden;
             text-overflow: ellipsis;
-        }
-
-        .box-dados-pagador span.label-branca {
-            color: #FFFFFF;
         }
 
         .btn-imprimir {
@@ -228,7 +251,7 @@
                 padding: 0 !important;
                 margin: 0 !important;
             }
-            .logo-back-container, h2, .form-group, .btn-principal, .resultado h3, .btn-imprimir { 
+            .logo-back-container, h2, .form-group, .form-grid-3, .form-grid-uf, .btn-principal, .resultado h3, .btn-imprimir { 
                 display: none !important; 
             }
             .container {
@@ -252,7 +275,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                background-image: url('../assets/CAPA CARNE NS.png') !important; /* Corrigido para .png maiúsculo */
+                background-image: url('../assets/CAPA CARNE NS.png') !important;
                 background-size: contain !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
@@ -263,10 +286,7 @@
                 width: 78mm;
                 height: 20mm;
                 font-size: 7.5pt;
-                color: #FFFFFF !important;
-            }
-            .box-dados-pagador span.label-branca {
-                color: #FFFFFF !important;
+                color: #000000 !important;
             }
         }
     </style>
@@ -283,22 +303,37 @@
     
     <div class="form-group">
         <label for="nome">Nome do Pagador:</label>
-        <input type="text" id="nome" placeholder="Ex: João Silva Sauro">
+        <input type="text" id="nome" placeholder="Ex: JOÃO SILVA SAURO" oninput="forçarMaiusculas(this)">
     </div>
     
-    <div class="form-group">
-        <label for="endereco">Endereço + Número:</label>
-        <input type="text" id="endereco" placeholder="Ex: Rua Cel. Martinho Ferreira do Amaral, 264">
+    <div class="form-grid-3">
+        <div class="form-group">
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" placeholder="Ex: RUA CEL. MARTINHO FERREIRA" oninput="forçarMaiusculas(this)">
+        </div>
+        <div class="form-group">
+            <label for="numero">Nº:</label>
+            <input type="text" id="numero" placeholder="Ex: 264" oninput="forçarMaiusculas(this)">
+        </div>
+        <div class="form-group">
+            <label for="complemento">Complemento (Opcional):</label>
+            <input type="text" id="complemento" placeholder="Ex: APTO 101" oninput="forçarMaiusculas(this)">
+        </div>
     </div>
 
-    <div class="form-group">
-        <label for="bairro">Bairro:</label>
-        <input type="text" id="bairro" placeholder="Ex: Centro">
-    </div>
-    
-    <div class="form-group">
-        <label for="cidade">Cidade / Estado:</label>
-        <input type="text" id="cidade" placeholder="Ex: Nova Serrana - MG">
+    <div class="form-grid-uf">
+        <div class="form-group">
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" placeholder="Ex: CENTRO" oninput="forçarMaiusculas(this)">
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" placeholder="Ex: NOVA SERRANA" oninput="forçarMaiusculas(this)">
+        </div>
+        <div class="form-group">
+            <label for="estado">UF:</label>
+            <input type="text" id="estado" maxlength="2" placeholder="Ex: MG" oninput="forçarMaiusculas(this)">
+        </div>
     </div>
     
     <button class="btn-principal" onclick="gerarCapa()">Gerar Capa de Carnê</button>
@@ -308,9 +343,9 @@
         <div class="preview-container-wrapper">
             <div class="preview-carne" id="carne-box">
                 <div class="box-dados-pagador">
-                    <div><span class="label-branca">PAGADOR:</span> <span id="lbl-nome"></span></div>
-                    <div><span class="label-branca">END:</span> <span id="lbl-endereco"></span></div>
-                    <div><span id="lbl-localidade"></span></div>
+                    <div>PAGADOR: <span id="lbl-linha1"></span></div>
+                    <div>END: <span id="lbl-linha2"></span></div>
+                    <div><span id="lbl-linha3"></span></div>
                 </div>
             </div>
         </div>
@@ -319,20 +354,34 @@
 </div>
 
 <script>
+function forçarMaiusculas(input) {
+    input.value = input.value.toUpperCase();
+}
+
 function gerarCapa() {
     const nome = document.getElementById('nome').value.trim();
     const endereco = document.getElementById('endereco').value.trim();
+    const numero = document.getElementById('numero').value.trim();
+    const complemento = document.getElementById('complemento').value.trim();
     const bairro = document.getElementById('bairro').value.trim();
-    const city = document.getElementById('cidade').value.trim();
+    const cidade = document.getElementById('cidade').value.trim();
+    const estado = document.getElementById('estado').value.trim();
     
-    if (!nome || !endereco || !bairro || !city) {
-        alert("Por favor, preencha todos os campos da capa do carnê.");
+    if (!nome || !endereco || !numero || !bairro || !cidade || !estado) {
+        alert("Por favor, preencha todos os campos obrigatórios.");
         return;
     }
     
-    document.getElementById('lbl-nome').innerText = nome.toUpperCase();
-    document.getElementById('lbl-endereco').innerText = endereco.toUpperCase();
-    document.getElementById('lbl-localidade').innerText = `${bairro.toUpperCase()} - ${city.toUpperCase()}`;
+    let textoLinha2 = `${endereco}, Nº ${numero}`;
+    if (complemento) {
+        textoLinha2 += ` - ${complemento}`;
+    }
+    
+    let textoLinha3 = `${bairro} - ${cidade}/${estado}`;
+    
+    document.getElementById('lbl-linha1').innerText = nome;
+    document.getElementById('lbl-linha2').innerText = textoLinha2;
+    document.getElementById('lbl-linha3').innerText = textoLinha3;
     
     document.getElementById('resultado-box').style.display = "block";
 }
