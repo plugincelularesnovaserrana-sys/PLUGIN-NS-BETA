@@ -155,7 +155,7 @@
             width: 500px;
             height: 707px;
             margin: 0 auto;
-            background-image: url('/assets/CAPA CARNE NS.jpg') !important;
+            background-image: url('../ativos/CAPA CARNE NS.jpg');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -164,29 +164,30 @@
             background-color: #11141a;
         }
 
-        /* Box de dados ampliado lateralmente para não espremer */
+        /* Box de dados ajustado perfeitamente no retângulo preto */
         .box-dados-pagador {
             position: absolute;
-            top: 285px;
-            left: 32px;
-            width: 440px;
-            height: 65px;
+            top: 298px;
+            left: 24px;
+            width: 185px;
+            height: 48px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             font-family: Arial, sans-serif;
-            font-size: 8.5px;
-            line-height: 1.4;
-            color: #FFFFFF; /* Texto Geral Branco */
+            font-size: 6.5px;
+            line-height: 1.3;
+            color: #FFFFFF;
             font-weight: bold;
             text-align: left;
         }
 
         .box-dados-pagador div {
             white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        /* Alterado para BRANCO apenas */
         .box-dados-pagador span.label-branca {
             color: #FFFFFF;
         }
@@ -216,14 +217,16 @@
         /* REGRAS DE IMPRESSÃO */
         @media print {
             @page {
-                size: A4;
+                size: A4 portrait;
                 margin: 0;
             }
-            body { 
-                background: white !important; 
-                color: black !important; 
-                padding: 0; 
-                margin: 0;
+            html, body {
+                width: 210mm;
+                height: 297mm;
+                background: #FFFFFF !important;
+                color: #000000 !important;
+                padding: 0 !important;
+                margin: 0 !important;
             }
             .logo-back-container, h2, .form-group, .btn-principal, .resultado h3, .btn-imprimir { 
                 display: none !important; 
@@ -244,21 +247,22 @@
                 border: none !important; 
                 box-shadow: none !important;
                 background-color: transparent !important;
-                width: 100vw;
-                height: 100vh;
+                width: 210mm;
+                height: 297mm;
                 position: absolute;
                 top: 0;
                 left: 0;
-                background-image: url('/assets/CAPA CARNE NS.jpg') !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+                background-image: url('../ativos/CAPA CARNE NS.jpg') !important;
+                background-size: contain !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
             .box-dados-pagador {
-                top: 85mm;
-                left: 9.5mm;
-                width: 130mm;
-                height: 19mm;
-                font-size: 8.5pt;
+                top: 125mm;
+                left: 10mm;
+                width: 78mm;
+                height: 20mm;
+                font-size: 7.5pt;
                 color: #FFFFFF !important;
             }
             .box-dados-pagador span.label-branca {
@@ -271,7 +275,7 @@
 
 <div class="container">
     <div class="logo-back-container">
-        <img src="../assets/LOGO.png" alt="Plugin Celulares & Acessórios">
+        <img src="../ativos/LOGO.png" alt="Plugin Celulares & Acessórios">
         <a href="../index.html" class="btn-back">⬅ Voltar ao Painel</a>
     </div>
 
@@ -304,9 +308,9 @@
         <div class="preview-container-wrapper">
             <div class="preview-carne" id="carne-box">
                 <div class="box-dados-pagador">
-                    <div><span class="label-branca">PAGADOR:</span> <span id="lbl-nome" style="color: inherit; font-weight: inherit;"></span></div>
-                    <div><span class="label-branca">END:</span> <span id="lbl-endereco" style="color: inherit; font-weight: inherit;"></span></div>
-                    <div><span id="lbl-localidade" style="color: inherit; font-weight: inherit;"></span></div>
+                    <div><span class="label-branca">PAGADOR:</span> <span id="lbl-nome"></span></div>
+                    <div><span class="label-branca">END:</span> <span id="lbl-endereco"></span></div>
+                    <div><span id="lbl-localidade"></span></div>
                 </div>
             </div>
         </div>
@@ -328,8 +332,6 @@ function gerarCapa() {
     
     document.getElementById('lbl-nome').innerText = nome.toUpperCase();
     document.getElementById('lbl-endereco').innerText = endereco.toUpperCase();
-    
-    // Combina o Bairro + Cidade na terceira linha
     document.getElementById('lbl-localidade').innerText = `${bairro.toUpperCase()} - ${city.toUpperCase()}`;
     
     document.getElementById('resultado-box').style.display = "block";
