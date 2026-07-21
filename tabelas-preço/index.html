@@ -324,7 +324,7 @@ async function loadData() {
         } else if (tab === 'apple_novos') {
             return rawData.tabela_apple_lacrados?.categorias || rawData.tabela_apple_novos?.categorias || [];
         } else if (tab === 'apple_grade_a') {
-            return rawData.tabela_apple_seminovos_grade_a?.categorias || rawData.tabela_apple_grade_a?.categorias || [];
+            return rawData.tabela_apple_seminovos_grade_a?.categorias || rawData.tabela_apple_seminovos?.categorias || rawData.tabela_apple_grade_a?.categorias || [];
         }
         return [];
     }
