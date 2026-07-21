@@ -119,18 +119,18 @@
 
 <div class="container">
     <h1>Painel Admin - Atualizador de Tabelas</h1>
-    <p class="desc">Cole os textos recebidos de cada fornecedor para recalcular as margens e atualizar o arquivo <b>tabelas_atualizadas.json.json</b> no GitHub.</p>
+    <p class="desc">Cole os textos recebidos de cada fornecedor para recalcular as margens e atualizar a lista no site automaticamente.</p>
 
     <div class="form-group">
         <label>🔑 GitHub Token (Personal Access Token):</label>
-        <input type="password" id="ghToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
+        <input type="password" id="ghToken" placeholder="Cole aqui o seu token ghp_...">
     </div>
 
     <div class="form-group">
         <label>👤 Usuário do GitHub / Repositório:</label>
         <div style="display: flex; gap: 10px;">
-            <input type="text" id="ghOwner" placeholder="Seu Usuário (ex: plugin-celulares)">
-            <input type="text" id="ghRepo" placeholder="Nome do Repositório (ex: site-tabelas)">
+            <input type="text" id="ghOwner" value="plugincelularesnovaserrana-sys" placeholder="Usuário">
+            <input type="text" id="ghRepo" value="PLUGIN-NS-BETA" placeholder="Repositório">
         </div>
     </div>
 
@@ -162,8 +162,8 @@
 </div>
 
 <script>
-    // Configurações Padrão
-    const FILE_NAME = "tabelas_atualizadas.json.json";
+    // Configuração exata do caminho e nome do arquivo no repositório
+    const FILE_PATH = "tabelas-preço/tabelas_atualizadas.json.json";
 
     function parseLinha(linha) {
         let linhaLimpa = linha.replace(/^[^\w\d\(\)]+/, '').trim();
@@ -242,14 +242,14 @@
         const statusDiv = document.getElementById('status');
 
         if (!token || !owner || !repo) {
-            alert("Preencha o Token, Usuário e Repositório do GitHub!");
+            alert("Por favor, preencha o seu GitHub Token!");
             return;
         }
 
         statusDiv.className = "status-loading";
-        statusDiv.innerText = "⏳ Processando tabelas e enviando arquivo tabelas_atualizadas.json.json...";
+        statusDiv.innerText = "⏳ Processando tabelas e enviando arquivo atualizado...";
 
-        // Estrutura EXATA esperada pelo seu index.html
+        // Estrutura de categorias enviada para o site
         const jsonFinal = {
             categorias: [
                 processarTextoParaCategoria(document.getElementById('txtAndroid').value, "ANDROID NOVOS", "android_novos"),
@@ -262,10 +262,10 @@
         const jsonString = JSON.stringify(jsonFinal, null, 2);
 
         try {
-            const url = `https://api.github.com/repos/${owner}/${repo}/contents/${FILE_NAME}`;
+            const url = `https://api.github.com/repos/${owner}/${repo}/contents/${FILE_PATH}`;
             let sha = "";
 
-            // Verifica se o arquivo já existe no GitHub para pegar o SHA de atualização
+            // Busca o SHA do arquivo existente no GitHub para atualização
             const getRes = await fetch(url, {
                 headers: { "Authorization": `token ${token}` }
             });
@@ -275,7 +275,7 @@
                 sha = fileData.sha;
             }
 
-            // Converte o JSON para Base64 (padrão da API do GitHub)
+            // Converte o JSON para Base64
             const contentBase64 = btoa(unescape(encodeURIComponent(jsonString)));
 
             const putRes = await fetch(url, {
@@ -293,7 +293,7 @@
 
             if (putRes.ok) {
                 statusDiv.className = "status-success";
-                statusDiv.innerText = `✅ Sucesso! O arquivo '${FILE_NAME}' foi atualizado e o index.html lerá os novos preços!`;
+                statusDiv.innerText = "✅ Sucesso! Tabela atualizada com sucesso no GitHub!";
             } else {
                 const errData = await putRes.json();
                 statusDiv.className = "status-error";
