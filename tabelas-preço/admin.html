@@ -249,14 +249,28 @@
         statusDiv.className = "status-loading";
         statusDiv.innerText = "⏳ Processando tabelas e enviando arquivo atualizado...";
 
-        // Estrutura de categorias enviada para o site
+// Estrutura de categorias montada no formato exato que o index.html lê
         const jsonFinal = {
-            categorias: [
-                processarTextoParaCategoria(document.getElementById('txtAndroid').value, "ANDROID NOVOS", "android_novos"),
-                processarTextoParaCategoria(document.getElementById('txtAcessorios').value, "ACESSÓRIOS", "acessorios"),
-                processarTextoParaCategoria(document.getElementById('txtAppleNovos').value, "APPLE NOVOS", "apple_novos"),
-                processarTextoParaCategoria(document.getElementById('txtAppleGradeA').value, "APPLE GRADE A", "apple_grade_a")
-            ]
+            tabela_android_acessorios_diversos: {
+                categorias: [
+                    processarTextoParaCategoria(document.getElementById('txtAndroid').value, "ANDROID NOVOS", "android_novos")
+                ]
+            },
+            tabela_acessorios: {
+                categorias: [
+                    processarTextoParaCategoria(document.getElementById('txtAcessorios').value, "ACESSÓRIOS", "acessorios")
+                ]
+            },
+            tabela_apple_novos: {
+                categorias: [
+                    processarTextoParaCategoria(document.getElementById('txtAppleNovos').value, "APPLE NOVOS", "apple_novos")
+                ]
+            },
+            tabela_apple_grade_a: {
+                categorias: [
+                    processarTextoParaCategoria(document.getElementById('txtAppleGradeA').value, "APPLE GRADE A", "apple_grade_a")
+                ]
+            }
         };
 
         const jsonString = JSON.stringify(jsonFinal, null, 2);
