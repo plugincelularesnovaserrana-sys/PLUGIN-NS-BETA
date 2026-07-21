@@ -162,8 +162,8 @@
 </div>
 
 <script>
-    // Configuração exata do caminho e nome do arquivo no repositório
-    const FILE_PATH = "tabelas-preço/tabelas_atualizadas.json.json";
+    // Configuração exata do caminho e nome do arquivo dentro da pasta tabelas-preço
+    const FILE_PATH = "tabelas-preço/tabelas_atualizadas.json";
 
     function parseLinha(linha) {
         let linhaLimpa = linha.replace(/^[^\w\d\(\)]+/, '').trim();
@@ -249,7 +249,7 @@
         statusDiv.className = "status-loading";
         statusDiv.innerText = "⏳ Processando tabelas e enviando arquivo atualizado...";
 
-// Estrutura de categorias montada no formato exato que o index.html lê
+        // Estrutura no formato exato que o index.html lê
         const jsonFinal = {
             tabela_android_acessorios_diversos: {
                 categorias: [
