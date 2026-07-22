@@ -119,7 +119,7 @@
 
 <div class="container">
     <h1>Painel Admin - Atualizador de Tabelas</h1>
-    <p class="desc">Cole os textos recebidos de cada fornecedor para recalcular as margens e categorizar por marca no site automaticamente.</p>
+    <p class="desc">Cole os textos recebidos de cada fornecedor para recalcular as margens e atualizar a lista no site automaticamente.</p>
 
     <div class="form-group">
         <label> GitHub Token (Personal Access Token):</label>
@@ -134,226 +134,152 @@
         </div>
     </div>
 
-    <hr style="border-color: #2A2E39; margin: 25px 0;">
+    <hr style="border: 0; border-top: 1px solid #2A2E39; margin: 25px 0;">
 
     <div class="form-group">
-        <label>1. Tabela Android Novos (+30% Margem):</label>
-        <textarea id="txtAndroid" placeholder="Cole o texto bruto de Androids aqui..."></textarea>
+        <label> 1. Android Novos</label>
+        <textarea id="txtAndroid" placeholder="Cole aqui a lista de Android Novos..."></textarea>
     </div>
 
     <div class="form-group">
-        <label>2. Tabela Apple Lacrados (+R$ 150,00 Margem):</label>
-        <textarea id="txtApple" placeholder="Cole o texto bruto da Apple Lacrados aqui..."></textarea>
+        <label> 2. Acessórios Gerais</label>
+        <textarea id="txtAcessorios" placeholder="Cole aqui a lista de Acessórios..."></textarea>
     </div>
 
     <div class="form-group">
-        <label>3. Tabela iPhones Seminovos (+R$ 150,00 Margem):</label>
-        <textarea id="txtSeminovos" placeholder="Cole o texto bruto de Seminovos aqui..."></textarea>
+        <label> 3. Apple Novos</label>
+        <textarea id="txtAppleNovos" placeholder="Cole aqui a lista de Apple Novos..."></textarea>
     </div>
 
     <div class="form-group">
-        <label>4. Tabela Acessórios e Diversos (+30% Margem):</label>
-        <textarea id="txtAcessorios" placeholder="Cole o texto bruto de Acessórios aqui..."></textarea>
+        <label> 4. Apple Grade A</label>
+        <textarea id="txtAppleGradeA" placeholder="Cole aqui a lista de Apple Grade A..."></textarea>
     </div>
 
-    <button class="btn-submit" onclick="processarEAtualizar()"> Atualizar Agora</button>
+    <button class="btn-submit" onclick="processarEEnviar()">🚀 Atualizar Site no GitHub</button>
 
     <div id="status"></div>
 </div>
 
 <script>
-    // --- REGRAS DE RECONHECIMENTO AUTOMÁTICO DE MARCA/CATEGORIA ---
-    function identificarMarcaAndroid(modelo) {
-        const m = modelo.toUpperCase();
-        if (m.includes("GALAXY") || m.includes("SAMSUNG")) return "Samsung";
-        if (m.includes("MOTO") || m.includes("MOTOROLA")) return "Motorola";
-        if (m.includes("POCO")) return "Poco";
-        if (m.includes("REDMI") || m.includes("NOTE ")) return "Redmi";
-        if (m.includes("XIAOMI") || m.includes(" MI ")) return "Xiaomi";
-        if (m.includes("REALME")) return "Realme";
-        if (m.includes("HONOR")) return "Honor";
-        if (m.includes("INFINIX")) return "Infinix";
-        if (m.includes("TECNO") || m.includes("SPARK")) return "Tecno";
-        if (m.includes("MULTILASER") || m.includes("UP PLAY") || m.includes("VITA")) return "Multilaser";
-        return "Outros";
-    }
+    // Configuração exata do caminho e nome do arquivo dentro da pasta tabelas-preço
+    const FILE_PATH = "tabelas-preco/tabelas_atualizadas.json";
 
-    function identificarMarcaApple(modelo) {
-        const m = modelo.toUpperCase();
-        if (m.includes("IPHONE")) return "iPhone";
-        if (m.includes("IPAD")) return "iPad";
-        if (m.includes("MACBOOK") || m.includes("MAC ")) return "MacBook";
-        if (m.includes("WATCH")) return "Apple Watch";
-        if (m.includes("AIRPODS")) return "AirPods";
-        if (m.includes("AIRTAG")) return "AirTag";
-        if (m.includes("HOMEPOD")) return "HomePod";
-        if (m.includes("CABO") || m.includes("FONTE") || m.includes("CARREGADOR") || m.includes("CAPA")) return "Acessórios";
-        return "Outros";
-    }
-
-    function identificarMarcaAcessorio(modelo) {
-        const m = modelo.toUpperCase();
-        if (m.includes("JBL")) return "JBL";
-        if (m.includes("GARMIN")) return "Garmin";
-        if (m.includes("HAYLOU")) return "Haylou";
-        if (m.includes("NINTENDO") || m.includes("SWITCH")) return "Nintendo";
-        if (m.includes("PS5") || m.includes("PLAYSTATION") || m.includes("MANETE PS")) return "PlayStation";
-        if (m.includes("XBOX") || m.includes("MANETE XBOX")) return "Xbox";
-        if (m.includes("META") || m.includes("QUEST")) return "Meta";
-        if (m.includes("TABLET SAMSUNG")) return "Tablet Samsung";
-        if (m.includes("TABLET REDMI") || m.includes("REDMI PAD")) return "Tablet Redmi";
-        if (m.includes("ROBÔ") || m.includes("VACUUM") || m.includes("XIAMI") || m.includes("XIAOMI")) return "Robô Xiaomi";
-        if (m.includes("MICROFONE")) return "Microfones";
-        if (m.includes("RELÓGIO") || m.includes("SMARTWATCH")) return "Smartwatch";
-        return "Outros";
-    }
-
-    // --- FUNÇÕES DE AJUSTE DE PREÇO ---
-    function aplicarPorcentagem(valorStr, percentual) {
-        let num = parseFloat(valorStr.replace(/[^\d]/g, ''));
-        if (isNaN(num)) return null;
-        let novoVal = num * (1 + percentual / 100);
-        return "R$ " + novoVal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    }
-
-    function aplicarFixo(valorStr, valorFixo) {
-        let num = parseFloat(valorStr.replace(/[^\d]/g, ''));
-        if (isNaN(num)) return null;
-        let novoVal = num + valorFixo;
-        return "R$ " + novoVal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    }
-
-    // --- PARSER DAS LINHAS DE TEXTO ---
-    function parseLinha(line, fnCalculoPreco) {
-        line = line.trim();
-        if (!line) return null;
-
-        // Procura por valores no formato R$ 1.000,00 ou R$1000 ou 1000,00 no final da linha
-        const priceRegex = /(?:R\$\s*)?(\d{1,3}(?:\.\d{3})*(?:,\d{2})?|\d+(?:,\d{2})?)\s*$/i;
-        const match = line.match(priceRegex);
-
+    function parseLinha(linha) {
+        let linhaLimpa = linha.replace(/^[^\w\d\(\)]+/, '').trim();
+        let match = linhaLimpa.match(/[\-\–\—\s]*\(\s*R\$\s*([\d\.\,]+)\s*\)/i);
         if (!match) return null;
 
-        const precoBruto = match[0];
-        const precoCalculado = fnCalculoPreco(precoBruto);
-        if (!precoCalculado) return null;
+        let custoStr = match[1].replace(/\./g, '').replace(',', '.');
+        let custo = parseFloat(custoStr);
+        if (isNaN(custo)) return null;
 
-        let resto = line.substring(0, match.index).trim();
+        let inicioIdx = match.index;
+        let fimIdx = match.index + match[0].length;
 
-        // Extrai as cores dentro de parênteses ou traços finais se houver
+        let nomeBruto = linhaLimpa.substring(0, inicioIdx).replace(/[\-\–\—\:]+$/, '').trim();
+        let restoLinha = linhaLimpa.substring(fimIdx).replace(/[\-\–\—\:]+$/, '').trim();
+
         let cores = [];
-        const coresRegex = /\(([^)]+)\)$/;
-        const matchCores = resto.match(coresRegex);
-
-        if (matchCores) {
-            cores = matchCores[1].split(/[\/,]/).map(c => c.trim()).filter(Boolean);
-            resto = resto.replace(coresRegex, '').trim();
+        if (restoLinha) {
+            let corLimpa = restoLinha.replace(/^(Cor|cor)\s*:\s*/i, '').trim();
+            if (corLimpa) {
+                cores = corLimpa.split(',').map(c => c.trim()).filter(c => c.length > 0);
+            }
         }
 
-        return {
-            modelo: resto,
-            preco: precoCalculado,
-            cores: cores
-        };
+        return { modelo: nomeBruto, custo: custo, cores: cores };
     }
 
-    // --- AGRUPADOR E ORDENADOR ---
-    function processarTextoParaCategorias(textoBruto, fnCalculo, fnIdentificarMarca) {
-        const linhas = textoBruto.split('\n');
-        const grupos = {};
+    function calcularPreco(modelo, custo, tipo) {
+        let nomeLower = modelo.toLowerCase();
 
-        linhas.forEach(line => {
-            const item = parseLinha(line, fnCalculo);
+        if (tipo === 'android_novos' || tipo === 'acessorios') {
+            return custo * 1.30; // +30%
+        } else if (tipo === 'apple_novos' || tipo === 'apple_grade_a') {
+            // iPhones, MacBooks, iPads (+600,00)
+            if (['iphone', 'macbook', 'mac ', 'ipad'].some(term => nomeLower.includes(term))) {
+                return custo + 600.0;
+            }
+            // Acessórios Apple (+100%)
+            else if (['airpods', 'airtag', 'magsafe', 'apple watch', 'serie ', 'série ', 'fonte apple'].some(term => nomeLower.includes(term))) {
+                return custo * 2.00;
+            }
+            // Drones e demais (+25%)
+            else {
+                return custo * 1.25;
+            }
+        }
+        return custo;
+    }
+
+    function processarTextoParaCategoria(texto, nomeCategoria, tipo) {
+        let itens = [];
+        let linhas = texto.split('\n');
+
+        linhas.forEach(linha => {
+            let item = parseLinha(linha);
             if (item) {
-                const marca = fnIdentificarMarca(item.modelo);
-                if (!grupos[marca]) {
-                    grupos[marca] = [];
-                }
-                grupos[marca].push(item);
+                let precoVenda = calcularPreco(item.modelo, item.custo, tipo);
+                itens.push({
+                    modelo: item.modelo,
+                    preco: `R$ ${precoVenda.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+                    cores: item.cores
+                });
             }
         });
 
-        // Ordenação Alfabética das Marcas
-        const marcasOrdenadas = Object.keys(grupos).sort((a, b) => {
-            if (a === 'Outros') return 1;
-            if (b === 'Outros') return -1;
-            return a.localeCompare(b);
-        });
-
-        // Monta a estrutura final com modelos ordenados alfabeticamente
-        return marcasOrdenadas.map(marca => {
-            const itensOrdenados = grupos[marca].sort((a, b) => a.modelo.localeCompare(b.modelo));
-            return {
-                nome: marca,
-                itens: itensOrdenados
-            };
-        });
+        return {
+            nome: nomeCategoria,
+            itens: itens
+        };
     }
 
-    // --- FUNÇÃO PRINCIPAL DE ATUALIZAÇÃO ---
-    async function processarEAtualizar() {
-        const token = document.getElementById("ghToken").value.trim();
-        const owner = document.getElementById("ghOwner").value.trim();
-        const repo = document.getElementById("ghRepo").value.trim();
-        const statusDiv = document.getElementById("status");
+    async function processarEEnviar() {
+        const token = document.getElementById('ghToken').value.trim();
+        const owner = document.getElementById('ghOwner').value.trim();
+        const repo = document.getElementById('ghRepo').value.trim();
+        const statusDiv = document.getElementById('status');
 
-        if (!token) {
-            alert("Por favor, insira o seu Token do GitHub.");
+        if (!token || !owner || !repo) {
+            alert("Por favor, preencha o seu GitHub Token!");
             return;
         }
 
         statusDiv.className = "status-loading";
-        statusDiv.innerText = " Processando tabelas, categorizando marcas e atualizando GitHub...";
+        statusDiv.innerText = " Processando tabelas e enviando arquivo atualizado...";
+
+        // Estrutura no formato exato que o index.html lê
+        const jsonFinal = {
+            tabela_android_acessorios_diversos: {
+                categorias: [
+                    processarTextoParaCategoria(document.getElementById('txtAndroid').value, "ANDROID NOVOS", "android_novos")
+                ]
+            },
+            tabela_acessorios: {
+                categorias: [
+                    processarTextoParaCategoria(document.getElementById('txtAcessorios').value, "ACESSÓRIOS", "acessorios")
+                ]
+            },
+            tabela_apple_novos: {
+                categorias: [
+                    processarTextoParaCategoria(document.getElementById('txtAppleNovos').value, "APPLE NOVOS", "apple_novos")
+                ]
+            },
+            tabela_apple_grade_a: {
+                categorias: [
+                    processarTextoParaCategoria(document.getElementById('txtAppleGradeA').value, "APPLE GRADE A", "apple_grade_a")
+                ]
+            }
+        };
+
+        const jsonString = JSON.stringify(jsonFinal, null, 2);
 
         try {
-            // Processa cada textarea com suas devidas regras
-            const categoriasAndroid = processarTextoParaCategorias(
-                document.getElementById("txtAndroid").value,
-                v => aplicarPorcentagem(v, 30),
-                identificarMarcaAndroid
-            );
-
-            const categoriasApple = processarTextoParaCategorias(
-                document.getElementById("txtApple").value,
-                v => aplicarFixo(v, 150),
-                identificarMarcaApple
-            );
-
-            const categoriasSeminovos = processarTextoParaCategorias(
-                document.getElementById("txtSeminovos").value,
-                v => aplicarFixo(v, 150),
-                identificarMarcaApple
-            );
-
-            const categoriasAcessorios = processarTextoParaCategorias(
-                document.getElementById("txtAcessorios").value,
-                v => aplicarPorcentagem(v, 30),
-                identificarMarcaAcessorio
-            );
-
-            // Monta o JSON Unificado no padrão exato
-            const jsonFinal = {
-                "tabela_android_acessorios_diversos": {
-                    "categorias": categoriasAndroid
-                },
-                "tabela_apple_lacrados": {
-                    "categorias": categoriasApple
-                },
-                "tabela_iphones_seminovos": {
-                    "categorias": categoriasSeminovos
-                },
-                "tabela_acessorios": {
-                    "categorias": categoriasAcessorios
-                }
-            };
-
-            const jsonString = JSON.stringify(jsonFinal, null, 2);
-            const path = "tabelas_atualizadas.json";
-            const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-
+            const url = `https://api.github.com/repos/${owner}/${repo}/contents/${FILE_PATH}`;
             let sha = "";
 
-            // Busca a SHA do arquivo existente se houver
+            // Busca o SHA do arquivo existente no GitHub para atualização
             const getRes = await fetch(url, {
                 headers: { "Authorization": `token ${token}` }
             });
@@ -363,7 +289,7 @@
                 sha = fileData.sha;
             }
 
-            // Envia a versão atualizada
+            // Converte o JSON para Base64
             const contentBase64 = btoa(unescape(encodeURIComponent(jsonString)));
 
             const putRes = await fetch(url, {
@@ -373,7 +299,7 @@
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    message: "Atualização automática com separação por marcas via Admin Web",
+                    message: "Atualização automática de preços via Admin Web",
                     content: contentBase64,
                     sha: sha ? sha : undefined
                 })
@@ -381,7 +307,7 @@
 
             if (putRes.ok) {
                 statusDiv.className = "status-success";
-                statusDiv.innerText = " Sucesso! Tabela categorizada e atualizada no GitHub!";
+                statusDiv.innerText = " Sucesso! Tabela atualizada com sucesso no GitHub!";
             } else {
                 const errData = await putRes.json();
                 statusDiv.className = "status-error";
