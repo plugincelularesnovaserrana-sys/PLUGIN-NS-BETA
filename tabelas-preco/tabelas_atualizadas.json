@@ -1544,98 +1544,98 @@
           },
           {
             "modelo": "iPhone 15 128GB",
-            "preco": "R$ 4.390,00",
+            "preco": "R$ 4.590,00",
             "cores": [
               "Black"
             ]
           },
           {
             "modelo": "iPhone 17 256GB",
-            "preco": "R$ 5.650,00",
+            "preco": "R$ 5.850,00",
             "cores": [
               "Purple"
             ]
           },
           {
             "modelo": "iPhone 17 256GB",
-            "preco": "R$ 5.700,00",
+            "preco": "R$ 5.900,00",
             "cores": [
               "Blue"
             ]
           },
           {
             "modelo": "iPhone 17 256GB",
-            "preco": "R$ 5.750,00",
+            "preco": "R$ 5.950,00",
             "cores": [
               "Black"
             ]
           },
           {
             "modelo": "iPhone 17 Pro 256GB",
-            "preco": "R$ 7.250,00",
+            "preco": "R$ 7.450,00",
             "cores": [
               "Orange"
             ]
           },
           {
             "modelo": "iPhone 17 Pro 256GB",
-            "preco": "R$ 7.400,00",
+            "preco": "R$ 7.600,00",
             "cores": [
               "Silver"
             ]
           },
           {
             "modelo": "iPhone 17 Pro 512GB",
-            "preco": "R$ 9.050,00",
+            "preco": "R$ 9.250,00",
             "cores": [
               "Blue"
-            ]
-          },
-          {
-            "modelo": "iPhone 17 Pro Max 256GB",
-            "preco": "R$ 7.590,00",
-            "cores": [
-              "Orange"
             ]
           },
           {
             "modelo": "iPhone 17 Pro Max 256GB",
             "preco": "R$ 7.790,00",
             "cores": [
+              "Orange"
+            ]
+          },
+          {
+            "modelo": "iPhone 17 Pro Max 256GB",
+            "preco": "R$ 7.990,00",
+            "cores": [
               "Blue"
             ]
           },
           {
             "modelo": "iPhone 17 Pro Max 256GB",
-            "preco": "R$ 7.870,00",
+            "preco": "R$ 8.070,00",
             "cores": [
               "Silver"
             ]
           },
           {
             "modelo": "iPhone 17 Pro Max 512GB",
-            "preco": "R$ 9.100,00",
+            "preco": "R$ 9.300,00",
             "cores": [
               "Orange"
             ]
           },
           {
             "modelo": "iPhone 17 Pro Max 1TB",
-            "preco": "R$ 11.450,00",
+            "preco": "R$ 11.650,00",
             "cores": [
               "Orange"
             ]
           },
           {
             "modelo": "iPhone 17 Pro Max 1TB",
-            "preco": "R$ 11.550,00",
+            "preco": "R$ 11.750,00",
             "cores": [
               "Blue"
             ]
           },
           {
             "modelo": "iPhone 17 Pro Max 1TB",
-            "preco": "R$ 11.599,00",
+            "preco": "R$ 11.799,00",
             "cores": [
               "Silver"
             ]
@@ -1680,42 +1680,42 @@
           },
           {
             "modelo": "iPad 11 128GB",
-            "preco": "R$ 3.180,00",
+            "preco": "R$ 3.380,00",
             "cores": [
               "Pink"
             ]
           },
           {
             "modelo": "iPad 11 128GB",
-            "preco": "R$ 3.270,00",
+            "preco": "R$ 3.470,00",
             "cores": [
               "Silver e Blue"
             ]
           },
           {
             "modelo": "iPad Air M3 11\" 128GB",
-            "preco": "R$ 4.600,00",
+            "preco": "R$ 4.800,00",
             "cores": [
               "Blue"
             ]
           },
           {
             "modelo": "iPad Air M3 11\" 128GB",
-            "preco": "R$ 4.650,00",
+            "preco": "R$ 4.850,00",
             "cores": [
               "Starlight"
             ]
           },
           {
             "modelo": "iPad Air M2 13\" 128GB",
-            "preco": "R$ 5.700,00",
+            "preco": "R$ 5.900,00",
             "cores": [
               "Blue"
             ]
           },
           {
             "modelo": "iPad Pro M4 256GB 11\"+ CELL",
-            "preco": "R$ 9.050,00",
+            "preco": "R$ 9.250,00",
             "cores": [
               "Silver"
             ]
@@ -1732,40 +1732,40 @@
           },
           {
             "modelo": "Mac Mini M2 512/8GB",
-            "preco": "R$ 4.100,00",
+            "preco": "R$ 4.300,00",
             "cores": []
           },
           {
             "modelo": "Mac Mini M4 256/16GB 2024",
-            "preco": "R$ 5.950,00",
+            "preco": "R$ 6.150,00",
             "cores": [
               "Silver"
             ]
           },
           {
             "modelo": "Mac Mini M4 512/16GB 2024",
-            "preco": "R$ 7.190,00",
+            "preco": "R$ 7.390,00",
             "cores": [
               "Silver"
             ]
           },
           {
             "modelo": "Mac Neo 256/8GB 13.6\"",
-            "preco": "R$ 5.300,00",
+            "preco": "R$ 5.500,00",
             "cores": [
               "indingo"
             ]
           },
           {
             "modelo": "Mac Neo 512/8GB 13.6\"",
-            "preco": "R$ 6.540,00",
+            "preco": "R$ 6.740,00",
             "cores": [
               "silver e indingo"
             ]
           },
           {
             "modelo": "Mac Air M4 512/16GB 13\"",
-            "preco": "R$ 7.900,00",
+            "preco": "R$ 8.100,00",
             "cores": [
               "Silver",
               "Sky Blue e Starlight"
@@ -1773,28 +1773,28 @@
           },
           {
             "modelo": "Mac Pro M4 Pro 1TB/24GB 14\"",
-            "preco": "R$ 16.100,00",
+            "preco": "R$ 16.300,00",
             "cores": [
               "Silver"
             ]
           },
           {
             "modelo": "Mac Air M5 512GB/16GB 13\"",
-            "preco": "R$ 8.190,00",
+            "preco": "R$ 8.390,00",
             "cores": [
               "Sky blue"
             ]
           },
           {
             "modelo": "Mac Air M5 1TB/16GB 13\"",
-            "preco": "R$ 9.790,00",
+            "preco": "R$ 9.990,00",
             "cores": [
               "Silver"
             ]
           },
           {
             "modelo": "Mac Air M5 512GB/16GB 15\"",
-            "preco": "R$ 10.050,00",
+            "preco": "R$ 10.250,00",
             "cores": [
               "Sky Blue",
               "Starlight"
@@ -2055,7 +2055,7 @@
         "itens": [
           {
             "modelo": "iPhone 11 Pro  64GB",
-            "preco": "R$ 2.050,00",
+            "preco": "R$ 2.250,00",
             "cores": []
           },
           {
@@ -2070,147 +2070,147 @@
           },
           {
             "modelo": "iPhone 12 64GB",
-            "preco": "R$ 2.000,00",
+            "preco": "R$ 2.200,00",
             "cores": []
           },
           {
             "modelo": "iPhone 12 128GB",
-            "preco": "R$ 2.150,00",
+            "preco": "R$ 2.350,00",
             "cores": []
           },
           {
             "modelo": "iPhone 12 256GB",
-            "preco": "R$ 2.300,00",
+            "preco": "R$ 2.500,00",
             "cores": []
           },
           {
             "modelo": "iPhone 12 Pro 128GB",
-            "preco": "R$ 2.400,00",
+            "preco": "R$ 2.600,00",
             "cores": []
           },
           {
             "modelo": "iPhone 12 Pro Max 128GB",
-            "preco": "R$ 2.800,00",
+            "preco": "R$ 3.000,00",
             "cores": []
           },
           {
             "modelo": "iPhone 12 Pro Max 256GB",
-            "preco": "R$ 2.900,00",
+            "preco": "R$ 3.100,00",
             "cores": []
           },
           {
             "modelo": "iPhone 13 128GB",
-            "preco": "R$ 2.450,00",
+            "preco": "R$ 2.650,00",
             "cores": []
           },
           {
             "modelo": "iPhone 13 256GB",
-            "preco": "R$ 2.600,00",
+            "preco": "R$ 2.800,00",
             "cores": []
           },
           {
             "modelo": "iPhone 13 Pro 128GB",
-            "preco": "R$ 2.900,00",
+            "preco": "R$ 3.100,00",
             "cores": []
           },
           {
             "modelo": "iPhone 13 Pro 256GB",
-            "preco": "R$ 3.050,00",
+            "preco": "R$ 3.250,00",
             "cores": []
           },
           {
             "modelo": "iPhone 14 128GB",
-            "preco": "R$ 2.600,00",
+            "preco": "R$ 2.800,00",
             "cores": []
           },
           {
             "modelo": "iPhone 14 Plus 128GB",
-            "preco": "R$ 2.700,00",
+            "preco": "R$ 2.900,00",
             "cores": []
           },
           {
             "modelo": "iPhone 14 Plus 256GB",
-            "preco": "R$ 2.850,00",
+            "preco": "R$ 3.050,00",
             "cores": []
           },
           {
             "modelo": "iPhone 14 Pro 512GB",
-            "preco": "R$ 3.600,00",
+            "preco": "R$ 3.800,00",
             "cores": []
           },
           {
             "modelo": "iPhone 14 Pro Max 128GB",
-            "preco": "R$ 3.850,00",
-            "cores": []
-          },
-          {
-            "modelo": "iPhone 14 Pro Max 256GB",
             "preco": "R$ 4.050,00",
             "cores": []
           },
           {
-            "modelo": "iPhone 15 128GB",
-            "preco": "R$ 3.300,00",
-            "cores": []
-          },
-          {
-            "modelo": "iPhone 15 256GB",
-            "preco": "R$ 3.450,00",
-            "cores": []
-          },
-          {
-            "modelo": "iPhone 15 Plus 128GB",
-            "preco": "R$ 3.450,00",
-            "cores": []
-          },
-          {
-            "modelo": "iPhone 15 Pro 128GB",
-            "preco": "R$ 3.900,00",
-            "cores": []
-          },
-          {
-            "modelo": "iPhone 15 Pro Max 256GB",
-            "preco": "R$ 4.750,00",
-            "cores": []
-          },
-          {
-            "modelo": "iPhone 15 Pro Max 512GB",
-            "preco": "R$ 4.950,00",
-            "cores": []
-          },
-          {
-            "modelo": "iPhone 16 128GB",
+            "modelo": "iPhone 14 Pro Max 256GB",
             "preco": "R$ 4.250,00",
             "cores": []
           },
           {
-            "modelo": "iPhone 16GB 256GB",
+            "modelo": "iPhone 15 128GB",
+            "preco": "R$ 3.500,00",
+            "cores": []
+          },
+          {
+            "modelo": "iPhone 15 256GB",
+            "preco": "R$ 3.650,00",
+            "cores": []
+          },
+          {
+            "modelo": "iPhone 15 Plus 128GB",
+            "preco": "R$ 3.650,00",
+            "cores": []
+          },
+          {
+            "modelo": "iPhone 15 Pro 128GB",
+            "preco": "R$ 4.100,00",
+            "cores": []
+          },
+          {
+            "modelo": "iPhone 15 Pro Max 256GB",
+            "preco": "R$ 4.950,00",
+            "cores": []
+          },
+          {
+            "modelo": "iPhone 15 Pro Max 512GB",
+            "preco": "R$ 5.150,00",
+            "cores": []
+          },
+          {
+            "modelo": "iPhone 16 128GB",
             "preco": "R$ 4.450,00",
+            "cores": []
+          },
+          {
+            "modelo": "iPhone 16GB 256GB",
+            "preco": "R$ 4.650,00",
             "cores": []
           },
           {
             "modelo": "iPhone 16 Plus 128GB",
-            "preco": "R$ 4.450,00",
+            "preco": "R$ 4.650,00",
             "cores": []
           },
           {
             "modelo": "iPhone 16 Pro 128GB",
-            "preco": "R$ 4.900,00",
-            "cores": []
-          },
-          {
-            "modelo": "iPhone 16 Pro 256GB",
             "preco": "R$ 5.100,00",
             "cores": []
           },
           {
+            "modelo": "iPhone 16 Pro 256GB",
+            "preco": "R$ 5.300,00",
+            "cores": []
+          },
+          {
             "modelo": "iPhone 16 Pro Max 256GB",
-            "preco": "R$ 5.800,00",
+            "preco": "R$ 6.000,00",
             "cores": []
           },
           {
             "modelo": "iPhone 17 Air 256GB",
-            "preco": "R$ 5.450,00",
+            "preco": "R$ 5.650,00",
             "cores": []
           }
         ]
