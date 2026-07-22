@@ -1,0 +1,150 @@
+{
+  "tabela_android_acessorios_diversos": {
+    "categorias": []
+  },
+  "tabela_apple_lacrados": {
+    "categorias": [
+      {
+        "nome": "AirTag",
+        "itens": [
+          {
+            "modelo": "🇺🇸 Airtag c/1 2G -",
+            "preco": "R$ 2.176,00",
+            "cores": [
+              "R$ 300"
+            ]
+          },
+          {
+            "modelo": "🇺🇸 Airtag c/4 2G -",
+            "preco": "R$ 2.176,00",
+            "cores": [
+              "R$ 900"
+            ]
+          }
+        ]
+      },
+      {
+        "nome": "Outros",
+        "itens": [
+          {
+            "modelo": "🇧🇷 Drone Dji FLIP MORE COMBO  Com Tela - (R$ 6.500) DJI",
+            "preco": "R$ 211,00",
+            "cores": []
+          },
+          {
+            "modelo": "🇧🇷 Drone Dji Neo - (R$ 4.200) combo com óculos DJI",
+            "preco": "R$ 202,00",
+            "cores": []
+          },
+          {
+            "modelo": "🇧🇷 Drone Dji Neo Fly More Combo - (R$ 2.700) DJI",
+            "preco": "R$ 201,00",
+            "cores": []
+          },
+          {
+            "modelo": "🇺🇲 Oura Ring 5  - (R$ 5.000) tamanho",
+            "preco": "R$ 157,00",
+            "cores": []
+          },
+          {
+            "modelo": "🇺🇸 GO PRO  MAX 2 (R$ 3.700) TRUE 8K",
+            "preco": "R$ 510,00",
+            "cores": []
+          }
+        ]
+      }
+    ]
+  },
+  "tabela_iphones_seminovos": {
+    "categorias": []
+  },
+  "tabela_acessorios": {
+    "categorias": [
+      {
+        "nome": "JBL",
+        "itens": [
+          {
+            "modelo": "🇧🇷 Microfone JBL - (R$ 300) PBM",
+            "preco": "R$ 130,00",
+            "cores": []
+          },
+          {
+            "modelo": "🇧🇷 Microfone JBL - (R$ 810) PBW C/",
+            "preco": "R$ 2,60",
+            "cores": []
+          }
+        ]
+      },
+      {
+        "nome": "Microfones",
+        "itens": [
+          {
+            "modelo": "🇧🇷 Microfone PULSE PRO -  SEM FIO 2 UND (R$ 280 )  SP",
+            "preco": "R$ 1.041,30",
+            "cores": []
+          },
+          {
+            "modelo": "🇧🇷 Microfone PULSE PRO - COM FIO 1 UND (R$ 65 ) SP",
+            "preco": "R$ 1.043,90",
+            "cores": []
+          }
+        ]
+      },
+      {
+        "nome": "Outros",
+        "itens": [
+          {
+            "modelo": "🇧🇷 Air Fryer 10L 1500W- (R$ 360) GO",
+            "preco": "R$ 332,80",
+            "cores": []
+          },
+          {
+            "modelo": "🇧🇷 Air Fryer 3L 1200W- (R$ 170) GO",
+            "preco": "R$ 325,00",
+            "cores": []
+          },
+          {
+            "modelo": "🇧🇷 Chaleira Eletrica 1000W- (R$ 60) GO",
+            "preco": "R$ 520,00",
+            "cores": []
+          },
+          {
+            "modelo": "🇧🇷 Churrasqueria Elétrica 1800W- (R$ 115) GO",
+            "preco": "R$ 170,30",
+            "cores": []
+          },
+          {
+            "modelo": "🇧🇷 Combo Gamer Kross 4 em 1 - (R$140) KE-GK",
+            "preco": "R$ 5.330,00",
+            "cores": []
+          },
+          {
+            "modelo": "🇧🇷 Mouse c/fio- (R$ 9) MF",
+            "preco": "R$ 130,00",
+            "cores": []
+          },
+          {
+            "modelo": "🇧🇷 Panela de Arroz  5 Xícaras- (R$120) GO",
+            "preco": "R$ 3,90",
+            "cores": []
+          },
+          {
+            "modelo": "🇧🇷 Sanduicheira Tostex Grill - (R$ 650) CE",
+            "preco": "R$ 55,90",
+            "cores": []
+          },
+          {
+            "modelo": "🇧🇷 Umidificador- (R$ 90) HC",
+            "preco": "R$ 377,00",
+            "cores": []
+          },
+          {
+            "modelo": "🇺🇸 Micro SD SanDisk Ultra  256GB  - (R$ 250) Classe",
+            "preco": "R$ 13,00",
+            "cores": []
+          }
+        ]
+      }
+    ]
+  }
+}
