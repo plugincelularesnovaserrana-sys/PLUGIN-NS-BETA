@@ -46,21 +46,6 @@
             ]
           },
           {
-            "modelo": "Galaxy A07 128/4GB",
-            "preco": "R$ 884,00",
-            "cores": [
-              "verde",
-              "preto"
-            ]
-          },
-          {
-            "modelo": "Galaxy A07 256/8GB",
-            "preco": "R$ 1.092,00",
-            "cores": [
-              "preto"
-            ]
-          },
-          {
             "modelo": "Galaxy A16 128/4GB",
             "preco": "R$ 1.040,00",
             "cores": [
@@ -71,7 +56,6 @@
             "modelo": "Galaxy A17 128/4GB",
             "preco": "R$ 1.157,00",
             "cores": [
-              "preto",
               "azul"
             ]
           },
@@ -120,15 +104,16 @@
           },
           {
             "modelo": "Moto G06 128/4GB",
-            "preco": "R$ 806,00",
+            "preco": "R$ 884,00",
             "cores": [
               "azul",
-              "verde"
+              "verde",
+              "laranja"
             ]
           },
           {
             "modelo": "Moto G06 256/4GB",
-            "preco": "R$ 949,00",
+            "preco": "R$ 975,00",
             "cores": [
               "verde"
             ]
@@ -169,14 +154,6 @@
             ]
           },
           {
-            "modelo": "Realme Note 60x 128/4GB",
-            "preco": "R$ 897,00",
-            "cores": [
-              "verde",
-              "preto"
-            ]
-          },
-          {
             "modelo": "Realme Note 70 128/4GB",
             "preco": "R$ 968,50",
             "cores": [
@@ -211,7 +188,8 @@
             "modelo": "Realme C71 NFC 256/8GB",
             "preco": "R$ 1.248,00",
             "cores": [
-              "verde"
+              "verde",
+              "branco"
             ]
           },
           {
@@ -339,7 +317,7 @@
           },
           {
             "modelo": "Redmi 15C 128/4+4GB",
-            "preco": "R$ 936,00",
+            "preco": "R$ 923,00",
             "cores": [
               "azul",
               "verde",
@@ -355,7 +333,7 @@
           },
           {
             "modelo": "Redmi 15C 256/4+4GB",
-            "preco": "R$ 1.059,50",
+            "preco": "R$ 1.020,50",
             "cores": [
               "preto",
               "azul"
@@ -403,13 +381,6 @@
             ]
           },
           {
-            "modelo": "Note 15 256/8GB",
-            "preco": "R$ 1.495,00",
-            "cores": [
-              "roxo"
-            ]
-          },
-          {
             "modelo": "Note 15 256/8GB NFC",
             "preco": "R$ 1.521,00",
             "cores": [
@@ -427,7 +398,7 @@
           },
           {
             "modelo": "Note 15 Pro 5G NFC 256/8GB",
-            "preco": "R$ 2.301,00",
+            "preco": "R$ 2.275,00",
             "cores": [
               "preto",
               "azul",
@@ -458,23 +429,17 @@
             ]
           },
           {
-            "modelo": "Poco C71 64/3GB",
-            "preco": "R$ 741,00",
-            "cores": [
-              "Gold"
-            ]
-          },
-          {
             "modelo": "Poco C71 128/4GB",
             "preco": "R$ 890,50",
             "cores": [
               "preto",
-              "Gold"
+              "Gold",
+              "azul"
             ]
           },
           {
             "modelo": "Poco C81 Pro 64/4GB",
-            "preco": "R$ 825,50",
+            "preco": "R$ 819,00",
             "cores": [
               "preto"
             ]
@@ -488,7 +453,7 @@
           },
           {
             "modelo": "Poco C81 Pro 256/4GB",
-            "preco": "R$ 1.053,00",
+            "preco": "R$ 1.040,00",
             "cores": [
               "preto",
               "verde",
@@ -497,7 +462,7 @@
           },
           {
             "modelo": "Poco C85 NFC 128/6GB",
-            "preco": "R$ 1.040,00",
+            "preco": "R$ 988,00",
             "cores": [
               "preto"
             ]
@@ -513,7 +478,7 @@
           },
           {
             "modelo": "Poco M8 Pro 5G NFC 512/12GB",
-            "preco": "R$ 2.470,00",
+            "preco": "R$ 2.444,00",
             "cores": [
               "Prata"
             ]
@@ -527,7 +492,7 @@
           },
           {
             "modelo": "Poco X8 Pro 5G NFC 256/8GB",
-            "preco": "R$ 2.665,00",
+            "preco": "R$ 2.639,00",
             "cores": [
               "verde",
               "amarelo",
@@ -538,14 +503,14 @@
             "modelo": "Poco X8 Pro 5G NFC 512/12GB",
             "preco": "R$ 3.081,00",
             "cores": [
-              "verde"
+              "verde",
+              "preto"
             ]
           },
           {
             "modelo": "Poco X8 Pro 5G NFC 512/12GB",
             "preco": "R$ 3.120,00",
             "cores": [
-              "preto",
               "branco"
             ]
           },
@@ -556,7 +521,7 @@
           },
           {
             "modelo": "Poco X8 Pro Max 5G NFC 512/12GB",
-            "preco": "R$ 3.939,00",
+            "preco": "R$ 3.913,00",
             "cores": [
               "preto",
               "azul"
@@ -676,13 +641,6 @@
             ]
           },
           {
-            "modelo": "Tablet Samsung A11 64/4GB 8.7\" 5G",
-            "preco": "R$ 1.274,00",
-            "cores": [
-              "cinza"
-            ]
-          },
-          {
             "modelo": "Tablet Samsung A11+  128/6GB 11\"",
             "preco": "R$ 2.015,00",
             "cores": [
@@ -741,14 +699,6 @@
           {
             "modelo": "Tablet Redmi Pad 2 11\"  256/8GB",
             "preco": "R$ 1.677,00",
-            "cores": [
-              "cinza",
-              "roxo"
-            ]
-          },
-          {
-            "modelo": "Tablet Redmi Pad 2 Pro 256/8GB 12.1\"",
-            "preco": "R$ 2.444,00",
             "cores": [
               "cinza"
             ]
@@ -1259,27 +1209,6 @@
             "cores": []
           },
           {
-            "modelo": "Micro SD SanDisk Ultra  32GB",
-            "preco": "R$ 91,00",
-            "cores": [
-              "Classe 10"
-            ]
-          },
-          {
-            "modelo": "Micro SD SanDisk Ultra  64GB",
-            "preco": "R$ 117,00",
-            "cores": [
-              "Classe 10"
-            ]
-          },
-          {
-            "modelo": "Micro SD SanDisk Ultra  128GB",
-            "preco": "R$ 169,00",
-            "cores": [
-              "Classe 10"
-            ]
-          },
-          {
             "modelo": "Micro SD SanDisk Ultra  256GB",
             "preco": "R$ 325,00",
             "cores": [
@@ -1396,18 +1325,6 @@
             "cores": [
               "3° geração"
             ]
-          },
-          {
-            "modelo": "Alexa Echo Show 8",
-            "preco": "R$ 1.287,00",
-            "cores": [
-              "3° geração"
-            ]
-          },
-          {
-            "modelo": "Alexa Echo Show 11",
-            "preco": "R$ 2.210,00",
-            "cores": []
           },
           {
             "modelo": "TV Box",
