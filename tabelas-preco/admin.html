@@ -156,7 +156,7 @@
         <textarea id="txtAppleGradeA" placeholder="Cole aqui a lista de Apple Grade A..."></textarea>
     </div>
 
-    <button class="btn-submit" onclick="processarEEnviar()">🚀 Atualizar Site no GitHub</button>
+    <button class="btn-submit" onclick="processarEEnviar()"> Atualizar Site no GitHub</button>
 
     <div id="status"></div>
 </div>
@@ -197,9 +197,9 @@
         if (tipo === 'android_novos' || tipo === 'acessorios') {
             return custo * 1.30; // +30%
         } else if (tipo === 'apple_novos' || tipo === 'apple_grade_a') {
-            // iPhones, MacBooks, iPads (+600,00)
+            // iPhones, MacBooks, iPads (+800,00)
             if (['iphone', 'macbook', 'mac ', 'ipad'].some(term => nomeLower.includes(term))) {
-                return custo + 600.0;
+                return custo + 800.0;
             }
             // Acessórios Apple (+100%)
             else if (['airpods', 'airtag', 'magsafe', 'apple watch', 'serie ', 'série ', 'fonte apple'].some(term => nomeLower.includes(term))) {
