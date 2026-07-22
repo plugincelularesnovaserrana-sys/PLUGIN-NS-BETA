@@ -156,7 +156,7 @@
         <textarea id="txtAppleGradeA" placeholder="Cole aqui a lista de Apple Grade A..."></textarea>
     </div>
 
-    <button class="btn-submit" onclick="processarEEnviar()"> Atualizar Site no GitHub</button>
+    <button class="btn-submit" onclick="processarEEnviar()">🚀 Atualizar Site no GitHub</button>
 
     <div id="status"></div>
 </div>
@@ -213,68 +213,35 @@
         return custo;
     }
 
-    // Detecta a subcategoria/marca de cada item com base no nome do modelo.
-    // Isso NÃO altera nenhum cálculo de preço, apenas organiza os itens em
-    // grupos (categorias) dentro de cada tabela.
-    function detectarSubcategoria(nomeLower, tipo) {
-        if (tipo === 'android_novos') {
-            if (nomeLower.includes('galaxy') || nomeLower.includes('samsung')) return 'SAMSUNG';
-            if (nomeLower.includes('moto')) return 'MOTOROLA';
-            if (nomeLower.includes('redmi') || nomeLower.includes('poco') || nomeLower.includes('xiaomi') || nomeLower.includes('mi ')) return 'XIAOMI';
-            if (nomeLower.includes('infinix')) return 'INFINIX';
-            if (nomeLower.includes('realme')) return 'REALME';
-            if (nomeLower.includes('honor')) return 'HONOR';
-            if (nomeLower.includes('spark') || nomeLower.includes('tecno') || nomeLower.includes('camon')) return 'TECNO';
-            if (nomeLower.includes('itel')) return 'ITEL';
-            if (nomeLower.includes('multilaser')) return 'MULTILASER';
-            if (nomeLower.includes('lg')) return 'LG';
-            if (nomeLower.includes('asus') || nomeLower.includes('zenfone')) return 'ASUS';
-            return 'OUTRAS MARCAS';
-        }
-
-        if (tipo === 'acessorios') {
-            if (nomeLower.includes('fone') || nomeLower.includes('headset') || nomeLower.includes('earbud') || nomeLower.includes('headphone')) return 'FONES DE OUVIDO';
-            if (nomeLower.includes('carregador') || nomeLower.includes('fonte') || nomeLower.includes('turbo')) return 'CARREGADORES';
-            if (nomeLower.includes('cabo')) return 'CABOS';
-            if (nomeLower.includes('capa') || nomeLower.includes('capinha') || nomeLower.includes('case')) return 'CAPAS E CASES';
-            if (nomeLower.includes('pelicula') || nomeLower.includes('película') || nomeLower.includes('vidro')) return 'PELÍCULAS E VIDROS';
-            if (nomeLower.includes('power bank') || nomeLower.includes('powerbank') || nomeLower.includes('bateria portat')) return 'POWER BANK';
-            if (nomeLower.includes('caixa de som') || nomeLower.includes('speaker') || nomeLower.includes('jbl') || nomeLower.includes('partybox')) return 'CAIXAS DE SOM';
-            if (nomeLower.includes('smartwatch') || nomeLower.includes('relogio') || nomeLower.includes('relógio') || nomeLower.includes('watch')) return 'SMARTWATCH';
-            if (nomeLower.includes('suporte')) return 'SUPORTES';
-            if (nomeLower.includes('drone') || nomeLower.includes('dji')) return 'DRONES';
-            if (nomeLower.includes('microfone') || nomeLower.includes('lark') || nomeLower.includes('boya') || nomeLower.includes('hollyland')) return 'MICROFONES';
-            return 'OUTROS ACESSÓRIOS';
-        }
+    function extrairMarca(nomeModelo, tipo) {
+        let nome = nomeModelo.toLowerCase();
 
         if (tipo === 'apple_novos' || tipo === 'apple_grade_a') {
-            if (nomeLower.includes('iphone')) return 'IPHONE';
-            if (nomeLower.includes('macbook') || nomeLower.includes('mac ')) return 'MACBOOK';
-            if (nomeLower.includes('ipad')) return 'IPAD';
-            if (nomeLower.includes('apple watch') || nomeLower.includes('série') || nomeLower.includes('serie ')) return 'APPLE WATCH';
-            if (nomeLower.includes('airpods')) return 'AIRPODS';
-            if (nomeLower.includes('airtag')) return 'AIRTAG';
-            if (nomeLower.includes('magsafe') || nomeLower.includes('fonte apple')) return 'ACESSÓRIOS APPLE';
+            if (nome.includes('iphone')) return 'IPHONE';
+            if (nome.includes('macbook') || nome.includes('mac ')) return 'MACBOOK';
+            if (nome.includes('ipad')) return 'IPAD';
+            if (nome.includes('watch') || nome.includes('série') || nome.includes('serie')) return 'APPLE WATCH';
+            if (nome.includes('airpods')) return 'AIRPODS';
+            if (nome.includes('airtag')) return 'AIRTAG';
+            if (nome.includes('magsafe') || nome.includes('fonte')) return 'ACESSÓRIOS';
             return 'OUTROS';
         }
 
-        return 'OUTROS';
+        const marcasConhecidas = [
+            'samsung', 'motorola', 'xiaomi', 'redmi', 'poco', 'infinix', 'tecno',
+            'realme', 'honor', 'asus', 'nokia', 'oneplus', 'oppo', 'vivo', 'zte',
+            'tcl', 'blu', 'multilaser', 'positivo', 'jbl', 'baseus', 'philips', 'sony', 'lg'
+        ];
+
+        for (const marca of marcasConhecidas) {
+            if (nome.includes(marca)) return marca.toUpperCase();
+        }
+
+        // Fallback: usa a primeira palavra do modelo como marca (ex: "Galaxy A06" -> "GALAXY")
+        let primeiraPalavra = nomeModelo.trim().split(/\s+/)[0] || 'OUTROS';
+        return primeiraPalavra.toUpperCase();
     }
 
-    // Ordena as subcategorias colocando "OUTRAS/OUTROS" sempre por último
-    function ordenarNomesCategoria(nomes) {
-        return nomes.sort((a, b) => {
-            const aOutros = a.startsWith('OUTR');
-            const bOutros = b.startsWith('OUTR');
-            if (aOutros && !bOutros) return 1;
-            if (!aOutros && bOutros) return -1;
-            return a.localeCompare(b, 'pt-BR');
-        });
-    }
-
-    // Processa o texto colado e devolve uma LISTA de categorias (subcategorias/marcas),
-    // cada uma com seus itens já com o preço calculado — o cálculo de preço em si
-    // (calcularPreco) permanece exatamente o mesmo de antes.
     function processarTextoParaCategorias(texto, tipo) {
         let grupos = {};
         let linhas = texto.split('\n');
@@ -283,11 +250,13 @@
             let item = parseLinha(linha);
             if (item) {
                 let precoVenda = calcularPreco(item.modelo, item.custo, tipo);
-                let subcategoria = detectarSubcategoria(item.modelo.toLowerCase(), tipo);
+                let marca = extrairMarca(item.modelo, tipo);
 
-                if (!grupos[subcategoria]) grupos[subcategoria] = [];
+                if (!grupos[marca]) {
+                    grupos[marca] = [];
+                }
 
-                grupos[subcategoria].push({
+                grupos[marca].push({
                     modelo: item.modelo,
                     preco: `R$ ${precoVenda.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
                     cores: item.cores
@@ -295,11 +264,10 @@
             }
         });
 
-        let nomesOrdenados = ordenarNomesCategoria(Object.keys(grupos));
-
-        return nomesOrdenados.map(nome => ({
-            nome: nome,
-            itens: grupos[nome]
+        // Transforma em array de categorias (uma por marca), ordenado alfabeticamente
+        return Object.keys(grupos).sort().map(marca => ({
+            nome: marca,
+            itens: grupos[marca]
         }));
     }
 
@@ -317,11 +285,7 @@
         statusDiv.className = "status-loading";
         statusDiv.innerText = " Processando tabelas e enviando arquivo atualizado...";
 
-        // Estrutura no formato exato que o index.html lê.
-        // Cada tabela agora vem organizada em várias subcategorias/marcas
-        // (ex: SAMSUNG, MOTOROLA, XIAOMI... ou IPHONE, IPAD, MACBOOK...),
-        // o que faz o index.html exibir automaticamente os botões de
-        // subcategoria já organizados — sem precisar alterar o index.html.
+        // Estrutura no formato exato que o index.html lê
         const jsonFinal = {
             tabela_android_acessorios_diversos: {
                 categorias: processarTextoParaCategorias(document.getElementById('txtAndroid').value, "android_novos")
