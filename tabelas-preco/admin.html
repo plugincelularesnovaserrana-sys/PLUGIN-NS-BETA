@@ -287,6 +287,7 @@
 
         // Estrutura no formato exato que o index.html lê
         const jsonFinal = {
+            ultima_atualizacao: new Date().toISOString(),
             tabela_android_acessorios_diversos: {
                 categorias: processarTextoParaCategorias(document.getElementById('txtAndroid').value, "android_novos")
             },
@@ -335,11 +336,11 @@
 
             if (putRes.ok) {
                 statusDiv.className = "status-success";
-                statusDiv.innerText = " Sucesso! Tabela atualizada com sucesso no GitHub!";
+                statusDiv.innerText = " Sucesso! Tabela atualizada com sucesso!";
             } else {
                 const errData = await putRes.json();
                 statusDiv.className = "status-error";
-                statusDiv.innerText = " Erro ao enviar para o GitHub: " + errData.message;
+                statusDiv.innerText = " Erro ao enviar: " + errData.message;
             }
         } catch (err) {
             statusDiv.className = "status-error";
