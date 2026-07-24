@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-07-23T15:55:40.723Z",
+  "ultima_atualizacao": "2026-07-24T15:37:57.841Z",
   "tabela_android_acessorios_diversos": {
     "categorias": [
       {
@@ -147,7 +147,7 @@
         "itens": [
           {
             "modelo": "Moto G06 128/4GB",
-            "preco": "R$ 936,00",
+            "preco": "R$ 910,00",
             "cores": [
               "* azul",
               "verde",
@@ -156,9 +156,10 @@
           },
           {
             "modelo": "Moto G06 256/4GB",
-            "preco": "R$ 1.014,00",
+            "preco": "R$ 1.040,00",
             "cores": [
-              "* verde"
+              "* verde",
+              "azul"
             ]
           },
           {
@@ -187,6 +188,21 @@
             "preco": "R$ 1.651,00",
             "cores": [
               "* cinza"
+            ]
+          },
+          {
+            "modelo": "Moto G77 256/8GB",
+            "preco": "R$ 1.820,00",
+            "cores": [
+              "* preto",
+              "azul"
+            ]
+          },
+          {
+            "modelo": "Moto G86 5G 256/8GB",
+            "preco": "R$ 1.664,00",
+            "cores": [
+              "* azul"
             ]
           }
         ]
@@ -231,8 +247,7 @@
             "preco": "R$ 1.937,00",
             "cores": [
               "* preto",
-              "azul",
-              "Titanium"
+              "azul"
             ]
           },
           {
@@ -272,12 +287,28 @@
         "nome": "POCO",
         "itens": [
           {
+            "modelo": "Poco C71 64/3GB",
+            "preco": "R$ 773,50",
+            "cores": [
+              "* preto",
+              "gold",
+              "azul"
+            ]
+          },
+          {
             "modelo": "Poco C71 128/4GB",
             "preco": "R$ 890,50",
             "cores": [
               "* preto",
-              "Gold",
-              "azul"
+              "Gold"
+            ]
+          },
+          {
+            "modelo": "Poco C81 Pro 64/4GB",
+            "preco": "R$ 819,00",
+            "cores": [
+              "* preto",
+              "gold"
             ]
           },
           {
@@ -298,9 +329,10 @@
           },
           {
             "modelo": "Poco C85 NFC 128/6GB",
-            "preco": "R$ 988,00",
+            "preco": "R$ 1.079,00",
             "cores": [
-              "* preto"
+              "* preto",
+              "verde"
             ]
           },
           {
@@ -398,6 +430,13 @@
       {
         "nome": "REALME",
         "itens": [
+          {
+            "modelo": "Realme Note 60x 128/4GB",
+            "preco": "R$ 754,00",
+            "cores": [
+              "*"
+            ]
+          },
           {
             "modelo": "Realme Note 70 128/4GB",
             "preco": "R$ 968,50",
@@ -499,7 +538,7 @@
           },
           {
             "modelo": "Realme C85 NFC 256/8GB",
-            "preco": "R$ 1.677,00",
+            "preco": "R$ 1.644,50",
             "cores": [
               "* azul",
               "preto"
@@ -583,19 +622,18 @@
             ]
           },
           {
-            "modelo": "Redmi 15C 256/4+4GB",
-            "preco": "R$ 1.020,50",
-            "cores": [
-              "* preto",
-              "azul"
-            ]
-          },
-          {
             "modelo": "Redmi 15C 256/8+8GB",
             "preco": "R$ 1.209,00",
             "cores": [
               "* preto",
               "verde"
+            ]
+          },
+          {
+            "modelo": "Redmi 15 256/8GB",
+            "preco": "R$ 1.365,00",
+            "cores": [
+              "* preto"
             ]
           }
         ]
@@ -1553,6 +1591,13 @@
         "nome": "REDMI",
         "itens": [
           {
+            "modelo": "Tablet Redmi Pad 2 128/4GB",
+            "preco": "R$ 1.417,00",
+            "cores": [
+              "* cinza"
+            ]
+          },
+          {
             "modelo": "Tablet Redmi Pad 2 Bundle C/Capa 128/4GB",
             "preco": "R$ 1.495,00",
             "cores": [
@@ -1658,20 +1703,6 @@
       {
         "nome": "SAMSUNG",
         "itens": [
-          {
-            "modelo": "Tablet Samsung A11+  128/6GB 11\"",
-            "preco": "R$ 2.015,00",
-            "cores": [
-              "* cinza"
-            ]
-          },
-          {
-            "modelo": "Tablet Samsung A11+  5G 128/6GB 11\"",
-            "preco": "R$ 2.210,00",
-            "cores": [
-              "* cinza"
-            ]
-          },
           {
             "modelo": "Tablet Samsung S10 LITE  128/6GB 11\" C/caneta e capa",
             "preco": "R$ 2.990,00",
@@ -2036,28 +2067,21 @@
         "itens": [
           {
             "modelo": "Serie SE 3° 40mm l GPS  S/M",
-            "preco": "R$ 3.380,00",
+            "preco": "R$ 3.500,00",
             "cores": [
-              "* Midnight"
+              "* Midnight e Starlight"
             ]
           },
           {
             "modelo": "Série 11 42mm GPS Alumínio",
             "preco": "R$ 4.420,00",
             "cores": [
-              "* Rose"
-            ]
-          },
-          {
-            "modelo": "Série 11 42mm GPS Alumínio",
-            "preco": "R$ 4.440,00",
-            "cores": [
-              "*  Space"
+              "* Rose e Space"
             ]
           },
           {
             "modelo": "Série 11 46mm GPS Alumínio  M/L",
-            "preco": "R$ 5.080,00",
+            "preco": "R$ 4.820,00",
             "cores": [
               "*  Space Gray e Rose"
             ]
@@ -2076,23 +2100,16 @@
         "itens": [
           {
             "modelo": "iPad 11 128GB",
-            "preco": "R$ 3.370,00",
-            "cores": [
-              "* Pink"
-            ]
-          },
-          {
-            "modelo": "iPad 11 128GB",
             "preco": "R$ 3.460,00",
             "cores": [
               "*  Silver e Blue"
             ]
           },
           {
-            "modelo": "iPad Air M3 11\" 128GB",
-            "preco": "R$ 4.800,00",
+            "modelo": "iPad 11 256GB",
+            "preco": "R$ 3.900,00",
             "cores": [
-              "*   Blue"
+              "* Pink"
             ]
           },
           {
@@ -2139,7 +2156,7 @@
             "modelo": "iPhone 16 128GB",
             "preco": "R$ 5.140,00",
             "cores": [
-              "* white"
+              "*  White"
             ]
           },
           {
@@ -2153,8 +2170,7 @@
             "modelo": "iPhone 17 256GB",
             "preco": "R$ 5.990,00",
             "cores": [
-              "* Black",
-              "Purple"
+              "*  Purple"
             ]
           },
           {
@@ -2168,7 +2184,7 @@
             "modelo": "iPhone 17 Pro 256GB",
             "preco": "R$ 7.600,00",
             "cores": [
-              "*  Silver"
+              "*  Silver e Blue"
             ]
           },
           {
@@ -2180,30 +2196,30 @@
           },
           {
             "modelo": "iPhone 17 Pro Max 256GB",
-            "preco": "R$ 7.790,00",
+            "preco": "R$ 7.740,00",
             "cores": [
               "*  Orange"
             ]
           },
           {
             "modelo": "iPhone 17 Pro Max 256GB",
-            "preco": "R$ 8.040,00",
-            "cores": [
-              "*  Blue"
-            ]
-          },
-          {
-            "modelo": "iPhone 17 Pro Max 256GB",
-            "preco": "R$ 8.070,00",
+            "preco": "R$ 8.050,00",
             "cores": [
               "*  Silver"
             ]
           },
           {
-            "modelo": "iPhone 17 Pro Max 512GB",
-            "preco": "R$ 9.300,00",
+            "modelo": "iPhone 17 Pro Max 256GB",
+            "preco": "R$ 8.100,00",
             "cores": [
-              "* Orange"
+              "*  Blue"
+            ]
+          },
+          {
+            "modelo": "iPhone 17 Pro Max 512GB",
+            "preco": "R$ 9.850,00",
+            "cores": [
+              "* Silver"
             ]
           },
           {
@@ -2233,13 +2249,6 @@
         "nome": "MACBOOK",
         "itens": [
           {
-            "modelo": "Mac Mini M2 512/8GB",
-            "preco": "R$ 4.300,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
             "modelo": "Mac Mini M4 256/16GB 2024",
             "preco": "R$ 6.150,00",
             "cores": [
@@ -2257,14 +2266,21 @@
             "modelo": "Mac Neo 256/8GB 13.6\"",
             "preco": "R$ 5.490,00",
             "cores": [
-              "* indingo"
+              "*  Indingo"
+            ]
+          },
+          {
+            "modelo": "Mac Neo 256/8GB 13.6\"",
+            "preco": "R$ 5.590,00",
+            "cores": [
+              "*   Silver"
             ]
           },
           {
             "modelo": "Mac Neo 512/8GB 13.6\"",
             "preco": "R$ 6.740,00",
             "cores": [
-              "* silver e indingo"
+              "*  Silver e indingo"
             ]
           },
           {
@@ -2293,7 +2309,7 @@
             "modelo": "Mac Air M5 1TB/16GB 13\"",
             "preco": "R$ 9.990,00",
             "cores": [
-              "*  Silver"
+              "*  Silver e Midnight"
             ]
           },
           {
@@ -2622,167 +2638,226 @@
           {
             "modelo": "iPhone 11 Pro  64GB",
             "preco": "R$ 2.250,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
+          },
+          {
+            "modelo": "iphone 11 Pro Max 64GB",
+            "preco": "R$ 2.550,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
+            "modelo": "iphone 11 Pro Max 256GB",
+            "preco": "R$ 2.700,00",
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 12 64GB",
             "preco": "R$ 2.200,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
-            "modelo": "iphone iPhone 12 128GB",
+            "modelo": "iPhone 12 128GB",
             "preco": "R$ 2.350,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
-            "modelo": "iphone iPhone 12 256GB",
+            "modelo": "iPhone 12 256GB",
             "preco": "R$ 2.500,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 12 Pro 128GB",
             "preco": "R$ 2.600,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 12 Pro Max 128GB",
             "preco": "R$ 3.000,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 12 Pro Max 256GB",
             "preco": "R$ 3.100,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 13 128GB",
             "preco": "R$ 2.650,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 13 256GB",
             "preco": "R$ 2.800,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 13 Pro 128GB",
             "preco": "R$ 3.100,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 13 Pro 256GB",
             "preco": "R$ 3.250,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 14 128GB",
             "preco": "R$ 2.800,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 14 Plus 128GB",
             "preco": "R$ 2.900,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 14 Plus 256GB",
             "preco": "R$ 3.050,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 14 Pro 512GB",
             "preco": "R$ 3.800,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 14 Pro Max 128GB",
             "preco": "R$ 4.050,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 14 Pro Max 256GB",
             "preco": "R$ 4.250,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 15 128GB",
             "preco": "R$ 3.500,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 15 256GB",
             "preco": "R$ 3.650,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 15 Plus 128GB",
             "preco": "R$ 3.650,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 15 Pro 128GB",
             "preco": "R$ 4.100,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 15 Pro Max 256GB",
             "preco": "R$ 4.950,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 15 Pro Max 512GB",
             "preco": "R$ 5.150,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 16 128GB",
             "preco": "R$ 4.450,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 16GB 256GB",
             "preco": "R$ 4.650,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 16 Plus 128GB",
             "preco": "R$ 4.650,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 16 Pro 128GB",
             "preco": "R$ 5.100,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 16 Pro 256GB",
             "preco": "R$ 5.300,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 16 Pro Max 256GB",
             "preco": "R$ 6.000,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           },
           {
             "modelo": "iPhone 17 Air 256GB",
             "preco": "R$ 5.650,00",
-            "cores": []
-          }
-        ]
-      },
-      {
-        "nome": "OUTROS",
-        "itens": [
-          {
-            "modelo": "11 Pro Max 64GB",
-            "preco": "R$ 2.187,50",
-            "cores": []
-          },
-          {
-            "modelo": "11 Pro Max 256GB",
-            "preco": "R$ 2.375,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           }
         ]
       }
