@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-07-28T18:23:16.744Z",
+  "ultima_atualizacao": "2026-07-29T12:17:32.255Z",
   "tabela_android_acessorios_diversos": {
     "categorias": [
       {
@@ -7,19 +7,17 @@
         "itens": [
           {
             "modelo": "Galaxy A07 128GB",
-            "preco": "R$ 832,00",
+            "preco": "R$ 910,00",
             "cores": [
-              "* preto",
-              "verde caixa amassada",
-              "aparelho com garantia"
+              "* preto"
             ]
           },
           {
-            "modelo": "Galaxy A07 128GB",
-            "preco": "R$ 884,00",
+            "modelo": "Galaxy A07 256/8GB",
+            "preco": "R$ 1.092,00",
             "cores": [
-              "* preto",
-              "verde"
+              "* roxo",
+              "preto"
             ]
           },
           {
@@ -33,14 +31,15 @@
             "modelo": "Galaxy A17 128/4GB",
             "preco": "R$ 1.157,00",
             "cores": [
-              "*  azul"
+              "*  azul",
+              "preto"
             ]
           },
           {
             "modelo": "Galaxy A17 256/8GB",
             "preco": "R$ 1.677,00",
             "cores": [
-              "* cinza"
+              "*"
             ]
           },
           {
@@ -106,13 +105,6 @@
             "preco": "R$ 910,00",
             "cores": [
               "* azul e verde"
-            ]
-          },
-          {
-            "modelo": "Moto G06 256/4GB",
-            "preco": "R$ 1.040,00",
-            "cores": [
-              "* verde e azul"
             ]
           },
           {
@@ -355,6 +347,13 @@
         "nome": "REALME",
         "itens": [
           {
+            "modelo": "Realme Note 60x 64/3GB",
+            "preco": "R$ 754,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
             "modelo": "Realme Note 60x 128/4GB",
             "preco": "R$ 897,00",
             "cores": [
@@ -531,7 +530,9 @@
             "modelo": "Redmi 15C 256/4+4GB",
             "preco": "R$ 1.059,50",
             "cores": [
-              "*"
+              "* preto",
+              "verde",
+              "azul"
             ]
           },
           {
@@ -546,7 +547,8 @@
             "modelo": "Redmi 15 256/8GB",
             "preco": "R$ 1.365,00",
             "cores": [
-              "* preto e roxo"
+              "* preto",
+              "rox e cinza"
             ]
           }
         ]
@@ -968,7 +970,7 @@
             "modelo": "JBL Boombox 4",
             "preco": "R$ 3.250,00",
             "cores": [
-              "* Camuflada"
+              "* Camuflada  e Branca"
             ]
           },
           {
@@ -1514,7 +1516,8 @@
             "modelo": "Tablet Redmi Pad 2 128/4GB",
             "preco": "R$ 1.417,00",
             "cores": [
-              "* cinza"
+              "* cinza",
+              "verde"
             ]
           },
           {
@@ -1997,6 +2000,28 @@
         "nome": "APPLE WATCH",
         "itens": [
           {
+            "modelo": "Série Se 3° 40mm GPS",
+            "preco": "R$ 3.280,00",
+            "cores": [
+              "* Midnigth"
+            ]
+          },
+          {
+            "modelo": "Série Se 3° 40mm GPS",
+            "preco": "R$ 3.480,00",
+            "cores": [
+              "* Starlight"
+            ]
+          },
+          {
+            "modelo": "Série Se 3° 44mm GPS",
+            "preco": "R$ 3.900,00",
+            "cores": [
+              "* Black",
+              "Starlight"
+            ]
+          },
+          {
             "modelo": "Série 11 42mm GPS Alumínio",
             "preco": "R$ 4.420,00",
             "cores": [
@@ -2091,6 +2116,27 @@
             ]
           },
           {
+            "modelo": "iPhone 16 128GB",
+            "preco": "R$ 4.970,00",
+            "cores": [
+              "* Blue"
+            ]
+          },
+          {
+            "modelo": "iPhone 16 128GB",
+            "preco": "R$ 5.050,00",
+            "cores": [
+              "* White"
+            ]
+          },
+          {
+            "modelo": "iPhone 16 128GB",
+            "preco": "R$ 5.100,00",
+            "cores": [
+              "* Black"
+            ]
+          },
+          {
             "modelo": "iPhone 17 256GB",
             "preco": "R$ 5.790,00",
             "cores": [
@@ -2101,19 +2147,20 @@
             "modelo": "iPhone 17 256GB",
             "preco": "R$ 5.990,00",
             "cores": [
-              "*  Purple e  White"
+              "*  Black",
+              "Purple e  White"
             ]
           },
           {
             "modelo": "iPhone 17 Pro 256GB",
-            "preco": "R$ 7.450,00",
+            "preco": "R$ 7.480,00",
             "cores": [
-              "*  Orange e Silver"
+              "*   Silver"
             ]
           },
           {
             "modelo": "iPhone 17 Pro 512GB",
-            "preco": "R$ 9.250,00",
+            "preco": "R$ 9.350,00",
             "cores": [
               "* Orange"
             ]
@@ -2127,14 +2174,14 @@
           },
           {
             "modelo": "iPhone 17 Pro Max 256GB",
-            "preco": "R$ 7.900,00",
+            "preco": "R$ 7.795,00",
             "cores": [
               "*  Silver"
             ]
           },
           {
             "modelo": "iPhone 17 Pro Max 256GB",
-            "preco": "R$ 7.950,00",
+            "preco": "R$ 7.830,00",
             "cores": [
               "*  Blue"
             ]
@@ -2151,13 +2198,6 @@
             "preco": "R$ 9.550,00",
             "cores": [
               "* Silver"
-            ]
-          },
-          {
-            "modelo": "iPhone 17 Pro Max 1TB",
-            "preco": "R$ 11.650,00",
-            "cores": [
-              "*  Orange"
             ]
           },
           {
@@ -2333,6 +2373,13 @@
             ]
           },
           {
+            "modelo": "GO PRO  MAX 2",
+            "preco": "R$ 4.625,00",
+            "cores": [
+              "* TRUE 8K 360"
+            ]
+          },
+          {
             "modelo": "DJI OSMO ACTION 6 STANDARD COMBO",
             "preco": "R$ 3.250,00",
             "cores": [
@@ -2344,13 +2391,6 @@
             "preco": "R$ 5.000,00",
             "cores": [
               "*"
-            ]
-          },
-          {
-            "modelo": "GO PRO  MAX 2",
-            "preco": "R$ 4.625,00",
-            "cores": [
-              "* TRUE 8K 360"
             ]
           },
           {
@@ -2685,13 +2725,6 @@
             ]
           },
           {
-            "modelo": "iPhone 14 Pro Max 256GB",
-            "preco": "R$ 4.250,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
             "modelo": "iPhone 15 128GB",
             "preco": "R$ 3.500,00",
             "cores": [
@@ -2778,7 +2811,9 @@
           {
             "modelo": "iPhone 17 Air 256GB",
             "preco": "R$ 5.650,00",
-            "cores": []
+            "cores": [
+              "*"
+            ]
           }
         ]
       }
