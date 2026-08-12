@@ -404,6 +404,14 @@
         margin: 6px 0 8px 0;
     }
 
+    /* Preenchedor invisível: reserva o mesmo espaço de uma nota/corte real
+       para que a última folha (parcial) mantenha a mesma proporção (1/3 ou 1/2)
+       das demais páginas, em vez de esticar a última nota para a folha toda. */
+    .nota-vazia {
+        visibility: hidden;
+        border: none;
+    }
+
     /* ===== IMPRESSÃO ===== */
     @media print {
         @page {
@@ -869,10 +877,23 @@
         }
 
         let htmlFinal = "";
-        const corteHTML = '<div class="np-corte"><div class="np-corte-linha"></div><span class="np-corte-icone">✂</span><span>Recorte aqui para protesto</span><span class="np-corte-icone">✂</span><div class="np-corte-linha"></div></div>';
+        const corteHTML = '<div class="np-corte"><div class="np-corte-linha"></div><span class="np-corte-icone">✂</span><span>Recorte aqui</span><span class="np-corte-icone">✂</span><div class="np-corte-linha"></div></div>';
+        const corteVazioHTML = '<div class="np-corte nota-vazia"><div class="np-corte-linha"></div><span class="np-corte-icone">✂</span><span>Recorte aqui</span><span class="np-corte-icone">✂</span><div class="np-corte-linha"></div></div>';
+        const notaVaziaHTML = '<div class="nota nota-vazia"></div>';
+
         for (let i = 0; i < notasHTML.length; i += groupSize) {
             const grupo = notasHTML.slice(i, i + groupSize);
-            htmlFinal += '<div class="folha-a4">' + grupo.join(corteHTML) + '</div>';
+            let conteudoFolha = grupo.join(corteHTML);
+
+            // Se a última folha ficou incompleta, completa com preenchedores
+            // invisíveis (nota + corte) até atingir o groupSize padrão, para
+            // que as notas reais mantenham a mesma altura das demais páginas.
+            const faltantes = groupSize - grupo.length;
+            for (let f = 0; f < faltantes; f++) {
+                conteudoFolha += corteVazioHTML + notaVaziaHTML;
+            }
+
+            htmlFinal += '<div class="folha-a4">' + conteudoFolha + '</div>';
         }
 
         const container = document.getElementById('resultadoImpressao');
