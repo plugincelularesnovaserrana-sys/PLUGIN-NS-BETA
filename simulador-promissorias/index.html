@@ -263,109 +263,145 @@
 
     /* ===== PRÉ-VISUALIZAÇÃO / DOCUMENTO ===== */
     #resultadoImpressao {
-        background: #fff;
+        background: transparent;
         color: #111827;
-        border-radius: 6px;
-        overflow: hidden;
-        border: 1px solid rgba(255,255,255,0.1);
     }
 
+    .folha-a4 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 794px;
+        height: 273mm;
+        margin: 0 auto 20px auto;
+        background: #fff;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 6px 16px rgba(0,0,0,0.25);
+    }
+    .folha-a4:last-child { margin-bottom: 0; }
+
     .nota {
-        padding: 12px 16px 16px 16px;
-        border-bottom: 1px dashed #9ca3af;
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px 16px 8px 16px;
+        border: 2px solid #000;
         break-inside: avoid;
         page-break-inside: avoid;
         position: relative;
+        background: #fff;
+        box-sizing: border-box;
+        overflow: hidden;
     }
-    .nota:last-child { border-bottom: none; }
+    .nota > * { flex: 0 0 auto; }
 
-    .nota.fim-folha {
-        border-bottom: 2px dashed #45F3FF;
-        padding-bottom: 26px;
-    }
-    .nota.fim-folha::after {
-        content: "corte / nova folha A4";
-        position: absolute;
-        bottom: 3px;
-        left: 16px;
-        color: #45F3FF;
-        font-size: 9px;
+    .np-corte {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 3px 0;
+        color: #444;
+        font-size: 8.5px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        font-weight: bold;
     }
-    @media print {
-        .nota.fim-folha { padding-bottom: 16px; }
-        .nota.fim-folha::after { content: none; }
+    .np-corte-linha {
+        flex: 1 1 auto;
+        border-top: 1px dashed #444;
+    }
+    .np-corte-icone {
+        font-size: 10px;
+        line-height: 1;
     }
 
     .np-cabecalho {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        font-size: 12.5px;
-        margin-bottom: 3px;
+        margin-bottom: 4px;
         flex-wrap: wrap;
         gap: 6px;
     }
+    .np-cabecalho .np-cab-esq {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
     .np-cabecalho .np-titulo {
-        font-weight: bold;
-        letter-spacing: 0.5px;
+        font-weight: 800;
+        font-size: 15px;
+        letter-spacing: 0.3px;
+    }
+    .np-cabecalho .np-numero {
+        font-weight: 700;
+        font-size: 11px;
+    }
+    .np-cabecalho .np-vencimento {
+        font-size: 11px;
     }
 
     .np-valor {
-        font-size: 17px;
+        font-size: 15px;
         font-weight: bold;
-        margin-bottom: 6px;
+        text-align: right;
+        margin: 4px 0 8px 0;
     }
 
     .np-linha {
         display: flex;
         justify-content: space-between;
         font-size: 10.8px;
-        margin-bottom: 3px;
+        margin-bottom: 8px;
         flex-wrap: wrap;
         gap: 10px;
     }
 
     .np-linha-single {
         font-size: 10.8px;
-        margin-bottom: 3px;
+        margin-bottom: 8px;
         word-break: break-word;
     }
 
     .np-avalistas {
-        margin: 6px 0;
-        border-top: 1px dotted #cbd5e1;
-        border-bottom: 1px dotted #cbd5e1;
-        padding: 5px 0;
+        margin-top: 10px;
     }
     .np-avalistas-titulo {
-        font-size: 10px;
+        font-size: 11px;
         font-weight: bold;
-        text-transform: uppercase;
-        margin-bottom: 4px;
-        color: #374151;
+        margin-bottom: 8px;
     }
-    .np-avalista-item { margin-bottom: 6px; }
-    .np-avalista-item:last-child { margin-bottom: 0; }
+    .np-avalistas-grid {
+        display: grid;
+        gap: 4px 24px;
+    }
+    .np-avalista-col .np-linha-single {
+        margin-bottom: 6px;
+    }
 
     .np-assinatura-linha {
         text-align: center;
-        margin: 12px 0 6px 0;
+        margin: 16px 0 2px 0;
         font-size: 9.8px;
     }
     .np-linha-assinatura {
         border-top: 1px solid #111827;
-        width: 230px;
-        margin: 0 auto 4px auto;
+        margin: 0 auto 1px auto;
+    }
+    .np-assinatura-emitente {
+        width: 100%;
+    }
+    .np-assinatura-avalista {
+        width: 100%;
     }
 
     .np-texto {
         font-size: 9.8px;
         text-align: justify;
         line-height: 1.35;
-        margin-top: 6px;
+        margin: 6px 0 8px 0;
     }
 
     /* ===== IMPRESSÃO ===== */
@@ -404,18 +440,18 @@
             border-radius: 0;
         }
 
-        #resultadoImpressao[data-modo="0"] .nota:nth-child(3n) {
+        .folha-a4 {
+            width: auto;
+            max-width: none;
+            height: 273mm;
+            margin: 0;
+            box-shadow: none;
             page-break-after: always;
+            page-break-inside: avoid;
         }
-        #resultadoImpressao[data-modo="1"] .nota:nth-child(2n),
-        #resultadoImpressao[data-modo="2"] .nota:nth-child(2n) {
-            page-break-after: always;
+        .folha-a4:last-child {
+            page-break-after: auto;
         }
-        #resultadoImpressao .nota:last-child {
-            page-break-after: auto !important;
-        }
-
-        .nota { border-bottom: 1px dashed #9ca3af; }
     }
 
     @media (max-width: 600px) {
@@ -753,7 +789,7 @@
     }
 
     /* ===== GERAÇÃO DAS NOTAS ===== */
-    function gerarNotaHTML(idx, total, dataVenc, valor, avalistas, credorNome, credorDoc, devedorNome, devedorDoc, devedorEndereco, cidadeUF, dataEmissaoStr, fimDaFolha) {
+    function gerarNotaHTML(idx, total, dataVenc, valor, avalistas, credorNome, credorDoc, devedorNome, devedorDoc, devedorEndereco, cidadeUF, dataEmissaoStr) {
         const numeroFormatado = 'Nº #' + idx + '/' + String(total).padStart(3, '0') + '#';
         const vencStr = String(dataVenc.getDate()).padStart(2, '0') + ' de ' + MESES[dataVenc.getMonth() + 1] + ' de ' + dataVenc.getFullYear();
 
@@ -763,31 +799,36 @@
         const valorExt = valorPorExtenso(valor).toUpperCase();
         const docCredorNums = credorDoc.replace(/\D/g, "");
         const rotuloDocCredor = docCredorNums.length === 14 ? 'CNPJ' : 'CPF';
+        const rotuloDocDevedor = devedorDoc.replace(/\D/g, "").length === 14 ? 'CNPJ' : 'CPF';
 
         let avalistaHTML = "";
         if (avalistas.length > 0) {
-            avalistaHTML = '<div class="np-avalistas"><div class="np-avalistas-titulo">Avalista(s)</div>';
+            avalistaHTML = '<div class="np-avalistas"><div class="np-avalistas-titulo">Avalista(s)</div>' +
+                '<div class="np-avalistas-grid" style="grid-template-columns: repeat(' + avalistas.length + ', 1fr);">';
             avalistas.forEach(function (av) {
                 avalistaHTML += '' +
-                    '<div class="np-avalista-item">' +
-                    '<div class="np-linha"><span><strong>Nome:</strong> ' + av.nome + '</span><span><strong>CPF/CNPJ:</strong> ' + av.doc + '</span></div>' +
-                    '<div class="np-assinatura-linha"><div class="np-linha-assinatura"></div><span>Assinatura do Avalista</span></div>' +
+                    '<div class="np-avalista-col">' +
+                    '<div class="np-linha-single">Nome: <strong>' + av.nome + '</strong></div>' +
+                    '<div class="np-linha-single">CPF: <strong>' + av.doc + '</strong></div>' +
+                    '<div class="np-assinatura-linha"><div class="np-linha-assinatura np-assinatura-avalista"></div><span>Assinatura do Avalista</span></div>' +
                     '</div>';
             });
-            avalistaHTML += '</div>';
+            avalistaHTML += '</div></div>';
         }
 
         return '' +
-            '<div class="nota' + (fimDaFolha ? ' fim-folha' : '') + '">' +
-            '<div class="np-cabecalho"><span class="np-titulo">NOTA PROMISSÓRIA</span><span>' + numeroFormatado + ' &nbsp; Vencimento: ' + vencStr + '</span></div>' +
+            '<div class="nota">' +
+            '<div class="np-cabecalho">' +
+                '<div class="np-cab-esq"><span class="np-titulo">NOTA PROMISSÓRIA</span><span class="np-numero">' + numeroFormatado + '</span></div>' +
+                '<div class="np-vencimento">Vencimento: <strong>' + vencStr + '</strong></div>' +
+            '</div>' +
             '<div class="np-valor">R$ ' + valor.toFixed(2).replace('.', ',') + '</div>' +
-            '<div class="np-linha"><span>Local de pagamento: ' + cidadeUF + '</span><span>Data da Emissão: ' + dataEmissaoStr + '</span></div>' +
+            '<p class="np-texto">No dia <strong>' + diaExt + '</strong> de <strong>' + mesExt + '</strong> de <strong>' + anoExt + '</strong> pagaremos por esta única via de <strong>NOTA PROMISSÓRIA</strong> a <strong>' + credorNome + '</strong> ' + rotuloDocCredor + ' <strong>' + credorDoc + '</strong> ou á sua ordem a quantia de <strong>' + valorExt + '</strong> em moeda corrente desse país</p>' +
+            '<div class="np-linha"><span>Local de pagamento: <strong>' + cidadeUF + '</strong></span><span>Data da Emissão: <strong>' + dataEmissaoStr + '</strong></span></div>' +
+            '<div class="np-linha-single">Nome do Emitente: <strong>' + devedorNome + '</strong></div>' +
+            '<div class="np-linha-single">' + rotuloDocDevedor + ': <strong>' + devedorDoc + '</strong> Endereço: <strong>' + devedorEndereco + '</strong></div>' +
             avalistaHTML +
-            '<div class="np-linha-single"><strong>Nome do Emitente:</strong> ' + devedorNome + '</div>' +
-            '<div class="np-linha-single"><strong>' + (devedorDoc.replace(/\D/g, "").length === 14 ? 'CNPJ' : 'CPF') + ':</strong> ' + devedorDoc + '</div>' +
-            '<div class="np-linha-single"><strong>Endereço:</strong> ' + devedorEndereco + '</div>' +
-            '<div class="np-assinatura-linha"><div class="np-linha-assinatura"></div><span>Assinatura do Emitente</span></div>' +
-            '<p class="np-texto">No dia ' + diaExt + ' de ' + mesExt + ' de ' + anoExt + ' pagaremos por esta única via de NOTA PROMISSÓRIA a ' + credorNome + ' ' + rotuloDocCredor + ' ' + credorDoc + ' ou à sua ordem a quantia de ' + valorExt + ' em moeda corrente desse país.</p>' +
+            '<div class="np-assinatura-linha"><div class="np-linha-assinatura np-assinatura-emitente"></div><span>Assinatura do Emitente</span></div>' +
             '</div>';
     }
 
@@ -820,13 +861,18 @@
         let dataVenc = new Date(document.getElementById('dataVencimento').value + 'T00:00:00');
 
         const groupSize = modo === '0' ? 3 : 2;
-        let htmlFinal = "";
+        const notasHTML = [];
 
         for (let i = 1; i <= total; i++) {
             if (i > 1) dataVenc.setMonth(dataVenc.getMonth() + 1);
+            notasHTML.push(gerarNotaHTML(i, total, new Date(dataVenc), valor, avalistas, credorNome, credorDoc, devedorNome, devedorDoc, devedorEndereco, cidadeUF, dataEmissaoStr));
+        }
 
-            const ultimaDaFolha = (i % groupSize === 0) && (i < total);
-            htmlFinal += gerarNotaHTML(i, total, new Date(dataVenc), valor, avalistas, credorNome, credorDoc, devedorNome, devedorDoc, devedorEndereco, cidadeUF, dataEmissaoStr, ultimaDaFolha);
+        let htmlFinal = "";
+        const corteHTML = '<div class="np-corte"><div class="np-corte-linha"></div><span class="np-corte-icone">✂</span><span>Recorte aqui para protesto</span><span class="np-corte-icone">✂</span><div class="np-corte-linha"></div></div>';
+        for (let i = 0; i < notasHTML.length; i += groupSize) {
+            const grupo = notasHTML.slice(i, i + groupSize);
+            htmlFinal += '<div class="folha-a4">' + grupo.join(corteHTML) + '</div>';
         }
 
         const container = document.getElementById('resultadoImpressao');
