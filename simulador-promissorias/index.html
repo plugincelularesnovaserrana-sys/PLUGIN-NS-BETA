@@ -626,44 +626,8 @@
         <p class="subtitle">Gere múltiplas notas promissórias prontas para impressão em A4</p>
     </header>
 
-    <div class="hist-config-box" id="histConfigBox">
-        <div class="hist-config-header" onclick="toggleHistConfig()">
-            <span>🗄️ Histórico de Notas (registro completo)</span>
-            <span class="hist-config-seta">▾</span>
-        </div>
-        <div class="hist-config-body">
-            <p class="hist-config-desc">
-                Toda nota gerada é salva automaticamente num histórico (arquivo no repositório do GitHub) e fica
-                disponível para consulta e download a qualquer momento. O Token de acesso já vem preenchido abaixo
-                (configurado direto no arquivo) — <strong>não compartilhe esta página com terceiros</strong> enquanto
-                o repositório for público, pois o Token concede acesso de escrita a ele.
-            </p>
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="histToken">GitHub Token (Personal Access Token)</label>
-                    <input type="password" id="histToken" placeholder="ghp_...">
-                </div>
-                <div class="form-group">
-                    <label for="histOwner">Usuário do GitHub</label>
-                    <input type="text" id="histOwner" value="plugincelularesnovaserrana-sys">
-                </div>
-                <div class="form-group">
-                    <label for="histRepo">Repositório</label>
-                    <input type="text" id="histRepo" value="PLUGIN-NS-BETA">
-                </div>
-                <div class="form-group" style="justify-content: flex-end;">
-                    <label class="hist-remember">
-                        <input type="checkbox" id="histLembrar" onchange="salvarConfigSessao()">
-                        Lembrar neste navegador (sobrescreve o token padrão do arquivo)
-                    </label>
-                </div>
-            </div>
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                <button type="button" class="btn-secundario" style="margin-top:0; flex:1;" onclick="verHistorico()">📜 Ver Histórico Completo</button>
-            </div>
-        
-            <div id="histStatusConfig" class="hist-status"></div>
-        </div>
+    <div style="text-align:right; margin-bottom: 15px;">
+        <button type="button" class="btn-secundario" style="width:auto; display:inline-block; padding:10px 22px; margin-top:0;" onclick="verHistorico()">📜 Ver Histórico</button>
     </div>
 
     <form id="geradorForm" onsubmit="gerarNotas(event)">
@@ -775,8 +739,7 @@
         </div>
         <input type="text" id="histBusca" class="hist-busca" placeholder="🔍 Buscar por devedor, credor ou valor..." oninput="renderHistorico()">
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin: 12px 22px 0 22px;">
-            <button type="button" class="btn-secundario" style="margin-top:0; flex:1;" onclick="baixarHistoricoJSON()">⬇️ Baixar JSON</button>
-            <button type="button" class="btn-secundario" style="margin-top:0; flex:1;" onclick="baixarHistoricoCSV()">⬇️ Baixar CSV (Excel)</button>
+            <button type="button" class="btn-secundario" style="margin-top:0; flex:1;" onclick="imprimirRegistrosHistorico(histFiltradosAtual)">🖨️ Imprimir Todos os Listados</button>
         </div>
         <div class="hist-modal-body" id="histModalBody">
             <p class="hist-vazio">Carregando...</p>
@@ -789,7 +752,6 @@
         const hoje = new Date();
         const proximoMes = new Date(hoje.getFullYear(), hoje.getMonth() + 1, hoje.getDate());
         document.getElementById('dataVencimento').value = proximoMes.toISOString().split('T')[0];
-        restaurarConfigSessao();
     };
 
     const MESES = ["", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
@@ -803,7 +765,8 @@
        permissão apenas de "Contents: Read and write", e troque-o assim
        que o repositório se tornar privado.
        =================================================================== */
-    const HIST_GH_TOKEN_PADRAO = "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";
+    const HIST_GH_TOKEN_PADRAO = "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
+";
     const HIST_GH_OWNER_PADRAO = "plugincelularesnovaserrana-sys";
     const HIST_GH_REPO_PADRAO = "PLUGIN-NS-BETA";
 
@@ -816,43 +779,15 @@
     let histDadosCache = [];
 
     function toggleHistConfig() {
-        document.getElementById('histConfigBox').classList.toggle('aberto');
-    }
-
-    function salvarConfigSessao() {
-        const lembrar = document.getElementById('histLembrar').checked;
-        if (lembrar) {
-            sessionStorage.setItem('histGhToken', document.getElementById('histToken').value.trim());
-            sessionStorage.setItem('histGhOwner', document.getElementById('histOwner').value.trim());
-            sessionStorage.setItem('histGhRepo', document.getElementById('histRepo').value.trim());
-            sessionStorage.setItem('histGhLembrar', '1');
-        } else {
-            sessionStorage.removeItem('histGhToken');
-            sessionStorage.removeItem('histGhOwner');
-            sessionStorage.removeItem('histGhRepo');
-            sessionStorage.removeItem('histGhLembrar');
-        }
-    }
-
-    function restaurarConfigSessao() {
-        if (sessionStorage.getItem('histGhLembrar') === '1') {
-            document.getElementById('histToken').value = sessionStorage.getItem('histGhToken') || '';
-            document.getElementById('histOwner').value = sessionStorage.getItem('histGhOwner') || document.getElementById('histOwner').value;
-            document.getElementById('histRepo').value = sessionStorage.getItem('histGhRepo') || document.getElementById('histRepo').value;
-            document.getElementById('histLembrar').checked = true;
-        } else {
-            // Sem preferência salva neste navegador: usa a configuração padrão embutida no arquivo
-            document.getElementById('histToken').value = HIST_GH_TOKEN_PADRAO;
-            document.getElementById('histOwner').value = HIST_GH_OWNER_PADRAO;
-            document.getElementById('histRepo').value = HIST_GH_REPO_PADRAO;
-        }
+        // painel de configuração não é mais exibido na tela; token/usuário/repositório
+        // ficam definidos direto nas constantes HIST_GH_*_PADRAO acima.
     }
 
     function getHistConfig() {
         return {
-            token: document.getElementById('histToken').value.trim(),
-            owner: document.getElementById('histOwner').value.trim(),
-            repo: document.getElementById('histRepo').value.trim()
+            token: HIST_GH_TOKEN_PADRAO.trim(),
+            owner: HIST_GH_OWNER_PADRAO.trim(),
+            repo: HIST_GH_REPO_PADRAO.trim()
         };
     }
 
@@ -911,8 +846,9 @@
         const cfg = getHistConfig();
         limparHistStatus('histStatusResultado');
 
-        if (!cfg.token || !cfg.owner || !cfg.repo || cfg.token === 'COLE_AQUI_SEU_TOKEN_ghp_...') {
-            return; // histórico não configurado (token padrão ainda não foi substituído): gera e imprime normalmente, sem salvar
+        if (!cfg.token || !cfg.owner || !cfg.repo || cfg.token === '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
+') {
+            return; // histórico não configurado (edite HIST_GH_TOKEN_PADRAO no arquivo): gera e imprime normalmente, sem salvar
         }
 
         setHistStatus('histStatusResultado', 'loading', '🗄️ Salvando notas no histórico...');
@@ -944,7 +880,13 @@
 
             setHistStatus('histStatusResultado', 'sucesso', `✅ ${registros.length} nota(s) salva(s) no histórico. Total de registros: ${dadosFinal.length}.`);
         } catch (err) {
-            setHistStatus('histStatusResultado', 'erro', '⚠️ Notas geradas normalmente, mas não foi possível salvar no histórico: ' + err.message);
+            let dica = err.message;
+            if (/bad credentials/i.test(err.message)) {
+                dica = 'Token inválido ou expirado. Gere um novo token no GitHub e substitua o valor de HIST_GH_TOKEN_PADRAO no arquivo.';
+            } else if (/404/.test(err.message) || /not found/i.test(err.message)) {
+                dica = 'Repositório ou caminho não encontrado. Confira HIST_GH_OWNER_PADRAO e HIST_GH_REPO_PADRAO no arquivo.';
+            }
+            setHistStatus('histStatusResultado', 'erro', '⚠️ Notas geradas normalmente, mas não foi possível salvar no histórico: ' + dica);
         }
     }
 
@@ -975,6 +917,8 @@
         }
     }
 
+    let histFiltradosAtual = [];
+
     function renderHistorico() {
         const termo = document.getElementById('histBusca').value.toLowerCase().trim();
         const body = document.getElementById('histModalBody');
@@ -985,17 +929,18 @@
                    (r.credorNome || '').toLowerCase().includes(termo) ||
                    (r.valor !== undefined && String(r.valor).includes(termo));
         });
+        histFiltradosAtual = filtrados;
 
         if (filtrados.length === 0) {
-            body.innerHTML = '<p class="hist-vazio">Nenhum registro encontrado nos últimos 30 dias.</p>';
+            body.innerHTML = '<p class="hist-vazio">Nenhum registro encontrado.</p>';
             return;
         }
 
         let html = '<table class="hist-tabela"><thead><tr>' +
-            '<th>Gerada em</th><th>Nº</th><th>Devedor</th><th>Credor</th><th>Valor</th><th>Vencimento</th>' +
+            '<th>Gerada em</th><th>Nº</th><th>Devedor</th><th>Credor</th><th>Valor</th><th>Vencimento</th><th>Ação</th>' +
             '</tr></thead><tbody>';
 
-        filtrados.forEach(r => {
+        filtrados.forEach((r, i) => {
             const geradaEm = new Date(r.dataGeracao).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
             const venc = r.vencimento ? new Date(r.vencimento + 'T00:00:00').toLocaleDateString('pt-BR') : '-';
             const valorFmt = 'R$ ' + Number(r.valor || 0).toFixed(2).replace('.', ',');
@@ -1006,6 +951,7 @@
                 '<td>' + (r.credorNome || '-') + '</td>' +
                 '<td>' + valorFmt + '</td>' +
                 '<td>' + venc + '</td>' +
+                '<td><button type="button" class="btn-secundario" style="width:auto; margin-top:0; padding:5px 12px; font-size:11px;" onclick="imprimirRegistrosHistorico([histFiltradosAtual[' + i + ']])">🖨️ Imprimir</button></td>' +
                 '</tr>';
         });
 
@@ -1013,44 +959,41 @@
         body.innerHTML = html;
     }
 
-    function baixarArquivo(conteudo, nomeArquivo, tipoMime) {
-        const blob = new Blob([conteudo], { type: tipoMime });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = nomeArquivo;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+    // Reconstrói o HTML de uma nota promissória a partir de um registro salvo no histórico
+    function construirNotaHTMLDeRegistro(registro) {
+        const partes = String(registro.numero || '1/1').split('/');
+        const idx = parseInt(partes[0], 10) || 1;
+        const total = parseInt(partes[1], 10) || 1;
+        const dataVenc = new Date((registro.vencimento || new Date().toISOString().split('T')[0]) + 'T00:00:00');
+        const dataEmissaoStr = new Date(registro.dataGeracao).toLocaleDateString('pt-BR');
+
+        return gerarNotaHTML(
+            idx, total, dataVenc, Number(registro.valor) || 0, registro.avalistas || [],
+            registro.credorNome || '', registro.credorDoc || '',
+            registro.devedorNome || '', registro.devedorDoc || '', registro.devedorEndereco || '',
+            registro.pagavel || '', dataEmissaoStr
+        );
     }
 
-    function baixarHistoricoJSON() {
-        if (!histDadosCache.length) { alert('Nenhum dado carregado para baixar.'); return; }
-        const dataStr = new Date().toISOString().split('T')[0];
-        baixarArquivo(JSON.stringify(histDadosCache, null, 2), `historico_notas_${dataStr}.json`, 'application/json');
-    }
-
-    function baixarHistoricoCSV() {
-        if (!histDadosCache.length) { alert('Nenhum dado carregado para baixar.'); return; }
-        const colunas = ['dataGeracao', 'numero', 'devedorNome', 'devedorDoc', 'devedorEndereco', 'credorNome', 'credorDoc', 'valor', 'vencimento', 'pagavel'];
-        const cabecalho = ['Gerada em', 'Numero', 'Devedor', 'Doc Devedor', 'Endereco Devedor', 'Credor', 'Doc Credor', 'Valor', 'Vencimento', 'Pagavel em'];
-
-        function escaparCSV(v) {
-            v = (v === undefined || v === null) ? '' : String(v);
-            if (v.includes(';') || v.includes('"') || v.includes('\n')) {
-                v = '"' + v.replace(/"/g, '""') + '"';
-            }
-            return v;
+    // Reimprime uma ou mais notas salvas no histórico (sem precisar preencher o formulário de novo)
+    function imprimirRegistrosHistorico(registros) {
+        if (!registros || registros.length === 0) {
+            alert('Nenhum registro para imprimir.');
+            return;
         }
 
-        let linhas = [cabecalho.join(';')];
-        histDadosCache.forEach(r => {
-            linhas.push(colunas.map(c => escaparCSV(r[c])).join(';'));
-        });
+        const groupSize = (registros[0].avalistas && registros[0].avalistas.length > 0) ? 2 : 3;
+        const notasHTML = registros.map(construirNotaHTMLDeRegistro);
+        const htmlFinal = montarFolhasHTML(notasHTML, groupSize);
 
-        const dataStr = new Date().toISOString().split('T')[0];
-        baixarArquivo('\uFEFF' + linhas.join('\n'), `historico_notas_${dataStr}.csv`, 'text/csv;charset=utf-8');
+        const container = document.getElementById('resultadoImpressao');
+        container.setAttribute('data-modo', groupSize === 3 ? '0' : '1');
+        container.innerHTML = htmlFinal;
+
+        document.getElementById('resultsSection').style.display = 'block';
+        fecharHistorico();
+        document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => window.print(), 300);
     }
 
     /* ===== ALTERNAR BLOCOS DE AVALISTA ===== */
@@ -1261,6 +1204,29 @@
     }
 
     /* ===== GERAÇÃO DAS NOTAS ===== */
+    const NP_CORTE_HTML = '<div class="np-corte"><div class="np-corte-linha"></div><span class="np-corte-icone">✂</span><span>Recorte aqui</span><span class="np-corte-icone">✂</span><div class="np-corte-linha"></div></div>';
+    const NP_CORTE_VAZIO_HTML = '<div class="np-corte nota-vazia"><div class="np-corte-linha"></div><span class="np-corte-icone">✂</span><span>Recorte aqui</span><span class="np-corte-icone">✂</span><div class="np-corte-linha"></div></div>';
+    const NP_NOTA_VAZIA_HTML = '<div class="nota nota-vazia"></div>';
+
+    function montarFolhasHTML(notasHTMLArray, groupSize) {
+        let htmlFinal = "";
+        for (let i = 0; i < notasHTMLArray.length; i += groupSize) {
+            const grupo = notasHTMLArray.slice(i, i + groupSize);
+            let conteudoFolha = grupo.join(NP_CORTE_HTML);
+
+            // Se a última folha ficou incompleta, completa com preenchedores
+            // invisíveis (nota + corte) até atingir o groupSize padrão, para
+            // que as notas reais mantenham a mesma altura das demais páginas.
+            const faltantes = groupSize - grupo.length;
+            for (let f = 0; f < faltantes; f++) {
+                conteudoFolha += NP_CORTE_VAZIO_HTML + NP_NOTA_VAZIA_HTML;
+            }
+
+            htmlFinal += '<div class="folha-a4">' + conteudoFolha + '</div>';
+        }
+        return htmlFinal;
+    }
+
     function gerarNotaHTML(idx, total, dataVenc, valor, avalistas, credorNome, credorDoc, devedorNome, devedorDoc, devedorEndereco, cidadeUF, dataEmissaoStr) {
         const numeroFormatado = 'Nº #' + idx + '/' + String(total).padStart(3, '0') + '#';
         const vencStr = String(dataVenc.getDate()).padStart(2, '0') + ' de ' + MESES[dataVenc.getMonth() + 1] + ' de ' + dataVenc.getFullYear();
@@ -1340,25 +1306,7 @@
             notasHTML.push(gerarNotaHTML(i, total, new Date(dataVenc), valor, avalistas, credorNome, credorDoc, devedorNome, devedorDoc, devedorEndereco, cidadeUF, dataEmissaoStr));
         }
 
-        let htmlFinal = "";
-        const corteHTML = '<div class="np-corte"><div class="np-corte-linha"></div><span class="np-corte-icone">✂</span><span>Recorte aqui</span><span class="np-corte-icone">✂</span><div class="np-corte-linha"></div></div>';
-        const corteVazioHTML = '<div class="np-corte nota-vazia"><div class="np-corte-linha"></div><span class="np-corte-icone">✂</span><span>Recorte aqui</span><span class="np-corte-icone">✂</span><div class="np-corte-linha"></div></div>';
-        const notaVaziaHTML = '<div class="nota nota-vazia"></div>';
-
-        for (let i = 0; i < notasHTML.length; i += groupSize) {
-            const grupo = notasHTML.slice(i, i + groupSize);
-            let conteudoFolha = grupo.join(corteHTML);
-
-            // Se a última folha ficou incompleta, completa com preenchedores
-            // invisíveis (nota + corte) até atingir o groupSize padrão, para
-            // que as notas reais mantenham a mesma altura das demais páginas.
-            const faltantes = groupSize - grupo.length;
-            for (let f = 0; f < faltantes; f++) {
-                conteudoFolha += corteVazioHTML + notaVaziaHTML;
-            }
-
-            htmlFinal += '<div class="folha-a4">' + conteudoFolha + '</div>';
-        }
+        const htmlFinal = montarFolhasHTML(notasHTML, groupSize);
 
         const container = document.getElementById('resultadoImpressao');
         container.setAttribute('data-modo', modo);
