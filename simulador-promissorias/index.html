@@ -246,152 +246,6 @@
         box-shadow: 0 4px 12px rgba(69, 243, 255, 0.3);
     }
 
-    /* ===== HISTÓRICO (GITHUB) ===== */
-    .hist-config-box {
-        margin-bottom: 25px;
-        background: rgba(15, 23, 42, 0.4);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 6px;
-        overflow: hidden;
-    }
-    .hist-config-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 14px 20px;
-        cursor: pointer;
-        font-size: 13px;
-        font-weight: 700;
-        color: #45F3FF;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        user-select: none;
-    }
-    .hist-config-header:hover { background: rgba(69, 243, 255, 0.04); }
-    .hist-config-seta { transition: transform 0.2s ease; }
-    .hist-config-box.aberto .hist-config-seta { transform: rotate(180deg); }
-    .hist-config-body {
-        display: none;
-        padding: 0 20px 20px 20px;
-    }
-    .hist-config-box.aberto .hist-config-body { display: block; }
-    .hist-config-desc {
-        font-size: 12px;
-        color: #94a3b8;
-        line-height: 1.5;
-        margin-bottom: 16px;
-    }
-    .hist-config-body .form-grid {
-        background: transparent;
-        border: none;
-        padding: 0;
-        margin-bottom: 12px;
-    }
-    .hist-remember {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 12.5px;
-        color: #cbd5e1;
-        text-transform: none;
-        letter-spacing: 0;
-        font-weight: 500;
-        cursor: pointer;
-    }
-    .hist-remember input { width: 16px; height: 16px; accent-color: #45F3FF; }
-    .hist-status {
-        margin-top: 10px;
-        font-size: 12.5px;
-        font-weight: 600;
-        padding: 10px 14px;
-        border-radius: 4px;
-        display: none;
-    }
-    .hist-status.mostrar { display: block; }
-    .hist-status.loading { background: rgba(69, 243, 255, 0.08); color: #45F3FF; border: 1px solid rgba(69, 243, 255, 0.3); }
-    .hist-status.sucesso { background: rgba(34, 197, 94, 0.08); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3); }
-    .hist-status.erro { background: rgba(239, 68, 68, 0.08); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
-
-    .hist-modal-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.65);
-        z-index: 1000;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-    }
-    .hist-modal-overlay.aberto { display: flex; }
-    .hist-modal {
-        background: #11141a;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        width: 100%;
-        max-width: 900px;
-        max-height: 85vh;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-    }
-    .hist-modal-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 18px 22px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .hist-modal-header h3 {
-        color: #45F3FF;
-        font-size: 16px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-    .hist-modal-fechar {
-        background: transparent;
-        border: none;
-        color: #94a3b8;
-        font-size: 18px;
-        cursor: pointer;
-        line-height: 1;
-    }
-    .hist-modal-fechar:hover { color: #fff; }
-    .hist-busca {
-        margin: 16px 22px 0 22px;
-        padding: 10px 14px;
-        background: #0B0C10;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-        color: #fff;
-        font-size: 13px;
-    }
-    .hist-busca:focus { outline: none; border-color: #45F3FF; }
-    .hist-modal-body {
-        padding: 16px 22px 22px 22px;
-        overflow-y: auto;
-    }
-    .hist-tabela { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-    .hist-tabela th {
-        text-align: left;
-        color: #45F3FF;
-        padding: 8px 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        text-transform: uppercase;
-        font-size: 10.5px;
-        letter-spacing: 0.4px;
-        position: sticky;
-        top: 0;
-        background: #11141a;
-    }
-    .hist-tabela td {
-        padding: 8px 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        color: #e2e8f0;
-        vertical-align: top;
-    }
-    .hist-tabela tr:hover td { background: rgba(69, 243, 255, 0.03); }
-    .hist-vazio { text-align: center; color: #8a8d93; font-style: italic; padding: 30px; }
-
     .results-section {
         margin-top: 30px;
         display: none;
@@ -626,10 +480,6 @@
         <p class="subtitle">Gere múltiplas notas promissórias prontas para impressão em A4</p>
     </header>
 
-    <div style="text-align:right; margin-bottom: 15px;">
-        <button type="button" class="btn-secundario" style="width:auto; display:inline-block; padding:10px 22px; margin-top:0;" onclick="verHistorico()">📜 Ver Histórico</button>
-    </div>
-
     <form id="geradorForm" onsubmit="gerarNotas(event)">
         <div class="form-grid">
 
@@ -726,24 +576,7 @@
     <div id="resultsSection" class="results-section">
         <h2>Notas Promissórias Geradas</h2>
         <button class="btn-print" onclick="window.print()">🖨️ Imprimir Notas Promissórias</button>
-        <div id="histStatusResultado" class="hist-status"></div>
         <div id="resultadoImpressao" data-modo="0"></div>
-    </div>
-</div>
-
-<div class="hist-modal-overlay" id="histModalOverlay" onclick="if(event.target===this) fecharHistorico()">
-    <div class="hist-modal">
-        <div class="hist-modal-header">
-            <h3>Histórico de Notas (registro completo)</h3>
-            <button type="button" class="hist-modal-fechar" onclick="fecharHistorico()">✕</button>
-        </div>
-        <input type="text" id="histBusca" class="hist-busca" placeholder="🔍 Buscar por devedor, credor ou valor..." oninput="renderHistorico()">
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin: 12px 22px 0 22px;">
-            <button type="button" class="btn-secundario" style="margin-top:0; flex:1;" onclick="imprimirRegistrosHistorico(histFiltradosAtual)">🖨️ Imprimir Todos os Listados</button>
-        </div>
-        <div class="hist-modal-body" id="histModalBody">
-            <p class="hist-vazio">Carregando...</p>
-        </div>
     </div>
 </div>
 
@@ -755,246 +588,6 @@
     };
 
     const MESES = ["", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-
-    /* ===================================================================
-       CONFIGURAÇÃO PADRÃO DO GITHUB (envio automático do histórico)
-       ATENÇÃO: troque HIST_GH_TOKEN_PADRAO pelo seu Personal Access Token
-       antes de publicar. Enquanto o repositório for público, qualquer
-       pessoa que abrir o código-fonte desta página consegue ver esse
-       token. Use um Fine-grained Token só deste repositório, com
-       permissão apenas de "Contents: Read and write", e troque-o assim
-       que o repositório se tornar privado.
-       =================================================================== */
-    const HIST_GH_TOKEN_PADRAO = "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
-";
-    const HIST_GH_OWNER_PADRAO = "plugincelularesnovaserrana-sys";
-    const HIST_GH_REPO_PADRAO = "PLUGIN-NS-BETA";
-
-    /* ===================================================================
-       HISTÓRICO DE NOTAS (salvo como JSON no repositório do GitHub)
-       - Guarda automaticamente cada nota gerada.
-       - A cada gravação, remove do arquivo os registros com mais de 30 dias.
-       =================================================================== */
-    const HIST_FILE_PATH = "simulador-promissorias/historico_notas.json";
-    let histDadosCache = [];
-
-    function toggleHistConfig() {
-        // painel de configuração não é mais exibido na tela; token/usuário/repositório
-        // ficam definidos direto nas constantes HIST_GH_*_PADRAO acima.
-    }
-
-    function getHistConfig() {
-        return {
-            token: HIST_GH_TOKEN_PADRAO.trim(),
-            owner: HIST_GH_OWNER_PADRAO.trim(),
-            repo: HIST_GH_REPO_PADRAO.trim()
-        };
-    }
-
-    function setHistStatus(elId, tipo, texto) {
-        const el = document.getElementById(elId);
-        if (!el) return;
-        el.className = 'hist-status mostrar ' + tipo;
-        el.textContent = texto;
-    }
-
-    function limparHistStatus(elId) {
-        const el = document.getElementById(elId);
-        if (!el) return;
-        el.className = 'hist-status';
-        el.textContent = '';
-    }
-
-    // Codifica/decodifica Base64 preservando acentuação (UTF-8)
-    function base64Encode(str) {
-        return btoa(unescape(encodeURIComponent(str)));
-    }
-    function base64Decode(str) {
-        return decodeURIComponent(escape(atob(str)));
-    }
-
-    function dentroDaRetencao(dataISO) {
-        return true; // histórico completo: sem expurgo automático
-    }
-
-    // Busca o arquivo de histórico existente no GitHub (sha + dados já filtrados a 30 dias)
-    async function buscarHistoricoRemoto(cfg) {
-        const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${HIST_FILE_PATH}`;
-        const headers = cfg.token ? { "Authorization": `token ${cfg.token}` } : {};
-        const res = await fetch(url, { headers });
-
-        if (res.status === 404) {
-            return { sha: null, dados: [] };
-        }
-        if (!res.ok) {
-            const err = await res.json().catch(() => ({}));
-            throw new Error(err.message || ('Erro HTTP ' + res.status));
-        }
-        const fileData = await res.json();
-        let dados = [];
-        try {
-            dados = JSON.parse(base64Decode(fileData.content));
-            if (!Array.isArray(dados)) dados = [];
-        } catch (e) {
-            dados = [];
-        }
-        return { sha: fileData.sha, dados: dados.filter(d => dentroDaRetencao(d.dataGeracao)) };
-    }
-
-    // Salva um lote de notas recém-geradas no histórico (não bloqueia a impressão em caso de erro)
-    async function salvarHistorico(registros) {
-        const cfg = getHistConfig();
-        limparHistStatus('histStatusResultado');
-
-        if (!cfg.token || !cfg.owner || !cfg.repo || cfg.token === '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
-') {
-            return; // histórico não configurado (edite HIST_GH_TOKEN_PADRAO no arquivo): gera e imprime normalmente, sem salvar
-        }
-
-        setHistStatus('histStatusResultado', 'loading', '🗄️ Salvando notas no histórico...');
-
-        try {
-            const atual = await buscarHistoricoRemoto(cfg);
-            const dadosFinal = atual.dados.concat(registros);
-
-            const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${HIST_FILE_PATH}`;
-            const contentBase64 = base64Encode(JSON.stringify(dadosFinal, null, 2));
-
-            const putRes = await fetch(url, {
-                method: "PUT",
-                headers: {
-                    "Authorization": `token ${cfg.token}`,
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    message: "Histórico de notas promissórias - " + new Date().toISOString(),
-                    content: contentBase64,
-                    sha: atual.sha || undefined
-                })
-            });
-
-            if (!putRes.ok) {
-                const errData = await putRes.json().catch(() => ({}));
-                throw new Error(errData.message || ('Erro HTTP ' + putRes.status));
-            }
-
-            setHistStatus('histStatusResultado', 'sucesso', `✅ ${registros.length} nota(s) salva(s) no histórico. Total de registros: ${dadosFinal.length}.`);
-        } catch (err) {
-            let dica = err.message;
-            if (/bad credentials/i.test(err.message)) {
-                dica = 'Token inválido ou expirado. Gere um novo token no GitHub e substitua o valor de HIST_GH_TOKEN_PADRAO no arquivo.';
-            } else if (/404/.test(err.message) || /not found/i.test(err.message)) {
-                dica = 'Repositório ou caminho não encontrado. Confira HIST_GH_OWNER_PADRAO e HIST_GH_REPO_PADRAO no arquivo.';
-            }
-            setHistStatus('histStatusResultado', 'erro', '⚠️ Notas geradas normalmente, mas não foi possível salvar no histórico: ' + dica);
-        }
-    }
-
-    function abrirModalHistorico() {
-        document.getElementById('histModalOverlay').classList.add('aberto');
-    }
-    function fecharHistorico() {
-        document.getElementById('histModalOverlay').classList.remove('aberto');
-    }
-
-    async function verHistorico() {
-        const cfg = getHistConfig();
-        abrirModalHistorico();
-        document.getElementById('histBusca').value = '';
-        document.getElementById('histModalBody').innerHTML = '<p class="hist-vazio">Carregando...</p>';
-
-        if (!cfg.owner || !cfg.repo) {
-            document.getElementById('histModalBody').innerHTML = '<p class="hist-vazio">Preencha ao menos Usuário e Repositório para consultar o histórico.</p>';
-            return;
-        }
-
-        try {
-            const atual = await buscarHistoricoRemoto(cfg);
-            histDadosCache = atual.dados.sort((a, b) => new Date(b.dataGeracao) - new Date(a.dataGeracao));
-            renderHistorico();
-        } catch (err) {
-            document.getElementById('histModalBody').innerHTML = '<p class="hist-vazio">Erro ao carregar histórico: ' + err.message + '</p>';
-        }
-    }
-
-    let histFiltradosAtual = [];
-
-    function renderHistorico() {
-        const termo = document.getElementById('histBusca').value.toLowerCase().trim();
-        const body = document.getElementById('histModalBody');
-
-        const filtrados = histDadosCache.filter(r => {
-            if (!termo) return true;
-            return (r.devedorNome || '').toLowerCase().includes(termo) ||
-                   (r.credorNome || '').toLowerCase().includes(termo) ||
-                   (r.valor !== undefined && String(r.valor).includes(termo));
-        });
-        histFiltradosAtual = filtrados;
-
-        if (filtrados.length === 0) {
-            body.innerHTML = '<p class="hist-vazio">Nenhum registro encontrado.</p>';
-            return;
-        }
-
-        let html = '<table class="hist-tabela"><thead><tr>' +
-            '<th>Gerada em</th><th>Nº</th><th>Devedor</th><th>Credor</th><th>Valor</th><th>Vencimento</th><th>Ação</th>' +
-            '</tr></thead><tbody>';
-
-        filtrados.forEach((r, i) => {
-            const geradaEm = new Date(r.dataGeracao).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
-            const venc = r.vencimento ? new Date(r.vencimento + 'T00:00:00').toLocaleDateString('pt-BR') : '-';
-            const valorFmt = 'R$ ' + Number(r.valor || 0).toFixed(2).replace('.', ',');
-            html += '<tr>' +
-                '<td>' + geradaEm + '</td>' +
-                '<td>' + (r.numero || '-') + '</td>' +
-                '<td>' + (r.devedorNome || '-') + '</td>' +
-                '<td>' + (r.credorNome || '-') + '</td>' +
-                '<td>' + valorFmt + '</td>' +
-                '<td>' + venc + '</td>' +
-                '<td><button type="button" class="btn-secundario" style="width:auto; margin-top:0; padding:5px 12px; font-size:11px;" onclick="imprimirRegistrosHistorico([histFiltradosAtual[' + i + ']])">🖨️ Imprimir</button></td>' +
-                '</tr>';
-        });
-
-        html += '</tbody></table>';
-        body.innerHTML = html;
-    }
-
-    // Reconstrói o HTML de uma nota promissória a partir de um registro salvo no histórico
-    function construirNotaHTMLDeRegistro(registro) {
-        const partes = String(registro.numero || '1/1').split('/');
-        const idx = parseInt(partes[0], 10) || 1;
-        const total = parseInt(partes[1], 10) || 1;
-        const dataVenc = new Date((registro.vencimento || new Date().toISOString().split('T')[0]) + 'T00:00:00');
-        const dataEmissaoStr = new Date(registro.dataGeracao).toLocaleDateString('pt-BR');
-
-        return gerarNotaHTML(
-            idx, total, dataVenc, Number(registro.valor) || 0, registro.avalistas || [],
-            registro.credorNome || '', registro.credorDoc || '',
-            registro.devedorNome || '', registro.devedorDoc || '', registro.devedorEndereco || '',
-            registro.pagavel || '', dataEmissaoStr
-        );
-    }
-
-    // Reimprime uma ou mais notas salvas no histórico (sem precisar preencher o formulário de novo)
-    function imprimirRegistrosHistorico(registros) {
-        if (!registros || registros.length === 0) {
-            alert('Nenhum registro para imprimir.');
-            return;
-        }
-
-        const groupSize = (registros[0].avalistas && registros[0].avalistas.length > 0) ? 2 : 3;
-        const notasHTML = registros.map(construirNotaHTMLDeRegistro);
-        const htmlFinal = montarFolhasHTML(notasHTML, groupSize);
-
-        const container = document.getElementById('resultadoImpressao');
-        container.setAttribute('data-modo', groupSize === 3 ? '0' : '1');
-        container.innerHTML = htmlFinal;
-
-        document.getElementById('resultsSection').style.display = 'block';
-        fecharHistorico();
-        document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => window.print(), 300);
-    }
 
     /* ===== ALTERNAR BLOCOS DE AVALISTA ===== */
     function alternarAvalistas(modo) {
@@ -1204,29 +797,6 @@
     }
 
     /* ===== GERAÇÃO DAS NOTAS ===== */
-    const NP_CORTE_HTML = '<div class="np-corte"><div class="np-corte-linha"></div><span class="np-corte-icone">✂</span><span>Recorte aqui</span><span class="np-corte-icone">✂</span><div class="np-corte-linha"></div></div>';
-    const NP_CORTE_VAZIO_HTML = '<div class="np-corte nota-vazia"><div class="np-corte-linha"></div><span class="np-corte-icone">✂</span><span>Recorte aqui</span><span class="np-corte-icone">✂</span><div class="np-corte-linha"></div></div>';
-    const NP_NOTA_VAZIA_HTML = '<div class="nota nota-vazia"></div>';
-
-    function montarFolhasHTML(notasHTMLArray, groupSize) {
-        let htmlFinal = "";
-        for (let i = 0; i < notasHTMLArray.length; i += groupSize) {
-            const grupo = notasHTMLArray.slice(i, i + groupSize);
-            let conteudoFolha = grupo.join(NP_CORTE_HTML);
-
-            // Se a última folha ficou incompleta, completa com preenchedores
-            // invisíveis (nota + corte) até atingir o groupSize padrão, para
-            // que as notas reais mantenham a mesma altura das demais páginas.
-            const faltantes = groupSize - grupo.length;
-            for (let f = 0; f < faltantes; f++) {
-                conteudoFolha += NP_CORTE_VAZIO_HTML + NP_NOTA_VAZIA_HTML;
-            }
-
-            htmlFinal += '<div class="folha-a4">' + conteudoFolha + '</div>';
-        }
-        return htmlFinal;
-    }
-
     function gerarNotaHTML(idx, total, dataVenc, valor, avalistas, credorNome, credorDoc, devedorNome, devedorDoc, devedorEndereco, cidadeUF, dataEmissaoStr) {
         const numeroFormatado = 'Nº #' + idx + '/' + String(total).padStart(3, '0') + '#';
         const vencStr = String(dataVenc.getDate()).padStart(2, '0') + ' de ' + MESES[dataVenc.getMonth() + 1] + ' de ' + dataVenc.getFullYear();
@@ -1306,7 +876,25 @@
             notasHTML.push(gerarNotaHTML(i, total, new Date(dataVenc), valor, avalistas, credorNome, credorDoc, devedorNome, devedorDoc, devedorEndereco, cidadeUF, dataEmissaoStr));
         }
 
-        const htmlFinal = montarFolhasHTML(notasHTML, groupSize);
+        let htmlFinal = "";
+        const corteHTML = '<div class="np-corte"><div class="np-corte-linha"></div><span class="np-corte-icone">✂</span><span>Recorte aqui</span><span class="np-corte-icone">✂</span><div class="np-corte-linha"></div></div>';
+        const corteVazioHTML = '<div class="np-corte nota-vazia"><div class="np-corte-linha"></div><span class="np-corte-icone">✂</span><span>Recorte aqui</span><span class="np-corte-icone">✂</span><div class="np-corte-linha"></div></div>';
+        const notaVaziaHTML = '<div class="nota nota-vazia"></div>';
+
+        for (let i = 0; i < notasHTML.length; i += groupSize) {
+            const grupo = notasHTML.slice(i, i + groupSize);
+            let conteudoFolha = grupo.join(corteHTML);
+
+            // Se a última folha ficou incompleta, completa com preenchedores
+            // invisíveis (nota + corte) até atingir o groupSize padrão, para
+            // que as notas reais mantenham a mesma altura das demais páginas.
+            const faltantes = groupSize - grupo.length;
+            for (let f = 0; f < faltantes; f++) {
+                conteudoFolha += corteVazioHTML + notaVaziaHTML;
+            }
+
+            htmlFinal += '<div class="folha-a4">' + conteudoFolha + '</div>';
+        }
 
         const container = document.getElementById('resultadoImpressao');
         container.setAttribute('data-modo', modo);
@@ -1314,33 +902,6 @@
 
         document.getElementById('resultsSection').style.display = 'block';
         document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
-
-        /* ===== Monta os registros deste lote e tenta salvar no histórico ===== */
-        const loteId = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2));
-        const agoraISO = new Date().toISOString();
-        const registrosHistorico = [];
-        let dataVencRegistro = new Date(document.getElementById('dataVencimento').value + 'T00:00:00');
-
-        for (let i = 1; i <= total; i++) {
-            if (i > 1) dataVencRegistro.setMonth(dataVencRegistro.getMonth() + 1);
-            registrosHistorico.push({
-                id: loteId + '-' + i,
-                loteId: loteId,
-                dataGeracao: agoraISO,
-                numero: i + '/' + total,
-                vencimento: dataVencRegistro.toISOString().split('T')[0],
-                valor: valor,
-                pagavel: cidadeUF,
-                credorNome: credorNome,
-                credorDoc: credorDoc,
-                devedorNome: devedorNome,
-                devedorDoc: devedorDoc,
-                devedorEndereco: devedorEndereco,
-                avalistas: avalistas
-            });
-        }
-
-        salvarHistorico(registrosHistorico);
     }
 </script>
 
