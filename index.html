@@ -260,6 +260,36 @@
         @media (prefers-reduced-motion: reduce){
             *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
         }
+
+        /* Ícone discreto de acesso administrativo */
+        .admin-gear {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            color: rgba(69, 243, 255, 0.35);
+            text-decoration: none;
+            transition: all 0.25s var(--ease);
+            z-index: 999;
+        }
+
+        .admin-gear svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .admin-gear:hover {
+            color: var(--cyan);
+            border-color: var(--cyan-dim);
+            background: rgba(69, 243, 255, 0.08);
+        }
     </style>
 </head>
 <body>
@@ -500,6 +530,14 @@
 
         </div>
     </div>
+
+    <!-- Acesso administrativo discreto -->
+    <a href="admin/index.html" class="admin-gear" title="Administrativo" aria-label="Administrativo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+    </a>
 
 </body>
 </html>
