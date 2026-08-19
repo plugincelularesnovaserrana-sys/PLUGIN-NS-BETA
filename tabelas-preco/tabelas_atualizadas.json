@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-08-18T12:19:43.009Z",
+  "ultima_atualizacao": "2026-08-19T12:47:45.897Z",
   "tabela_android_acessorios_diversos": {
     "categorias": [
       {
@@ -13,10 +13,19 @@
             ]
           },
           {
+            "modelo": "Galaxy A07 128GB",
+            "preco": "R$ 975,00",
+            "cores": [
+              "* preto",
+              "verde"
+            ]
+          },
+          {
             "modelo": "Galaxy A07 256GB",
             "preco": "R$ 1.118,00",
             "cores": [
-              "* Preto"
+              "* Preto",
+              "verde"
             ]
           },
           {
@@ -31,13 +40,6 @@
             "preco": "R$ 1.248,00",
             "cores": [
               "* preto"
-            ]
-          },
-          {
-            "modelo": "Galaxy A17 256/8GB",
-            "preco": "R$ 1.677,00",
-            "cores": [
-              "*   cinza"
             ]
           },
           {
@@ -56,18 +58,18 @@
             ]
           },
           {
-            "modelo": "Galaxy S25 FE 256/8GB",
-            "preco": "R$ 4.095,00",
-            "cores": [
-              "* Preto"
-            ]
-          },
-          {
             "modelo": "Galaxy S25 Ultra 256/8GB",
-            "preco": "R$ 7.800,00",
+            "preco": "R$ 6.500,00",
             "cores": [
               "* Prata",
               "Cinza e Preto"
+            ]
+          },
+          {
+            "modelo": "Galaxy S26 Ultra 256/8GB",
+            "preco": "R$ 7.800,00",
+            "cores": [
+              "* Azul"
             ]
           },
           {
@@ -197,8 +199,7 @@
             "modelo": "Note 15 Pro NFC 256/8GB",
             "preco": "R$ 2.093,00",
             "cores": [
-              "* azul",
-              "Titanium e preto"
+              "* Titanium e preto  ••••••"
             ]
           },
           {
@@ -254,7 +255,7 @@
             "preco": "R$ 1.287,00",
             "cores": [
               "*  verde",
-              "roxo e preto"
+              "roxo"
             ]
           },
           {
@@ -298,8 +299,7 @@
             "modelo": "Poco X8 Pro Max 5G NFC 512/12GB",
             "preco": "R$ 4.036,50",
             "cores": [
-              "* preto",
-              "laranja e branco"
+              "* preto"
             ]
           }
         ]
@@ -308,8 +308,15 @@
         "nome": "REALME",
         "itens": [
           {
+            "modelo": "Realme Note 60x 64/4GB",
+            "preco": "R$ 780,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
             "modelo": "Realme Note 60x 128/4GB",
-            "preco": "R$ 897,00",
+            "preco": "R$ 903,50",
             "cores": [
               "*  verde e preto"
             ]
@@ -431,8 +438,7 @@
             "modelo": "Redmi 15C NFC 128/4+4GB",
             "preco": "R$ 1.079,00",
             "cores": [
-              "* verde",
-              "preto"
+              "* verde"
             ]
           },
           {
@@ -464,7 +470,7 @@
         "itens": [
           {
             "modelo": "Spark Go 1s 64/3GB",
-            "preco": "R$ 702,00",
+            "preco": "R$ 689,00",
             "cores": [
               "*  Preto",
               "verde e branco"
@@ -1414,6 +1420,13 @@
             "cores": [
               "*"
             ]
+          },
+          {
+            "modelo": "PS5 Pro Digital 2TR",
+            "preco": "R$ 8.580,00",
+            "cores": [
+              "*"
+            ]
           }
         ]
       },
@@ -1926,6 +1939,13 @@
         "nome": "APPLE WATCH",
         "itens": [
           {
+            "modelo": "Série Se 3° 40mm GPS",
+            "preco": "R$ 3.900,00",
+            "cores": [
+              "* Midnight"
+            ]
+          },
+          {
             "modelo": "Série Se 3° 44mm GPS",
             "preco": "R$ 3.900,00",
             "cores": [
@@ -1934,17 +1954,38 @@
             ]
           },
           {
+            "modelo": "Série Se 3° 44mm GPS + CEL",
+            "preco": "R$ 4.520,00",
+            "cores": [
+              "* Midnight"
+            ]
+          },
+          {
             "modelo": "Série 11 42mm GPS Alumínio",
             "preco": "R$ 4.420,00",
             "cores": [
-              "* Rose e Space"
+              "* Rose e Space Gray"
+            ]
+          },
+          {
+            "modelo": "Série 11 42mm GPS Alumínio",
+            "preco": "R$ 4.500,00",
+            "cores": [
+              "* Silver"
             ]
           },
           {
             "modelo": "Série 11 46mm GPS Alumínio  M/L",
             "preco": "R$ 4.780,00",
             "cores": [
-              "*   Rose"
+              "*   Rose e Space Gray"
+            ]
+          },
+          {
+            "modelo": "Série 11 46mm GPS Alumínio  M/L",
+            "preco": "R$ 4.900,00",
+            "cores": [
+              "*  Black"
             ]
           }
         ]
@@ -1956,8 +1997,21 @@
             "modelo": "iPad 11 128GB",
             "preco": "R$ 3.560,00",
             "cores": [
-              "*   Blue",
-              "Pink e Silver"
+              "*   Blue e Silver"
+            ]
+          },
+          {
+            "modelo": "iPad Air M4 11” 128GB",
+            "preco": "R$ 5.720,00",
+            "cores": [
+              "* Blue"
+            ]
+          },
+          {
+            "modelo": "iPad Air M4 11” 256GB",
+            "preco": "R$ 6.360,00",
+            "cores": [
+              "* Space Gray"
             ]
           },
           {
@@ -1968,8 +2022,15 @@
             ]
           },
           {
+            "modelo": "iPad Pro M5 11\" 256GB",
+            "preco": "R$ 8.700,00",
+            "cores": [
+              "* Silver"
+            ]
+          },
+          {
             "modelo": "iPad Pro M5 13\" 256GB",
-            "preco": "R$ 9.400,00",
+            "preco": "R$ 10.600,00",
             "cores": [
               "* Black"
             ]
@@ -1987,36 +2048,40 @@
             ]
           },
           {
-            "modelo": "iPhone 17 256GB",
-            "preco": "R$ 5.780,00",
+            "modelo": "iPhone 16 128GB",
+            "preco": "R$ 5.400,00",
             "cores": [
-              "*  Sage"
+              "*  Blue",
+              "Pink",
+              "Black e White"
             ]
           },
           {
             "modelo": "iPhone 17 256GB",
-            "preco": "R$ 5.940,00",
+            "preco": "R$ 5.700,00",
             "cores": [
-              "*  Black e Purple"
+              "*  Sage e Blue"
+            ]
+          },
+          {
+            "modelo": "iPhone 17 256GB",
+            "preco": "R$ 5.890,00",
+            "cores": [
+              "*  Black",
+              "White e Purple"
             ]
           },
           {
             "modelo": "iPhone 17 Pro 256GB",
             "preco": "R$ 7.700,00",
             "cores": [
-              "* Orange"
-            ]
-          },
-          {
-            "modelo": "iPhone 17 Pro 256GB",
-            "preco": "R$ 7.800,00",
-            "cores": [
-              "* Blue"
+              "* Orange",
+              "Blue e Silver"
             ]
           },
           {
             "modelo": "iPhone 17 Pro Max 256GB",
-            "preco": "R$ 8.190,00",
+            "preco": "R$ 8.100,00",
             "cores": [
               "* Orange",
               "Blue e Silver"
@@ -2043,14 +2108,14 @@
         "itens": [
           {
             "modelo": "Mac Mini M4 256/16GB 2024",
-            "preco": "R$ 6.150,00",
+            "preco": "R$ 6.100,00",
             "cores": [
               "* Silver"
             ]
           },
           {
             "modelo": "Mac Mini M4 512/16GB 2024",
-            "preco": "R$ 7.390,00",
+            "preco": "R$ 7.000,00",
             "cores": [
               "* Silver"
             ]
@@ -2059,14 +2124,7 @@
             "modelo": "Mac Neo 256/8GB 13.6\"",
             "preco": "R$ 5.800,00",
             "cores": [
-              "* Citrus e indingo"
-            ]
-          },
-          {
-            "modelo": "Mac Neo 256/8GB 13.6\"",
-            "preco": "R$ 5.900,00",
-            "cores": [
-              "* Silver"
+              "* Blush e indingo"
             ]
           },
           {
@@ -2427,14 +2485,14 @@
             ]
           },
           {
-            "modelo": "iphone 11 Pro Max 64GB",
+            "modelo": "IPHONE 11 Pro Max 64GB",
             "preco": "R$ 2.550,00",
             "cores": [
               "*"
             ]
           },
           {
-            "modelo": "iphone 11 Pro Max 256GB",
+            "modelo": "IPHONE 11 Pro Max 256GB",
             "preco": "R$ 2.700,00",
             "cores": [
               "*"
