@@ -583,8 +583,8 @@
             </div>
 
             <div class="form-group">
-                <label for="qtdParcelas">Quantidade de Parcelas (Máx. 15x)</label>
-                <input type="number" id="qtdParcelas" required min="1" max="15">
+                <label for="qtdParcelas">Quantidade de Parcelas (Máx. 36x)</label>
+                <input type="number" id="qtdParcelas" required min="1" max="36">
             </div>
 
             <div class="form-group">
@@ -792,8 +792,8 @@
         const iofPct = parseFloat(document.getElementById('iof').value) / 100;
         const taxaBoleto = parseFloat(document.getElementById('taxaBoleto').value);
 
-        if (nParcelas > 15) {
-            alert("O limite de parcelamento máximo é de até 15x!");
+        if (nParcelas > 36) {
+            alert("O limite de parcelamento máximo é de até 36x!");
             return;
         }
 
@@ -867,7 +867,7 @@
     function numeroParaExtenso(valor) {
         const unidades = ["", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove"];
         const dezenas10 = ["dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"];
-        const dezenas = ["", "", "vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa"];
+        const dezenas = ["", "", "vinte", "trinta", "quarenta", "quinquenta", "sessenta", "setenta", "oitenta", "noventa"];
         const centenas = ["", "cem", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"];
 
         function converteGrupo(n) {
