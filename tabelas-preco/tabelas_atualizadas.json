@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-10-22T14:46:00.564Z",
+  "ultima_atualizacao": "2026-11-04T15:46:33.619Z",
   "tabela_android_acessorios_diversos": {
     "categorias": [
       {
@@ -7,120 +7,51 @@
         "itens": [
           {
             "modelo": "Galaxy A07 5G 128/4GB",
-            "preco": "R$ 1.144,00",
+            "preco": "R$ 1.170,00",
             "cores": [
               "* preto"
             ]
           },
           {
-            "modelo": "Galaxy A08 128/4GB",
-            "preco": "R$ 1.105,00",
+            "modelo": "Galaxy A07 256/8GB",
+            "preco": "R$ 1.170,00",
             "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "Galaxy A17 NFC 256/8GB",
-            "preco": "R$ 1.560,00",
-            "cores": [
-              "* preto"
-            ]
-          },
-          {
-            "modelo": "Galaxy A36 5G NFC 128/6GB",
-            "preco": "R$ 1.885,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "Galaxy A57 5G NFC 256/8GB",
-            "preco": "R$ 2.847,00",
-            "cores": [
-              "* cinza"
+              "* verde"
             ]
           },
           {
             "modelo": "Galaxy S25 FE 5G NFC 256/8GB",
-            "preco": "R$ 3.965,00",
+            "preco": "R$ 3.991,00",
             "cores": [
-              "*"
+              "* azul"
             ]
           },
           {
             "modelo": "Galaxy S26 FE 5G NFC 256/12GB",
-            "preco": "R$ 4.420,00",
+            "preco": "R$ 4.446,00",
             "cores": [
-              "*"
+              "* preto"
             ]
           },
           {
             "modelo": "Galaxy S25 Ultra 5G NFC 256/12GB",
-            "preco": "R$ 6.500,00",
-            "cores": [
-              "* Preto e Prata"
-            ]
-          },
-          {
-            "modelo": "Galaxy S25 Ultra 5G NFC 512/12GB",
-            "preco": "R$ 7.280,00",
+            "preco": "R$ 6.526,00",
             "cores": [
               "* Preto"
             ]
           },
           {
             "modelo": "Galaxy S26 Ultra 5G NFC 256/12GB",
-            "preco": "R$ 7.930,00",
+            "preco": "R$ 7.956,00",
             "cores": [
               "* Preto"
-            ]
-          },
-          {
-            "modelo": "Galaxy S26 Ultra 5G NFC 512/12GB",
-            "preco": "R$ 9.230,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "Galaxy S26 Ultra 5G NFC 1TB",
-            "preco": "R$ 10.660,00",
-            "cores": [
-              "*"
             ]
           },
           {
             "modelo": "Galaxy Z Flip 8 256/12GB",
             "preco": "R$ 7.540,00",
             "cores": [
-              "* Rosa e Preto"
-            ]
-          }
-        ]
-      },
-      {
-        "nome": "GO",
-        "itens": [
-          {
-            "modelo": "GO MI -25 64/4GB",
-            "preco": "R$ 806,00",
-            "cores": [
-              "* prata",
-              "gold e azul"
-            ]
-          },
-          {
-            "modelo": "Go Mi 25 Plus 128/6GB",
-            "preco": "R$ 936,00",
-            "cores": [
-              "* preto"
-            ]
-          },
-          {
-            "modelo": "GO MI -17 64/4GB",
-            "preco": "R$ 806,00",
-            "cores": [
-              "* laranja"
+              "* Rosa"
             ]
           }
         ]
@@ -130,7 +61,7 @@
         "itens": [
           {
             "modelo": "Hotwav A17 Pro Max 128/4+8GB +",
-            "preco": "R$ 812,50",
+            "preco": "R$ 838,50",
             "cores": [
               "*  preto",
               "silver",
@@ -139,11 +70,16 @@
           },
           {
             "modelo": "Hotwav A17 Pro Max 256/4+12GB",
-            "preco": "R$ 988,00",
+            "preco": "R$ 1.014,00",
             "cores": [
-              "* laranja",
-              "preto",
-              "silver"
+              "* preto e silver"
+            ]
+          },
+          {
+            "modelo": "Hotwav A18 Pro Max 128/6+10GB +",
+            "preco": "R$ 1.196,00",
+            "cores": [
+              "*  laranja"
             ]
           }
         ]
@@ -153,30 +89,30 @@
         "itens": [
           {
             "modelo": "Mi 17T 5G NFC 512/12GB",
-            "preco": "R$ 4.420,00",
+            "preco": "R$ 4.446,00",
             "cores": [
-              "* preto"
+              "* azul"
             ]
           },
           {
             "modelo": "Mi 17T Pro 5G NFC 512/12GB",
-            "preco": "R$ 5.492,50",
+            "preco": "R$ 5.518,50",
             "cores": [
-              "* preto"
+              "* azul"
             ]
           },
           {
             "modelo": "Mi 17 5G NFC 512/12GB  Slim",
-            "preco": "R$ 6.565,00",
+            "preco": "R$ 6.591,00",
             "cores": [
               "* preto"
             ]
           },
           {
             "modelo": "Mi 17 Ultra 5G NFC 512/12GB",
-            "preco": "R$ 10.400,00",
+            "preco": "R$ 10.426,00",
             "cores": [
-              "* verde"
+              "* verde e branco"
             ]
           }
         ]
@@ -186,44 +122,25 @@
         "itens": [
           {
             "modelo": "Moto G05 128/4GB",
-            "preco": "R$ 988,00",
+            "preco": "R$ 1.001,00",
             "cores": [
               "* verde"
             ]
           },
           {
-            "modelo": "Moto G06 64/4GB",
-            "preco": "R$ 845,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
             "modelo": "Moto G06 128/4GB",
-            "preco": "R$ 975,00",
+            "preco": "R$ 1.027,00",
             "cores": [
-              "*  Verde e laranja"
-            ]
-          },
-          {
-            "modelo": "Moto G35 5G NFC 128/4",
-            "preco": "R$ 1.196,00",
-            "cores": [
-              "*  verde"
-            ]
-          },
-          {
-            "modelo": "Moto G35 256/4GB 5G",
-            "preco": "R$ 1.339,00",
-            "cores": [
-              "* preto"
+              "* Azul",
+              "verde",
+              "laranja"
             ]
           },
           {
             "modelo": "Moto G17 Power 256/8GB",
-            "preco": "R$ 1.664,00",
+            "preco": "R$ 1.690,00",
             "cores": [
-              "* azul e marrom"
+              "* azul"
             ]
           }
         ]
@@ -232,67 +149,60 @@
         "nome": "MOTOROLA",
         "itens": [
           {
+            "modelo": "Motorola G15 128/4GB",
+            "preco": "R$ 1.092,00",
+            "cores": [
+              "* cinza"
+            ]
+          },
+          {
             "modelo": "Motorola G15 256/4GB",
-            "preco": "R$ 1.183,00",
+            "preco": "R$ 1.235,00",
             "cores": [
               "* verde"
             ]
           },
           {
             "modelo": "Motorola G17 128/4GB",
-            "preco": "R$ 1.261,00",
+            "preco": "R$ 1.313,00",
             "cores": [
               "* azul"
             ]
           },
           {
             "modelo": "Motorola G17 256/4GB",
-            "preco": "R$ 1.469,00",
+            "preco": "R$ 1.404,00",
             "cores": [
               "* azul"
             ]
           },
           {
             "modelo": "Motorola G56 256/8GB 5G",
-            "preco": "R$ 1.800,50",
+            "preco": "R$ 1.820,00",
             "cores": [
-              "* azul e cinza"
+              "* azul marinho"
             ]
           },
           {
             "modelo": "Motorola G67 256/4GB",
-            "preco": "R$ 1.794,00",
+            "preco": "R$ 1.833,00",
             "cores": [
               "* cinza"
             ]
           },
           {
             "modelo": "Motorola G77 256/8GB",
-            "preco": "R$ 1.898,00",
+            "preco": "R$ 1.937,00",
             "cores": [
               "* preto",
               "verde"
             ]
           },
           {
-            "modelo": "Motorola G86 Power 5G  256/8",
-            "preco": "R$ 1.950,00",
-            "cores": [
-              "* azul"
-            ]
-          },
-          {
-            "modelo": "Motorola G86 5G 256/8GB",
-            "preco": "R$ 1.976,00",
+            "modelo": "Motorola G86 5G Slim 256/8GB",
+            "preco": "R$ 2.015,00",
             "cores": [
               "* azul e pink"
-            ]
-          },
-          {
-            "modelo": "Motorola Signature 5G NFC 512/12+12GB",
-            "preco": "R$ 5.200,00",
-            "cores": [
-              "* preto"
             ]
           }
         ]
@@ -314,23 +224,21 @@
         "itens": [
           {
             "modelo": "Note 14 Pro+ 5G NFCe  512/12GB",
-            "preco": "R$ 2.600,00",
+            "preco": "R$ 2.626,00",
             "cores": [
-              "* roxo",
-              "azul",
-              "preto"
+              "* roxo e azul"
             ]
           },
           {
             "modelo": "Note 15 128/6GB NFC",
-            "preco": "R$ 1.521,00",
+            "preco": "R$ 1.547,00",
             "cores": [
               "* verde"
             ]
           },
           {
             "modelo": "Note 15 5G NFC 256/8GB Slim",
-            "preco": "R$ 2.067,00",
+            "preco": "R$ 2.093,00",
             "cores": [
               "* azul",
               "preto"
@@ -338,7 +246,7 @@
           },
           {
             "modelo": "Note 15 Pro NFC 256/8GB",
-            "preco": "R$ 2.080,00",
+            "preco": "R$ 2.145,00",
             "cores": [
               "* preto",
               "Titanium",
@@ -347,86 +255,100 @@
           },
           {
             "modelo": "Note 15 Pro NFC 512/12GB",
-            "preco": "R$ 2.366,00",
+            "preco": "R$ 2.392,00",
             "cores": [
-              "* preto"
+              "* preto",
+              "azul"
             ]
           },
           {
             "modelo": "Note 15 Pro 5G NFC 256/8GB",
-            "preco": "R$ 2.366,00",
+            "preco": "R$ 2.392,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "Note 15 Pro 5G NFC 512/12GB",
-            "preco": "R$ 2.795,00",
+            "preco": "R$ 2.821,00",
             "cores": [
-              "* preto"
+              "* Roxo"
             ]
           },
           {
             "modelo": "Note 15 Pro+ 5G NFC 256/8GB",
-            "preco": "R$ 2.665,00",
+            "preco": "R$ 2.691,00",
             "cores": [
-              "* marrom",
-              "preto"
+              "* azul e preto"
             ]
           },
           {
             "modelo": "Note 15 Pro+ 512/12GB",
-            "preco": "R$ 3.133,00",
+            "preco": "R$ 3.159,00",
             "cores": [
-              "* preto",
-              "marrom"
+              "* preto e azul"
             ]
           },
           {
             "modelo": "Note 17 128/4GB",
-            "preco": "R$ 1.540,50",
+            "preco": "R$ 1.560,00",
             "cores": [
               "* preto",
-              "roxo"
+              "roxo e azul"
             ]
           },
           {
             "modelo": "Note 17 128/6+6GB",
-            "preco": "R$ 1.638,00",
+            "preco": "R$ 1.664,00",
             "cores": [
               "* preto",
-              "roxo"
+              "roxo",
+              "azul"
             ]
           },
           {
             "modelo": "Note 17 256/6+6GB",
-            "preco": "R$ 1.755,00",
+            "preco": "R$ 1.781,00",
             "cores": [
               "* preto"
             ]
           },
           {
             "modelo": "Note 17 256/8+8GB",
-            "preco": "R$ 1.833,00",
+            "preco": "R$ 1.885,00",
             "cores": [
               "* preto",
               "roxo"
             ]
           },
           {
+            "modelo": "Note 17 5G 128/6GB",
+            "preco": "R$ 1.846,00",
+            "cores": [
+              "* preto",
+              "azul"
+            ]
+          },
+          {
+            "modelo": "Note 17 Pro 5G NFC 256/8GB",
+            "preco": "R$ 2.561,00",
+            "cores": [
+              "* preto",
+              "azul"
+            ]
+          },
+          {
             "modelo": "Note 17 Pro Max 5G NFC 256/8+8GB",
-            "preco": "R$ 3.185,00",
+            "preco": "R$ 3.211,00",
             "cores": [
               "*  verde"
             ]
           },
           {
             "modelo": "Note 17 Pro Max 5G NFC 512/8+8GB",
-            "preco": "R$ 3.510,00",
+            "preco": "R$ 3.536,00",
             "cores": [
-              "*  roxo",
-              "verde",
-              "cloud Blush"
+              "*  roxo e cloud Blush"
             ]
           }
         ]
@@ -435,56 +357,58 @@
         "nome": "POCO",
         "itens": [
           {
+            "modelo": "Poco C71 64/3GB",
+            "preco": "R$ 858,00",
+            "cores": [
+              "* preto",
+              "azul",
+              "Gold"
+            ]
+          },
+          {
             "modelo": "Poco C71 128/4GB",
-            "preco": "R$ 975,00",
+            "preco": "R$ 1.001,00",
             "cores": [
               "* dourado",
-              "preto"
+              "preto",
+              "azul"
             ]
           },
           {
-            "modelo": "Poco C81 Pro 256/4GB",
-            "preco": "R$ 1.248,00",
-            "cores": [
-              "*   verde"
-            ]
-          },
-          {
-            "modelo": "Poco C85 128/6GB",
-            "preco": "R$ 1.079,00",
-            "cores": [
-              "* preto e roxo"
-            ]
-          },
-          {
-            "modelo": "Poco C95 Pro NFC 128/6GB",
-            "preco": "R$ 1.430,00",
-            "cores": [
-              "* verde",
-              "preto"
-            ]
-          },
-          {
-            "modelo": "Poco C95 Pro NFC 256/8GB",
-            "preco": "R$ 1.716,00",
+            "modelo": "Poco C81 Pro 64/4GB",
+            "preco": "R$ 923,00",
             "cores": [
               "* preto",
               "verde"
             ]
           },
           {
-            "modelo": "Poco M8 5G NFC 512/8GB",
-            "preco": "R$ 2.184,00",
+            "modelo": "Poco C81 Pro 256/4GB",
+            "preco": "R$ 1.209,00",
             "cores": [
-              "* preto"
+              "*   verde",
+              "preto"
             ]
           },
           {
-            "modelo": "Poco M8s 5G NFC 128/6GB",
-            "preco": "R$ 1.495,00",
+            "modelo": "Poco C85 128/6GB",
+            "preco": "R$ 1.105,00",
             "cores": [
-              "* preto",
-              "branco"
+              "* preto e roxo"
+            ]
+          },
+          {
+            "modelo": "Poco C95 Pro 128/6GB",
+            "preco": "R$ 1.456,00",
+            "cores": [
+              "*  preto"
+            ]
+          },
+          {
+            "modelo": "Poco C95 Pro 256/8GB",
+            "preco": "R$ 1.742,00",
+            "cores": [
+              "* preto"
             ]
           },
           {
@@ -495,15 +419,8 @@
             ]
           },
           {
-            "modelo": "Poco X8 5G NFC 256/8GB",
-            "preco": "R$ 2.340,00",
-            "cores": [
-              "* preto"
-            ]
-          },
-          {
             "modelo": "Poco X8 Pro 5G NFC 256/8GB",
-            "preco": "R$ 2.886,00",
+            "preco": "R$ 3.029,00",
             "cores": [
               "* amarelo",
               "verde"
@@ -511,7 +428,7 @@
           },
           {
             "modelo": "Poco X8 Pro 5G NFC 256/8GB",
-            "preco": "R$ 2.925,00",
+            "preco": "R$ 3.055,00",
             "cores": [
               "*  branco",
               "preto"
@@ -519,9 +436,9 @@
           },
           {
             "modelo": "Poco X8 Pro 5G NFC 512/12GB",
-            "preco": "R$ 3.315,00",
+            "preco": "R$ 3.406,00",
             "cores": [
-              "* verde"
+              "* preto e verde"
             ]
           },
           {
@@ -532,8 +449,16 @@
             ]
           },
           {
+            "modelo": "Poco X8 Pro Max 5G NFC 256/12GB",
+            "preco": "R$ 3.796,00",
+            "cores": [
+              "* azul",
+              "branco"
+            ]
+          },
+          {
             "modelo": "Poco X8 Pro Max 5G NFC 512/12GB",
-            "preco": "R$ 4.030,00",
+            "preco": "R$ 4.218,50",
             "cores": [
               "* azul",
               "preto"
@@ -550,7 +475,7 @@
             "modelo": "Poco F8 Ultra 5G NFC 256/12GB",
             "preco": "R$ 5.837,00",
             "cores": [
-              "* preto"
+              "* preto e azul"
             ]
           },
           {
@@ -566,52 +491,23 @@
         "nome": "REALME",
         "itens": [
           {
-            "modelo": "Realme Note 60x 128/4GB",
-            "preco": "R$ 1.001,00",
-            "cores": [
-              "* verde",
-              "preto"
-            ]
-          },
-          {
             "modelo": "Realme Note 70 128/4GB",
-            "preco": "R$ 1.033,50",
+            "preco": "R$ 1.053,00",
             "cores": [
               "* gold"
             ]
           },
           {
-            "modelo": "Realme C71 NFC 128/4GB",
-            "preco": "R$ 1.092,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "Realme C71 NFC 256/8GB",
-            "preco": "R$ 1.300,00",
-            "cores": [
-              "* branco"
-            ]
-          },
-          {
             "modelo": "Realme C71 5G 128/6GB",
-            "preco": "R$ 1.345,50",
+            "preco": "R$ 1.378,00",
             "cores": [
               "* preto",
               "verde"
             ]
           },
           {
-            "modelo": "Realme C71 5G 256/8GB",
-            "preco": "R$ 1.469,00",
-            "cores": [
-              "*  Verde"
-            ]
-          },
-          {
             "modelo": "Realme C100i NFC 128/4GB",
-            "preco": "R$ 1.183,00",
+            "preco": "R$ 1.209,00",
             "cores": [
               "* Cinza",
               "roxo"
@@ -619,39 +515,51 @@
           },
           {
             "modelo": "Realme C100i NFC 256/4GB",
-            "preco": "R$ 1.495,00",
+            "preco": "R$ 1.534,00",
             "cores": [
-              "*"
+              "* cinza"
+            ]
+          },
+          {
+            "modelo": "Realme C100x 128/4GB",
+            "preco": "R$ 1.391,00",
+            "cores": [
+              "* azul e dourado"
             ]
           },
           {
             "modelo": "Realme C100x NFC 256/8GB",
-            "preco": "R$ 1.807,00",
+            "preco": "R$ 1.833,00",
             "cores": [
-              "* azul",
-              "gold"
+              "* azul e dourado"
             ]
           },
           {
             "modelo": "Realme C85 NFC 256/8GB",
-            "preco": "R$ 1.768,00",
+            "preco": "R$ 1.807,00",
             "cores": [
-              "* preto",
-              "azul"
+              "* preto e azul"
             ]
           },
           {
             "modelo": "Realme C85 NFC 5G 256/8GB",
-            "preco": "R$ 2.132,00",
+            "preco": "R$ 2.171,00",
             "cores": [
               "* verde e roxo"
             ]
           },
           {
             "modelo": "Realme C85 Pro NFC 256/8GB",
-            "preco": "R$ 1.768,00",
+            "preco": "R$ 1.833,00",
             "cores": [
-              "* roxo"
+              "* roxo e verde"
+            ]
+          },
+          {
+            "modelo": "Realme P4 Power 5G NFC 512/12GB",
+            "preco": "R$ 3.562,00",
+            "cores": [
+              "* silver"
             ]
           }
         ]
@@ -661,40 +569,30 @@
         "itens": [
           {
             "modelo": "Redmi A5 128/4GB",
-            "preco": "R$ 1.066,00",
+            "preco": "R$ 1.092,00",
             "cores": [
               "* preto",
-              "azul",
-              "verde",
-              "gold"
+              "azul e dourado"
             ]
           },
           {
-            "modelo": "Redmi A7 64/3GB ,",
-            "preco": "R$ 923,00",
+            "modelo": "Redmi A7 Pro 64/4GB",
+            "preco": "R$ 884,00",
+            "cores": [
+              "* azul e preto"
+            ]
+          },
+          {
+            "modelo": "Redmi A7 Pro 128/4GB",
+            "preco": "R$ 1.040,00",
             "cores": [
               "* preto",
               "azul"
             ]
           },
           {
-            "modelo": "Redmi A7 Pro 64/4GB",
-            "preco": "R$ 838,50",
-            "cores": [
-              "* azul",
-              "verde"
-            ]
-          },
-          {
-            "modelo": "Redmi A7 Pro 128/4GB",
-            "preco": "R$ 1.001,00",
-            "cores": [
-              "* preto"
-            ]
-          },
-          {
             "modelo": "Redmi 15C 128/4+4GB",
-            "preco": "R$ 1.040,00",
+            "preco": "R$ 1.092,00",
             "cores": [
               "* preto",
               "azul e verde"
@@ -702,43 +600,39 @@
           },
           {
             "modelo": "Redmi 15C 128/4+4GB NFC",
-            "preco": "R$ 1.105,00",
+            "preco": "R$ 1.131,00",
             "cores": [
               "*  verde",
               "preto"
             ]
           },
           {
-            "modelo": "Redmi 15C 256/8GB",
-            "preco": "R$ 1.248,00",
-            "cores": [
-              "*   verde",
-              "preto",
-              "azul"
-            ]
-          },
-          {
             "modelo": "Redmi 15 128/6+6GB",
-            "preco": "R$ 1.235,00",
+            "preco": "R$ 1.326,00",
             "cores": [
               "* roxo",
-              "preto",
-              "cinza"
+              "preto e cinza"
             ]
           },
           {
-            "modelo": "Redmi 15 256/8+8GB",
-            "preco": "R$ 1.469,00",
+            "modelo": "Redmi 17 128/4GB NFC",
+            "preco": "R$ 1.339,00",
             "cores": [
-              "*  Roxo",
-              "preto"
+              "* preto e azul"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "nome": "SPARK",
+        "itens": [
           {
-            "modelo": "Redmi 17 256/6GB",
-            "preco": "R$ 1.638,00",
+            "modelo": "Spark Go S1 64/3GB",
+            "preco": "R$ 728,00",
             "cores": [
-              "*  roxo"
+              "* verde",
+              "Gold",
+              "branco"
             ]
           }
         ]
@@ -817,6 +711,20 @@
           {
             "modelo": "Alexa Echo Spot",
             "preco": "R$ 689,00",
+            "cores": [
+              "* preto"
+            ]
+          },
+          {
+            "modelo": "Alexa Echo Show 5 3°G",
+            "preco": "R$ 819,00",
+            "cores": [
+              "* preta"
+            ]
+          },
+          {
+            "modelo": "Alexa Echo Show 8",
+            "preco": "R$ 1.690,00",
             "cores": [
               "* preto"
             ]
@@ -941,6 +849,18 @@
         ]
       },
       {
+        "nome": "FIRME",
+        "itens": [
+          {
+            "modelo": "Firme Stick TV HD",
+            "preco": "R$ 260,00",
+            "cores": [
+              "*"
+            ]
+          }
+        ]
+      },
+      {
         "nome": "FONE",
         "itens": [
           {
@@ -967,14 +887,6 @@
       {
         "nome": "HAYLOU",
         "itens": [
-          {
-            "modelo": "Haylou Whatch S6",
-            "preco": "R$ 169,00",
-            "cores": [
-              "* preto",
-              "silver"
-            ]
-          },
           {
             "modelo": "Haylou Solar Neo",
             "preco": "R$ 208,00",
@@ -1036,7 +948,7 @@
         "itens": [
           {
             "modelo": "Htv 9",
-            "preco": "R$ 1.339,00",
+            "preco": "R$ 1.391,00",
             "cores": [
               "*"
             ]
@@ -1100,25 +1012,11 @@
             ]
           },
           {
-            "modelo": "JBL Grip",
-            "preco": "R$ 585,00",
-            "cores": [
-              "* preta"
-            ]
-          },
-          {
-            "modelo": "JBL FLIP 7",
-            "preco": "R$ 754,00",
-            "cores": [
-              "*  Vermelha",
-              "Rosa"
-            ]
-          },
-          {
             "modelo": "JBL Charge 6",
             "preco": "R$ 1.131,00",
             "cores": [
-              "* preta"
+              "* preta",
+              "camuflada e vermelha"
             ]
           },
           {
@@ -1133,7 +1031,6 @@
             "preco": "R$ 3.185,00",
             "cores": [
               "* branca",
-              "azul",
               "camuflada"
             ]
           },
@@ -1141,7 +1038,7 @@
             "modelo": "JBL Boombox 4",
             "preco": "R$ 3.237,00",
             "cores": [
-              "* Marrom e Laranja"
+              "*  Laranja"
             ]
           },
           {
@@ -1161,13 +1058,6 @@
           {
             "modelo": "JBL Party Box 130",
             "preco": "R$ 3.380,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "JBL Party Box Encore 2 c/mic",
-            "preco": "R$ 2.600,00",
             "cores": [
               "*"
             ]
@@ -1217,13 +1107,6 @@
           {
             "modelo": "Fone JBL 530 C FIO",
             "preco": "R$ 208,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "Fone JBL 520",
-            "preco": "R$ 286,00",
             "cores": [
               "*"
             ]
@@ -1297,13 +1180,6 @@
             ]
           },
           {
-            "modelo": "Manete Ps5 Edição Limitada GHOST",
-            "preco": "R$ 585,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
             "modelo": "Manete XBOX",
             "preco": "R$ 507,00",
             "cores": [
@@ -1322,13 +1198,6 @@
       {
         "nome": "MI",
         "itens": [
-          {
-            "modelo": "Mi Band 10",
-            "preco": "R$ 312,00",
-            "cores": [
-              "* Black"
-            ]
-          },
           {
             "modelo": "Mi Band 11 Active",
             "preco": "R$ 325,00",
@@ -1527,6 +1396,18 @@
         ]
       },
       {
+        "nome": "MULTILASER",
+        "itens": [
+          {
+            "modelo": "Tablet Multilaser M7 32G 3G",
+            "preco": "R$ 351,00",
+            "cores": [
+              "*"
+            ]
+          }
+        ]
+      },
+      {
         "nome": "NINTENDO",
         "itens": [
           {
@@ -1551,25 +1432,44 @@
         ]
       },
       {
+        "nome": "PATINETE",
+        "itens": [
+          {
+            "modelo": "Patinete elétrico",
+            "preco": "R$ 1.623,70",
+            "cores": [
+              "*"
+            ]
+          }
+        ]
+      },
+      {
         "nome": "PEN",
         "itens": [
           {
+            "modelo": "Pen SanDisk 16GB Z50",
+            "preco": "R$ 52,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
             "modelo": "Pen SanDisk 32GB Z50",
-            "preco": "R$ 71,50",
+            "preco": "R$ 54,60",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "Pen SanDisk 64GB Z50",
-            "preco": "R$ 91,00",
+            "preco": "R$ 65,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "Pen SanDisk 128GB Z50",
-            "preco": "R$ 123,50",
+            "preco": "R$ 97,50",
             "cores": [
               "*"
             ]
@@ -1604,21 +1504,33 @@
           },
           {
             "modelo": "Pen Multi 32GB",
-            "preco": "R$ 52,00",
+            "preco": "R$ 45,50",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "Pen Multi 64GB",
-            "preco": "R$ 84,50",
+            "preco": "R$ 58,50",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "Pen Multi 128GB",
-            "preco": "R$ 117,00",
+            "preco": "R$ 84,50",
+            "cores": [
+              "*"
+            ]
+          }
+        ]
+      },
+      {
+        "nome": "POCO",
+        "itens": [
+          {
+            "modelo": "Tablet Poco Pad M1 256/8GB",
+            "preco": "R$ 2.405,00",
             "cores": [
               "*"
             ]
@@ -1688,31 +1600,45 @@
         "nome": "REDMI",
         "itens": [
           {
+            "modelo": "Tablet Redmi Pad 2 124/4GB 9.7\"",
+            "preco": "R$ 1.495,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
             "modelo": "Tablet Redmi Pad 2 128/4GB",
-            "preco": "R$ 1.482,00",
+            "preco": "R$ 1.605,50",
             "cores": [
               "* cinza"
             ]
           },
           {
             "modelo": "Tablet Redmi Pad 2 128/4GB 4G",
-            "preco": "R$ 1.690,00",
+            "preco": "R$ 1.729,00",
             "cores": [
               "* cinza"
             ]
           },
           {
             "modelo": "Tablet Redmi Pad 2 256/8GB",
-            "preco": "R$ 1.755,00",
+            "preco": "R$ 1.794,00",
             "cores": [
               "* cinza"
             ]
           },
           {
-            "modelo": "Tablet Redmi Pad 2 Pro 256/8GB 13\"",
+            "modelo": "Tablet Redmi Pad 2 Pro 256/8GB",
             "preco": "R$ 2.574,00",
             "cores": [
-              "* cinza"
+              "*"
+            ]
+          },
+          {
+            "modelo": "Redmi Watch 5 Active",
+            "preco": "R$ 338,00",
+            "cores": [
+              "* preto"
             ]
           },
           {
@@ -1768,48 +1694,6 @@
             "cores": [
               "* preto"
             ]
-          },
-          {
-            "modelo": "Relógio Garmin Forerunner 965",
-            "preco": "R$ 4.290,00",
-            "cores": [
-              "* Preto"
-            ]
-          },
-          {
-            "modelo": "Relógio Garmin Forerunner 570 42mm",
-            "preco": "R$ 3.744,00",
-            "cores": [
-              "* Preto"
-            ]
-          },
-          {
-            "modelo": "Relógio Garmin Venu 4 41mm",
-            "preco": "R$ 4.069,00",
-            "cores": [
-              "* Preto"
-            ]
-          },
-          {
-            "modelo": "Relógio Garmin Venu 4 45mm",
-            "preco": "R$ 4.550,00",
-            "cores": [
-              "* Cinza"
-            ]
-          },
-          {
-            "modelo": "Relógio Garmin Fenix 7x Pro Amoled",
-            "preco": "R$ 5.460,00",
-            "cores": [
-              "* Preto"
-            ]
-          },
-          {
-            "modelo": "Relógio Garmin Fenix 8 51mm Amoled",
-            "preco": "R$ 7.969,00",
-            "cores": [
-              "* Preto"
-            ]
           }
         ]
       },
@@ -1843,6 +1727,13 @@
         "nome": "SAMSUNG",
         "itens": [
           {
+            "modelo": "Tablet Samsung 4G 64/4GB 7\"",
+            "preco": "R$ 1.365,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
             "modelo": "Tablet Samsung A11+ 128/6GB",
             "preco": "R$ 1.885,00",
             "cores": [
@@ -1857,24 +1748,10 @@
             ]
           },
           {
-            "modelo": "Tablet Samsung S10 LITE 256/8GB 11\" C/caneta e capa",
-            "preco": "R$ 3.185,00",
-            "cores": [
-              "* cinza"
-            ]
-          },
-          {
             "modelo": "Tablet Samsung S10 LITE 128/6GB 5G 11\" C/ caneta e capa",
             "preco": "R$ 3.185,00",
             "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "Tablet Samsung S10 LITE 256/8GB 5G 11\" C/caneta e capa",
-            "preco": "R$ 3.380,00",
-            "cores": [
-              "*"
+              "* cinza"
             ]
           },
           {
@@ -1930,22 +1807,8 @@
         "nome": "SSD",
         "itens": [
           {
-            "modelo": "SSD 240GB Kingston",
-            "preco": "R$ 663,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
             "modelo": "SSD 480GB Kingston",
             "preco": "R$ 871,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "SSD 960GB Kingston",
-            "preco": "R$ 1.235,00",
             "cores": [
               "*"
             ]
@@ -1978,7 +1841,7 @@
           },
           {
             "modelo": "Tablet  Kids PC 256/4GB",
-            "preco": "R$ 377,00",
+            "preco": "R$ 416,00",
             "cores": [
               "*"
             ]
@@ -1996,19 +1859,19 @@
             "cores": [
               "* cinza"
             ]
+          },
+          {
+            "modelo": "Tablet Mega 5 Blackview 11\" 256/8GB",
+            "preco": "R$ 2.080,00",
+            "cores": [
+              "*"
+            ]
           }
         ]
       },
       {
         "nome": "TRICICLO",
         "itens": [
-          {
-            "modelo": "Triciclo elétrico",
-            "preco": "R$ 1.001,00",
-            "cores": [
-              "*"
-            ]
-          },
           {
             "modelo": "Triciclo elétrico",
             "preco": "R$ 1.298,70",
@@ -2022,8 +1885,8 @@
         "nome": "TV",
         "itens": [
           {
-            "modelo": "TV Box",
-            "preco": "R$ 130,00",
+            "modelo": "TV BOX",
+            "preco": "R$ 143,00",
             "cores": [
               "*"
             ]
@@ -2068,7 +1931,7 @@
           },
           {
             "modelo": "Uni TV S1",
-            "preco": "R$ 474,50",
+            "preco": "R$ 507,00",
             "cores": [
               "*"
             ]
@@ -2076,13 +1939,13 @@
         ]
       },
       {
-        "nome": "VIVO",
+        "nome": "X-BOX",
         "itens": [
           {
-            "modelo": "Relógio Garmin Vivo Active 6",
-            "preco": "R$ 2.769,00",
+            "modelo": "X-box Séries X 1 TR Mídia Digital",
+            "preco": "R$ 7.800,00",
             "cores": [
-              "* Preto"
+              "*"
             ]
           }
         ]
@@ -2093,13 +1956,6 @@
           {
             "modelo": "Robô Xiaomi H40",
             "preco": "R$ 2.795,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "Robô Xiaomi H50",
-            "preco": "R$ 3.705,00",
             "cores": [
               "*"
             ]
@@ -2121,6 +1977,20 @@
           {
             "modelo": "Robô Xiaomi Vaccum 5 Pro",
             "preco": "R$ 7.007,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
+            "modelo": "Robô Xiaomi Vacuum 6",
+            "preco": "R$ 6.500,00",
+            "cores": [
+              "*  220v"
+            ]
+          },
+          {
+            "modelo": "Caixa Xiaomi Sound",
+            "preco": "R$ 715,00",
             "cores": [
               "*"
             ]
@@ -2213,7 +2083,7 @@
         "itens": [
           {
             "modelo": "Fonte Apple",
-            "preco": "R$ 240,00",
+            "preco": "R$ 260,00",
             "cores": [
               "*"
             ]
@@ -2225,35 +2095,28 @@
         "itens": [
           {
             "modelo": "Airpods 4 S/cancelamento",
-            "preco": "R$ 2.100,00",
+            "preco": "R$ 2.270,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "Airpods 4 C/cancelamento",
-            "preco": "R$ 2.480,00",
+            "preco": "R$ 2.600,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "AirPods 5",
-            "preco": "R$ 2.620,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "AirPods Pro 3",
-            "preco": "R$ 2.900,00",
+            "preco": "R$ 2.830,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "Airpods Max",
-            "preco": "R$ 6.300,00",
+            "preco": "R$ 6.000,00",
             "cores": [
               "* Midnight"
             ]
@@ -2265,7 +2128,14 @@
         "itens": [
           {
             "modelo": "Airtag C/1 2G",
-            "preco": "R$ 640,00",
+            "preco": "R$ 680,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
+            "modelo": "Airtag C/4 2G",
+            "preco": "R$ 1.828,00",
             "cores": [
               "*"
             ]
@@ -2277,14 +2147,14 @@
         "itens": [
           {
             "modelo": "Série Se 3° 40mm GPS",
-            "preco": "R$ 3.180,00",
+            "preco": "R$ 3.420,00",
             "cores": [
               "* Midnight"
             ]
           },
           {
             "modelo": "Série Se 3° 44mm GPS",
-            "preco": "R$ 3.900,00",
+            "preco": "R$ 4.100,00",
             "cores": [
               "* Midnight",
               "Starlight"
@@ -2292,44 +2162,44 @@
           },
           {
             "modelo": "Série Se 3° 44mm GPS + CEL",
-            "preco": "R$ 4.520,00",
+            "preco": "R$ 4.880,00",
             "cores": [
               "* Midnight"
             ]
           },
           {
             "modelo": "Série 11 42mm GPS Alumínio",
-            "preco": "R$ 4.400,00",
+            "preco": "R$ 4.840,00",
             "cores": [
               "* Rose"
             ]
           },
           {
             "modelo": "Série 11 46mm GPS Alumínio",
-            "preco": "R$ 4.780,00",
+            "preco": "R$ 5.110,00",
             "cores": [
-              "*   Rose"
+              "* Rose"
             ]
           },
           {
             "modelo": "Série 12 42mm GPS",
-            "preco": "R$ 6.760,00",
+            "preco": "R$ 7.200,00",
             "cores": [
               "* Black"
             ]
           },
           {
             "modelo": "Apple Watch Ultra 3 +Cel",
-            "preco": "R$ 9.280,00",
+            "preco": "R$ 10.020,00",
             "cores": [
               "*  Black"
             ]
           },
           {
             "modelo": "Apple Watch Ultra 4 + Cel",
-            "preco": "R$ 11.000,00",
+            "preco": "R$ 10.200,00",
             "cores": [
-              "* Midnigth"
+              "* Midnight"
             ]
           }
         ]
@@ -2339,22 +2209,36 @@
         "itens": [
           {
             "modelo": "iPad 11 128GB",
-            "preco": "R$ 3.690,00",
+            "preco": "R$ 3.650,00",
             "cores": [
-              "* Silver",
-              "Blue e Pink"
+              "*  Blue e Pink"
             ]
           },
           {
-            "modelo": "iPad Air M4 11` 128GB",
-            "preco": "R$ 5.680,00",
+            "modelo": "ipad 11 128GB",
+            "preco": "R$ 3.750,00",
+            "cores": [
+              "* Silver"
+            ]
+          },
+          {
+            "modelo": "iPad 11 256GB",
+            "preco": "R$ 4.700,00",
+            "cores": [
+              "*  Blue",
+              "Silver e Pink"
+            ]
+          },
+          {
+            "modelo": "iPad Air M4 11\" 128GB",
+            "preco": "R$ 6.030,00",
             "cores": [
               "*  Space Gray"
             ]
           },
           {
-            "modelo": "iPad Air M4 11` 256GB",
-            "preco": "R$ 6.400,00",
+            "modelo": "iPad Air M4 11\" 256GB",
+            "preco": "R$ 6.810,00",
             "cores": [
               "*  Starlight"
             ]
@@ -2368,14 +2252,14 @@
           },
           {
             "modelo": "iPad Pro M5 11\" 256GB",
-            "preco": "R$ 8.700,00",
+            "preco": "R$ 9.295,00",
             "cores": [
               "* Silver"
             ]
           },
           {
             "modelo": "iPad Pro M5 13\" 256GB",
-            "preco": "R$ 10.600,00",
+            "preco": "R$ 11.345,00",
             "cores": [
               "* Black"
             ]
@@ -2386,116 +2270,110 @@
         "nome": "IPHONE",
         "itens": [
           {
+            "modelo": "iPhone 15 128GB",
+            "preco": "R$ 4.550,00",
+            "cores": [
+              "*  Blue"
+            ]
+          },
+          {
+            "modelo": "iPhone 15 128GB",
+            "preco": "R$ 4.650,00",
+            "cores": [
+              "*  Black"
+            ]
+          },
+          {
+            "modelo": "iPhone 15 128GB",
+            "preco": "R$ 4.800,00",
+            "cores": [
+              "*   Pink"
+            ]
+          },
+          {
             "modelo": "iPhone 16 128GB",
-            "preco": "R$ 5.150,00",
+            "preco": "R$ 5.450,00",
             "cores": [
               "* Blue e Ocean"
             ]
           },
           {
             "modelo": "iPhone 17E 256GB",
-            "preco": "R$ 4.700,00",
+            "preco": "R$ 4.950,00",
             "cores": [
-              "*  White e Pink"
+              "*  Pink"
             ]
           },
           {
             "modelo": "iPhone 17 256GB",
-            "preco": "R$ 6.100,00",
+            "preco": "R$ 6.090,00",
             "cores": [
               "* Sage"
             ]
           },
           {
             "modelo": "iPhone 17 256GB",
-            "preco": "R$ 6.150,00",
+            "preco": "R$ 6.300,00",
             "cores": [
-              "*   Blue",
-              "Black e Lavanda"
+              "* Blue",
+              "Black e Lavanda",
+              "White"
             ]
           },
           {
-            "modelo": "iPhone 17 Pro  256GB",
-            "preco": "R$ 7.400,00",
+            "modelo": "iPhone 17 Pro Max 256GB",
+            "preco": "R$ 7.950,00",
             "cores": [
               "*  Orange"
             ]
           },
           {
             "modelo": "iPhone 17 Pro Max 256GB",
-            "preco": "R$ 7.800,00",
-            "cores": [
-              "* Orange"
-            ]
-          },
-          {
-            "modelo": "iPhone 17 Pro Max 256GB",
-            "preco": "R$ 7.900,00",
+            "preco": "R$ 8.000,00",
             "cores": [
               "*  Blue"
             ]
           },
           {
-            "modelo": "iPhone 17 Pro Max 256GB",
-            "preco": "R$ 8.000,00",
-            "cores": [
-              "* Silver"
-            ]
-          },
-          {
-            "modelo": "iPhone 17 Pro Max 512GB",
-            "preco": "R$ 9.300,00",
-            "cores": [
-              "* Orange"
-            ]
-          },
-          {
             "modelo": "iPhone 18 Pro 256GB",
-            "preco": "R$ 8.550,00",
-            "cores": [
-              "* Silver"
-            ]
-          },
-          {
-            "modelo": "iPhone 18 Pro 256GB",
-            "preco": "R$ 8.650,00",
+            "preco": "R$ 8.800,00",
             "cores": [
               "*   Glacier"
             ]
           },
           {
             "modelo": "iPhone 18 Pro 256GB",
-            "preco": "R$ 8.900,00",
-            "cores": [
-              "*   Burgundy"
-            ]
-          },
-          {
-            "modelo": "iPhone 18 Pro Max 256GB",
-            "preco": "R$ 9.850,00",
-            "cores": [
-              "* Silver"
-            ]
-          },
-          {
-            "modelo": "iPhone 18 Pro Max 256GB",
-            "preco": "R$ 10.300,00",
+            "preco": "R$ 9.200,00",
             "cores": [
               "* Burgundy"
             ]
           },
           {
-            "modelo": "iPhone 18 Pro Max 256GB",
-            "preco": "R$ 10.500,00",
+            "modelo": "iPhone 18 Pro 256GB",
+            "preco": "R$ 9.350,00",
             "cores": [
-              "*  Glacier"
+              "*   Silver"
+            ]
+          },
+          {
+            "modelo": "iPhone 18 Pro Max 256GB",
+            "preco": "R$ 9.750,00",
+            "cores": [
+              "* Silver e Glacier"
             ]
           },
           {
             "modelo": "iPhone 18 Pro Max 512GB",
-            "preco": "R$ 11.490,00",
+            "preco": "R$ 12.000,00",
             "cores": [
-              "*  Glacier"
+              "* Glacier"
+            ]
+          },
+          {
+            "modelo": "iPhone DUO 256GB",
+            "preco": "R$ 21.800,00",
+            "cores": [
+              "* Night Sky"
             ]
           }
         ]
@@ -2505,37 +2383,31 @@
         "itens": [
           {
             "modelo": "Mac Mini M4 256/16GB 2024",
-            "preco": "R$ 6.150,00",
+            "preco": "R$ 6.530,00",
             "cores": [
               "* Silver"
             ]
           },
           {
             "modelo": "Mac Neo 256/8GB 13.6\"",
-            "preco": "R$ 5.500,00",
+            "preco": "R$ 5.750,00",
             "cores": [
               "* Cítrus"
             ]
           },
           {
             "modelo": "Mac Neo 256/8GB 13.6\"",
-            "preco": "R$ 5.700,00",
+            "preco": "R$ 6.075,00",
             "cores": [
               "*  Indingo e Blush"
             ]
           },
           {
             "modelo": "Mac Neo 512/8GB 13.6\"",
-            "preco": "R$ 6.450,00",
+            "preco": "R$ 6.830,00",
             "cores": [
-              "*   Indingo"
-            ]
-          },
-          {
-            "modelo": "Mac Neo 512/8GB 13.6\"",
-            "preco": "R$ 6.500,00",
-            "cores": [
-              "*  Silver"
+              "*  Silver",
+              "índigo"
             ]
           },
           {
@@ -2547,14 +2419,29 @@
           },
           {
             "modelo": "Mac Air M5 512/16GB 13”",
-            "preco": "R$ 9.700,00",
+            "preco": "R$ 9.900,00",
             "cores": [
-              "*   Starlight"
+              "*   Starlight e Sky Blue",
+              "Midnight e Silver"
+            ]
+          },
+          {
+            "modelo": "Mac Air M5 1TB/16GB 13”",
+            "preco": "R$ 11.400,00",
+            "cores": [
+              "* Silver"
+            ]
+          },
+          {
+            "modelo": "Mac Air M5 512/16GB 15”",
+            "preco": "R$ 11.100,00",
+            "cores": [
+              "* Silver"
             ]
           },
           {
             "modelo": "Mac Pro M5 Max 2TB/36GB 14\"",
-            "preco": "R$ 26.800,00",
+            "preco": "R$ 28.600,00",
             "cores": [
               "*  Silver"
             ]
@@ -2594,21 +2481,21 @@
           },
           {
             "modelo": "Pencil PRO A2538",
-            "preco": "R$ 1.050,00",
+            "preco": "R$ 1.137,50",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "Cabo Apple",
-            "preco": "R$ 150,00",
+            "preco": "R$ 175,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "Magic Mouse USB-C",
-            "preco": "R$ 1.000,00",
+            "preco": "R$ 787,50",
             "cores": [
               "*"
             ]
@@ -2654,6 +2541,13 @@
           {
             "modelo": "culos RayBan Meta Headliner Ger.2ª RW4013F",
             "preco": "R$ 4.625,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
+            "modelo": "GO PRO 13  Black",
+            "preco": "R$ 3.062,50",
             "cores": [
               "*"
             ]
@@ -2907,105 +2801,105 @@
         "itens": [
           {
             "modelo": "iPhone 11 Pro Max 64GB",
-            "preco": "R$ 2.550,00",
+            "preco": "R$ 2.650,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "iPhone 11 Pro Max 256GB",
-            "preco": "R$ 2.700,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "iPhone 12 128GB",
-            "preco": "R$ 2.350,00",
+            "preco": "R$ 1.000,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "iPhone 12 Pro 128GB",
-            "preco": "R$ 2.600,00",
+            "preco": "R$ 2.700,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
+            "modelo": "iPhone 12 Pro Max 256GB",
+            "preco": "R$ 3.250,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "iPhone 13 128GB",
-            "preco": "R$ 2.600,00",
+            "preco": "R$ 2.700,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "iPhone 13 256GB",
-            "preco": "R$ 2.750,00",
+            "preco": "R$ 2.850,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "iPhone 14 128GB",
-            "preco": "R$ 2.750,00",
+            "preco": "R$ 2.900,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "iPhone 14 256GB",
-            "preco": "R$ 2.900,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "iPhone 14 Plus 128GB",
-            "preco": "R$ 2.900,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "iPhone 14 Plus 256GB",
             "preco": "R$ 3.050,00",
             "cores": [
               "*"
             ]
           },
           {
-            "modelo": "iPhone 14 Pro 128GB",
-            "preco": "R$ 3.600,00",
+            "modelo": "iPhone 14 Plus 128GB",
+            "preco": "R$ 3.050,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
+            "modelo": "iPhone 14 Plus 256GB",
+            "preco": "R$ 3.200,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "iPhone 14 Pro 128GB",
-            "preco": "R$ 3.600,00",
+            "preco": "R$ 3.700,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "iPhone 14 Pro 256GB",
-            "preco": "R$ 3.750,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "iPhone 14 Pro 512GB",
             "preco": "R$ 3.850,00",
             "cores": [
               "*"
             ]
           },
           {
-            "modelo": "iPhone 14 Pro Max 128GB",
+            "modelo": "iPhone 14 Pro 512GB",
             "preco": "R$ 4.000,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
+            "modelo": "iPhone 14 Pro Max 128GB",
+            "preco": "R$ 4.100,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
+            "modelo": "iPhone 14 Pro Max 256GB",
+            "preco": "R$ 4.350,00",
             "cores": [
               "*"
             ]
@@ -3019,63 +2913,70 @@
           },
           {
             "modelo": "iPhone 15 Plus 128GB",
-            "preco": "R$ 3.650,00",
+            "preco": "R$ 3.750,00",
             "cores": [
               "*"
             ]
           },
           {
-            "modelo": "iPhone 15 Pro Max 256GB",
-            "preco": "R$ 4.900,00",
+            "modelo": "iPhone 15 Pro 128GB",
+            "preco": "R$ 4.300,00",
             "cores": [
               "*"
             ]
           },
           {
-            "modelo": "iPhone 16E 128GB",
-            "preco": "R$ 3.300,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "iPhone 16 128GB",
+            "modelo": "iPhone 15 Pro 256GB",
             "preco": "R$ 4.450,00",
             "cores": [
               "*"
             ]
           },
           {
+            "modelo": "iPhone 15 Pro Max 256GB",
+            "preco": "R$ 5.000,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
+            "modelo": "iPhone 16E 128GB",
+            "preco": "R$ 3.400,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
+            "modelo": "iPhone 16 128GB",
+            "preco": "R$ 4.600,00",
+            "cores": [
+              "*"
+            ]
+          },
+          {
             "modelo": "iPhone 16 Plus 128GB",
-            "preco": "R$ 4.650,00",
+            "preco": "R$ 4.800,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "iPhone 16 Pro  128GB",
-            "preco": "R$ 5.100,00",
-            "cores": [
-              "*"
-            ]
-          },
-          {
-            "modelo": "iPhone 16 Pro  256GB",
-            "preco": "R$ 5.300,00",
+            "preco": "R$ 5.250,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "iPhone 16 Pro Max 256GB",
-            "preco": "R$ 5.900,00",
+            "preco": "R$ 6.000,00",
             "cores": [
               "*"
             ]
           },
           {
             "modelo": "iPhone 17 Pro  256GB",
-            "preco": "R$ 6.800,00",
+            "preco": "R$ 7.200,00",
             "cores": [
               "*"
             ]
